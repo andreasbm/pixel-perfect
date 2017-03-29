@@ -1,0 +1,130 @@
+@import "../base";
+
+/* Colors */
+$input-color-placeholder: color("gray", "lighten-3") !default;
+$input-color-bg: color("gray", "lighten-5") !default;
+$input-color-border: $input-color-bg !default;
+$input-color-invalid: color("error") !default;
+$input-color-invalid-left: color("error") !default;
+$input-color-success: color("success") !default;
+$input-color-focus: color("primary") !default;
+$input-color-bg-disabled: color("white", "darken") !default;
+$input-color-disabled: color("gray", "lighten-5") !default;
+$input-color-border-disabled: $input-color-bg-disabled !default;
+
+/* Input sizes */
+$input-padding: pxToRem(18) pxToRem(20) !default;
+$input-border-width: pxToRem(2) !default;
+$input-margin-bottom: $spacing-m !default;
+$input-border-radius: pxToRem(6) !default;
+$input-transition: border-color .3s !default;
+
+$input-font-size: $font-size-m !default;
+$input-font-size-s: $font-size-s !default;
+$input-font-size-l: $font-size-l !default;
+$input-border: $input-border-width solid $input-color-border !default;
+
+/* Textarea sizes */
+$textarea-padding: pxToRem(18) pxToRem(20) !default;
+$textarea-height: pxToRem(106) !default;
+
+/* Placeholders */
+::-webkit-input-placeholder {
+  color: $input-color-placeholder;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $input-color-placeholder;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $input-color-placeholder;
+}
+
+:-ms-input-placeholder {
+  color: $input-color-placeholder;
+}
+
+select::-moz-focus-inner {
+  border: 0;
+}
+
+/* Input fields */
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+input[type=month],
+input[type=week],
+input[type=year],
+input[type=file],
+.input,
+select,
+textarea {
+  background-color: $input-color-bg;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  margin-bottom: $input-margin-bottom;
+  padding: $input-padding;
+  transition: $input-transition;
+  font-size: $input-font-size;
+
+  display: block;
+  outline: none;
+  width: 100%;
+  box-shadow: none;
+  box-sizing: border-box;
+  appearance: none;
+  -moz-appearance: none;
+  line-height: initial;
+
+  // Disabled input style
+  &:disabled, &.ng-disabled, &.disabled, &[readonly="readonly"], &[disabled="disabled"] {
+    color: $input-color-disabled;
+    background: $input-color-bg-disabled;
+    border-color: $input-color-border-disabled;
+    cursor: not-allowed;
+  }
+
+  // Focused input style
+  &:focus:not([readonly]), &.active {
+    border-color: $input-color-focus;
+  }
+}
+
+/* Textarea */
+textarea {
+  height: $textarea-height;
+  min-height: $textarea-height;
+  padding: $textarea-padding;
+  resize: none;
+
+  &.resizeable {
+    resize: vertical;
+  }
+
+  &.prevent-scroll {
+    overflow-y: hidden; /* prevents scroll bar flash */
+  }
+}
+
+/* Select */
+select {
+  cursor: pointer;
+  overflow: hidden;
+
+  /* REMOVE UGLE FIREFOX BORDER */
+  text-shadow: 0 0 0 #000;
+
+  &::-ms-expand {
+    display: none;
+  }
+}

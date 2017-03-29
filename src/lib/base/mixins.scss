@@ -1,0 +1,95 @@
+@import "mixins/flexbox";
+
+$vendors: webkit moz ms o;
+@mixin vendor-prefix($property, $value) {
+  @each $vendor in $vendors {
+    #{"-" + $vendor + "-" + $property}: #{$value};
+  }
+  #{$property}: #{$value};
+}
+
+@mixin createColor($color_name, $color_variant, $color_value) {
+  @if $color_variant == "base" {
+
+    // Base colors
+    .#{$color_name}-bg {
+      background-color: $color_value !important;
+    }
+    .#{$color_name} {
+      color: $color_value !important;
+    }
+    .#{$color_name}-border {
+      border: 1px solid $color_value !important;
+    }
+
+  } @else {
+
+    // Variants
+    .#{$color_name}-bg.#{$color_variant}-bg {
+      background-color: $color_value !important;
+    }
+    .#{$color_name}.#{$color_variant} {
+      color: $color_value !important;
+    }
+    .#{$color_name}.#{$color_variant}-border {
+      border-color: $color_value !important;
+    }
+  }
+}
+
+@mixin createColors($colors) {
+  @each $color_name, $color in $colors {
+    @each $color_variant, $color_value in $color {
+      @include createColor($color_name, $color_variant, $color_value);
+    }
+  }
+}
+
+@mixin breakpointify($class-name, $is-inline: false) {
+  @if $is-inline == true {
+    &.#{$class-name} { @content; }
+
+    &.s-only-#{$class-name} {
+      @media #{$s-and-down} { @content; }
+    }
+
+    &.m-down-#{$class-name} {
+      @media #{$m-and-down} { @content; }
+    }
+
+    &.m-#{$class-name} {
+      @media #{$m-and-up} { @content; }
+    }
+
+    &.m-only#{$class-name} {
+      @media #{$m-only} { @content; }
+    }
+
+    &.l-#{$class-name} {
+      @media #{$l-and-up} { @content; }
+    }
+
+  } @else {
+    .#{$class-name} { @content; }
+
+    .s-only-#{$class-name} {
+      @media #{$s-and-down} { @content; }
+    }
+
+    .m-down-#{$class-name} {
+      @media #{$m-and-down} { @content; }
+    }
+
+    .m-#{$class-name} {
+      @media #{$m-and-up} { @content; }
+    }
+
+    .m-only#{$class-name} {
+      @media #{$m-only} { @content; }
+    }
+
+    .l-#{$class-name} {
+      @media #{$l-and-up} { @content; }
+    }
+  }
+}

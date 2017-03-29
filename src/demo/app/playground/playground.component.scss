@@ -1,0 +1,42 @@
+@import "../../../lib/base";
+
+.stack-section {
+
+	.container {
+		border-right: dashed 2px color("black");
+		border-left: dashed 2px color("black");
+	}
+
+	.item {
+		text-align: center;
+		padding: 12px;
+
+		&:nth-child(odd) { background: color("blue");}
+		&:nth-child(even) { background: color("green");}
+
+		&:nth-child(1) { background: color("blue"); }
+		&:nth-child(2) { background: color("green"); }
+		&:nth-child(3) { background: color("orange"); }
+		&:nth-child(4) { background: color("brown"); }
+		&:nth-child(5) { background: color("purple"); }
+		&:nth-child(6) { background: color("red"); }
+		&:nth-child(7) { background: color("indigo"); }
+		&:nth-child(8) { background: color("light-blue"); }
+		&:nth-child(9) { background: color("cyan"); }
+		&:nth-child(10) { background: color("teal"); }
+		&:nth-child(11) { background: color("amber"); }
+		&:nth-child(12) { background: color("deep-orange"); }
+
+		img {
+			max-height: pxToRem(50);
+			width: auto;
+		}
+	}
+
+	.stack-example {
+		.square {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}

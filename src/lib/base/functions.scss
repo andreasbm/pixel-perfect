@@ -1,0 +1,8 @@
+@import "functions/color-function";
+
+$px-to-rem-base-size: 17 !default;
+
+@function pxToRem($size-px) {
+	$remSize: $size-px / $px-to-rem-base-size;
+	@return #{$remSize}rem;
+}

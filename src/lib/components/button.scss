@@ -1,0 +1,127 @@
+@import "../base";
+
+// Button
+$button-border: none !default;
+$button-radius: pxToRem(6) !default;
+
+$button-padding-left-right: pxToRem(15) !default;
+$button-padding-top-bottom: pxToRem(15) !default;
+$button-padding: $button-padding-top-bottom $button-padding-left-right;
+
+$button-image-height: pxToRem(15) !default;
+
+$button-font-size: $font-size-h4 !default;
+$button-line-height: 100% !default;
+$button-transition: all 200ms ease !default;
+
+// Disabled styles
+$button-disabled-color-bg: color("gray", "lighten-2") !default;
+$button-disabled-color: color("gray") !default;
+
+// States
+$button-color: color("white") !default;
+$button-state-normal-color-bg: color("primary") !default;
+$button-state-success-color-bg: color("success") !default;
+$button-state-error-color-bg: color("error") !default;
+$button-state-warn-color-bg: color("warn") !default;
+$button-state-shady-color-bg: color("gray", "lighten-3") !default;
+
+@mixin buttonStateCSS($color) {
+  background-color: $color;
+  &:hover { background-color: lighten($color, 5%); }
+}
+
+@mixin buttonFlatStateCSS($color) {
+  color: $color;
+  &:hover { color: lighten($color, 15%); }
+}
+
+button {
+  appearance: none;
+}
+
+button, .btn, .btn-floating {
+  border-radius: $button-radius;
+  border: $button-border;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  transition: $button-transition;
+
+  outline: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: .5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+
+  &:not(.btn-flat) {
+    color: $button-color;
+    background-color: $button-state-normal-color-bg;
+    &:hover { background-color: lighten($button-state-normal-color-bg, 5%); }
+
+    &.btn-success { @include buttonStateCSS($button-state-success-color-bg); }
+    &.btn-error { @include buttonStateCSS($button-state-error-color-bg); }
+    &.btn-warn { @include buttonStateCSS($button-state-warn-color-bg); }
+    &.btn-shady { @include buttonStateCSS($button-state-shady-color-bg); }
+  }
+
+  &.btn-flat {
+    background-color: transparent;
+    color: $button-state-normal-color-bg;
+    &:hover { color: lighten($button-state-normal-color-bg, 15%); }
+
+    &.btn-success { @include buttonFlatStateCSS($button-state-success-color-bg); }
+    &.btn-error { @include buttonFlatStateCSS($button-state-error-color-bg); }
+    &.btn-warn { @include buttonFlatStateCSS($button-state-warn-color-bg); }
+    &.btn-shady { @include buttonFlatStateCSS($button-state-shady-color-bg); }
+  }
+
+  // Icons
+  img {
+    height: $button-image-height;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  > span {
+    &:empty {
+      display: none;
+    }
+  }
+
+  * {
+    line-height: $button-line-height;
+    color: inherit;
+  }
+}
+
+button.disabled,
+button[disabled],
+.btn.disabled,
+.btn:disabled {
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: $button-disabled-color !important;
+
+  * {
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: $button-disabled-color !important;
+    background: $button-disabled-color-bg !important;
+  }
+
+  &:not(.btn-flat) {
+    background-color: $button-disabled-color-bg !important;
+  }
+}
+
+

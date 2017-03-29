@@ -1,0 +1,192 @@
+@import "../base";
+
+$font-family-default: 'Lato', Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+$font-size-base-l-screen:   17px !default;
+$font-size-base-m-screen:   16px !default;
+$font-size-base-s-screen:   16px !default;
+
+$font-size-l:   pxToRem(18) !default;
+$font-size-m:   pxToRem(15) !default; // Assumes the browser default, typically `16px`
+$font-size-s:   pxToRem(13) !default;
+$font-size-xs:  pxToRem(10) !default;
+
+$font-size-h1:  pxToRem(50) !default;
+$font-size-h2:  pxToRem(32) !default;
+$font-size-h3:  pxToRem(24) !default;
+$font-size-h4:  pxToRem(20) !default;
+$font-size-h5:  $font-size-l !default;
+$font-size-h6:  $font-size-m !default;
+
+$font-size-label: $font-size-s !default;
+
+/* Font weights */
+$font-weight-base:    normal !default;
+$font-weight-bold:    700 !default;
+$font-weight-strong:  500 !default;
+$font-weight-thin:    300 !default;
+
+$font-weight-h1:  $font-weight-bold !default;
+$font-weight-h2:  $font-weight-thin !default;
+$font-weight-h3:  $font-weight-thin !default;
+$font-weight-h4:  $font-weight-thin !default;
+$font-weight-h5:  $font-weight-thin !default;
+$font-weight-h6:  $font-weight-bold !default;
+
+/* Line height */
+$line-height-html:      1.5em !default;
+$line-height-label:     180% !default;
+$line-height-paragraph: 180% !default;
+$line-height-span:      180% !default;
+$line-height-base:      1.5 !default;
+$line-height-header:    150% !default;
+
+/* Margins */
+$margin-paragraph:      0.8em 0;
+$margin-span:           0;
+$margin-header:         0.1em 0 0.2em 0;
+
+/* Colors */
+$color-html: color("black") !default;
+
+$color-link: (
+  "default":  color("primary"),
+  "light":    color("primary", "lighten"),
+  "dark":     color("primary", "darken")
+) !default;
+
+$color-header: (
+  "default":  color("black"),
+  "light":    color("white"),
+  "dark":     color("black")
+) !default;
+
+$color-span-p: (
+  "default":  color("gray"),
+  "light":    color("white", "darken"),
+  "dark":     color("gray")
+) !default;
+
+$color-label: (
+  "default":  color("gray"),
+  "light":    color("white", "darken"),
+  "dark":     color("gray")
+) !default;
+
+html {
+  color: $color-html;
+  font-family: $font-family-default;
+  font-size: $font-size-base-s-screen;
+
+  line-height: $line-height-html;
+  font-weight: normal;
+
+  @media only screen and (min-width: $breakpoint-m) {
+    font-size: $font-size-base-m-screen;
+  }
+
+  @media only screen and (min-width: $breakpoint-l) {
+    font-size: $font-size-base-l-screen;
+  }
+}
+
+body {
+  font-size: $font-size-m;
+}
+
+// Text Styles
+em { font-style: italic; }
+strong, .strong { font-weight: $font-weight-strong; }
+b, .bold { font-weight: $font-weight-bold; }
+.thin { font-weight: $font-weight-thin; }
+.small, small { font-size: $font-size-s; }
+.medium { font-size: $font-size-m; }
+.large { font-size: $font-size-l; }
+
+@mixin headerStyle($font-size, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height-header;
+  font-weight: $font-weight;
+  margin: $margin-header;
+}
+
+// Header Styles
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: map_get($color-header, "default");
+}
+h1 { @include headerStyle($font-size-h1, $font-weight-h1); }
+h2 { @include headerStyle($font-size-h2, $font-weight-h2); }
+h3 { @include headerStyle($font-size-h3, $font-weight-h3); }
+h4 { @include headerStyle($font-size-h4, $font-weight-h4); }
+h5 { @include headerStyle($font-size-h5, $font-weight-h5); }
+h6 { @include headerStyle($font-size-h6, $font-weight-h6); }
+
+p {
+  color: map_get($color-span-p, "default");
+  line-height: $line-height-paragraph;
+  margin: $margin-paragraph;
+}
+
+span {
+  color: map_get($color-span-p, "default");
+  line-height: $line-height-span;
+  margin: $margin-span;
+}
+
+label {
+  color: map_get($color-label, "default");
+  font-weight: $font-weight-bold;
+  font-size: $font-size-label;
+  line-height: $line-height-label;
+  display: block;
+}
+
+a {
+  color: map_get($color-link, "default");
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+
+  &.link:hover {
+    text-decoration: underline;
+  }
+
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+}
+
+.section-light a, a.light {
+  color: map_get($color-link, "light");
+}
+
+.section-light span, .section-light p, span.light, p.light {
+  color: map_get($color-span-p, "light");
+}
+
+.section-light label, label.light {
+  color: map_get($color-label, "light");
+}
+
+.section-light h1, .section-light h2, .section-light h3, .section-light h4, .section-light h5, .section-light h6,
+h1.light, h2.light, h3.light, h4.light, h5.light {
+  color: map_get($color-header, "light");
+}
+
+.section-dark a, a.dark {
+  color: map_get($color-link, "dark");
+}
+
+.section-dark span, .section-dark p, span.dark, p.dark {
+  color: map_get($color-span-p, "dark");
+}
+
+.section-dark label, label.dark {
+  color: map_get($color-label, "default");
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4, .section-dark h5, .section-dark h6,
+h1.dark, h2.dark, h3.dark, h4.dark, h5.dark {
+  color: map_get($color-header, "dark");
+}
+
+.color-inherit { color: inherit; }

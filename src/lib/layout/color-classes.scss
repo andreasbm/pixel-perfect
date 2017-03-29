@@ -1,0 +1,8 @@
+@import "../base";
+
+@if ($colors == null) {
+  @warn "Remember to define the $colors variable";
+
+} @else {
+  @include createColors($colors);
+}

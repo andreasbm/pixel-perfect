@@ -1,0 +1,25 @@
+{
+  "name": "pixel-perfect",
+  "version": "0.0.1",
+  "description": "A pixel perfect SCSS stylesheets to get you going.",
+  "author": "Appnest",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreasbm/pixel-perfect/issues"
+  },
+  "homepage": "https://github.com/andreasbm/pixel-perfect#readme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasbm/pixel-perfect.git"
+  },
+  "keywords": [
+    "pixel",
+    "perfect",
+    "stylesheet",
+    "scss",
+    "simple",
+    "css",
+    "styles"
+  ]
+}

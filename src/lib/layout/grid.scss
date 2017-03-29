@@ -1,0 +1,221 @@
+@import "../base";
+
+/* Grid settings */
+$stack-num-cols: 12 !default;
+$stack-spacing: 15 !default;
+$stack-spacing-unit: 'px' !default;
+$spacing-s: pxToRem(7.5) !default;
+$spacing-m: pxToRem(15) !default;
+$spacing-l: pxToRem(30) !default;
+
+/* Container */
+$container-width: 80% !default;
+$container-width-m: 85% !default;
+$container-width-l: 70% !default;
+$container-width-wide: 90% !default;
+$container-width-thin: 70% !default;
+
+$container-max-width: pxToRem(1280) !default;
+$container-max-width-thin: pxToRem(700) !default;
+$container-max-width-wide: pxToRem(1430) !default;
+
+/* Section */
+$section-top-bottom-spacing-l: pxToRem(150) !default;
+$section-top-bottom-spacing-m: pxToRem(100) !default;
+$section-top-bottom-spacing-s: pxToRem(50) !default;
+
+.container {
+  width: $container-width;
+  max-width: $container-max-width;
+  margin: 0 auto;
+
+  @media #{$m-and-up} {
+    width: $container-width-m;
+  }
+  @media #{$l-and-up} {
+    width: $container-width-l;
+  }
+
+  &.container-thin {
+    max-width: $container-max-width-thin;
+    width: $container-width-thin;
+  }
+
+  &.container-wide {
+    max-width: $container-max-width-wide;
+    width: $container-width-wide;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+section {
+  padding-top: $section-top-bottom-spacing-m;
+  padding-bottom: $section-top-bottom-spacing-m;
+
+  &.section-s {
+    padding-top: $section-top-bottom-spacing-s;
+    padding-bottom: $section-top-bottom-spacing-s;
+  }
+
+  &.section-l {
+    padding-top: $section-top-bottom-spacing-l;
+    padding-bottom: $section-top-bottom-spacing-l;
+  }
+}
+
+/* Padding */
+@include breakpointify("padding-top-m") { padding-top: $section-top-bottom-spacing-m !important;  }
+@include breakpointify("padding-bottom-m") { padding-bottom: $section-top-bottom-spacing-m !important;  }
+
+@include breakpointify("padding-top-s") { padding-top: $section-top-bottom-spacing-s !important;  }
+@include breakpointify("padding-bottom-s") { padding-bottom: $section-top-bottom-spacing-s !important;  }
+
+@include breakpointify("padding-top-l") { padding-top: $section-top-bottom-spacing-l !important; }
+@include breakpointify("padding-bottom-l") { padding-bottom: $section-top-bottom-spacing-l !important;  }
+
+@include breakpointify("padding-top-no") { padding-top: 0 !important; }
+@include breakpointify("padding-bottom-no") { padding-bottom: 0 !important;  }
+
+/* Margin */
+@include breakpointify("margin-top-m") { margin-top: $section-top-bottom-spacing-m !important;  }
+@include breakpointify("margin-bottom-m") { margin-bottom: $section-top-bottom-spacing-m !important;  }
+
+@include breakpointify("margin-top-s") { margin-top: $section-top-bottom-spacing-s !important;  }
+@include breakpointify("margin-bottom-s") { margin-bottom: $section-top-bottom-spacing-s !important;  }
+
+@include breakpointify("margin-top-l") { margin-top: $section-top-bottom-spacing-l !important; }
+@include breakpointify("margin-bottom-l") { margin-bottom: $section-top-bottom-spacing-l !important;  }
+
+@include breakpointify("margin-top-no") { margin-top: 0 !important; }
+@include breakpointify("margin-bottom-no") { margin-bottom: 0 !important;  }
+
+@function getStackSpacing($with-unit: false) {
+  @if $with-unit {
+    @return #{$stack-spacing}#{$stack-spacing-unit};
+  } @else {
+    @return #{$stack-spacing};
+  }
+}
+
+@function getStackSpacingForIndex($index, $max-cols, $with-unit: false) {
+  @if $with-unit {
+    @return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
+  } @else {
+    @return #{$stack-spacing / ($max-cols/$index)};
+  }
+}
+
+@mixin gridItemCSS($index, $max-cols) {
+  $perc: ($index / $max-cols) * 100%;
+
+  /* Only add gap if the size of the column is not 100% */
+  @if $perc != 100% {
+    max-width: calc(#{$perc} - #{getStackSpacing(true)} + #{getStackSpacingForIndex($index, $max-cols, true)});
+    @include flex-basis(calc(#{$perc} - #{getStackSpacing(true)} + #{getStackSpacingForIndex($index, $max-cols, true)}));
+  }
+}
+
+.stack-grid {
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+
+  > .item {
+    /*flex: 0 0 auto;*/
+    @include flex(0 0 auto);
+
+    width: 100%;
+
+    $i: 1;
+
+    // Small and up
+    @while $i <= $stack-num-cols {
+      &.s#{$i} {
+        @include gridItemCSS($i, $stack-num-cols);
+      }
+      $i: $i + 1;
+    }
+
+    $i: 1;
+
+    // Medium and up
+    @while $i <= $stack-num-cols {
+      @media #{$m-and-up} {
+        &.m#{$i} {
+          @include gridItemCSS($i, $stack-num-cols);
+        }
+      }
+      $i: $i + 1;
+    }
+
+    $i: 1;
+    // Large and up
+    @while $i <= $stack-num-cols {
+      @media #{$l-and-up} {
+        &.l#{$i} {
+          @include gridItemCSS($i, $stack-num-cols);
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+}
+
+/* Horizontal grids */
+.stack {
+  @include display-flex();
+  @include flex-flow(row nowrap);
+  @include align-items(center);
+}
+
+.stack, .stack-grid {
+
+  /* Wrap */
+  @include breakpointify("stack-wrap", true) { @include flex-wrap(wrap); }
+  @include breakpointify("stack-nowrap", true) { @include flex-wrap(nowrap); }
+
+  /* Alignment - Determines the layout of the arranged views perpendicular to the stack’s axis. */
+  @include breakpointify("stack-align-start", true) { @include justify-content(flex-start); }
+  @include breakpointify("stack-align-end", true) { @include justify-content(flex-end); }
+  @include breakpointify("stack-align-center", true) { @include justify-content(center); }
+
+  /* Direction - Determines the stack’s orientation */
+  @include breakpointify("stack-direction-horizontal", true) { @include flex-direction(row); }
+  @include breakpointify("stack-direction-vertical", true) { @include flex-direction(column);}
+  @include breakpointify("stack-direction-horizontal-reverse", true) { @include flex-direction(row-reverse);}
+  @include breakpointify("stack-direction-vertical-reverse", true) { @include flex-direction(column-reverse); }
+
+  /* Distribution */
+  @include breakpointify("stack-distribution-fill", true) {
+    > .item { @include flex-grow(1); }
+  }
+  @include breakpointify("stack-distribution-center", true) { @include justify-content(space-around); }
+  @include breakpointify("stack-distribution-space", true) { @include justify-content(space-between); }
+
+  /* Items */
+  @include breakpointify("stack-items-align-center", true) { @include align-items(center); }
+  @include breakpointify("stack-items-align-start", true) { @include align-items(flex-start);}
+  @include breakpointify("stack-items-align-end", true) { @include align-items(flex-end); }
+  @include breakpointify("stack-items-align-baseline", true) { @include align-items(baseline); }
+  @include breakpointify("stack-items-align-fill", true) { @include align-items(stretch); }
+
+  /* Item */
+  > .item {
+    @include breakpointify("item-align-center", true) { @include align-self(center); }
+    @include breakpointify("item-align-start", true) { @include align-self(flex-start); }
+    @include breakpointify("item-align-end", true) { @include align-self(flex-end); }
+    @include breakpointify("item-align-baseline", true) { @include align-self(baseline); }
+    @include breakpointify("item-align-fill", true) { @include align-self(stretch); }
+  }
+}
+
+/* Space */
+@include breakpointify("space-horizontal-s") { width: $spacing-s; }
+@include breakpointify("space-horizontal-m") { width: $spacing-m; }
+@include breakpointify("space-horizontal-l") { width: $spacing-l; }
+@include breakpointify("space-vertical-s") { height: $spacing-s; }
+@include breakpointify("space-vertical-m") { height: $spacing-m; }
+@include breakpointify("space-vertical-l") { height: $spacing-l; }
