@@ -1,3 +1,8 @@
+// Overwrite vars
+$font-size-base-l-screen: 17px;
+@import "theme-custom";
+
+// Lib
 @import "../lib/base";
 @import "../lib/components";
 @import "../lib/layout";

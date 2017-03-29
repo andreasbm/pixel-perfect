@@ -1,0 +1,38 @@
+@import "../functions";
+@import "typography-vars";
+
+// Button
+$button-border: none !default;
+$button-radius: pxToRem(6) !default;
+
+$button-padding-left-right: pxToRem(15) !default;
+$button-padding-top-bottom: pxToRem(15) !default;
+$button-padding: $button-padding-top-bottom $button-padding-left-right;
+
+$button-image-height: pxToRem(15) !default;
+
+$button-font-size: $font-size-h4 !default;
+$button-line-height: 100% !default;
+$button-transition: all 200ms ease !default;
+
+// Disabled styles
+$button-disabled-color-bg: color("gray", "lighten-2") !default;
+$button-disabled-color: color("gray") !default;
+
+// States
+$button-color: color("white") !default;
+$button-state-normal-color-bg: color("primary") !default;
+$button-state-success-color-bg: color("success") !default;
+$button-state-error-color-bg: color("error") !default;
+$button-state-warn-color-bg: color("warn") !default;
+$button-state-shady-color-bg: color("gray", "lighten-3") !default;
+
+@mixin buttonStateCSS($color) {
+	background-color: $color;
+	&:hover { background-color: lighten($color, 5%); }
+}
+
+@mixin buttonFlatStateCSS($color) {
+	color: $color;
+	&:hover { color: lighten($color, 15%); }
+}

@@ -1,0 +1,9 @@
+$breakpoint-s: 600px !default;
+$breakpoint-m: 992px !default;
+$breakpoint-l: 1200px !default;
+
+$m-and-up: "only screen and (min-width : #{$breakpoint-s + 1})" !default;
+$l-and-up: "only screen and (min-width : #{$breakpoint-m + 1})" !default;
+$s-and-down: "only screen and (max-width : #{$breakpoint-s})" !default;
+$m-and-down: "only screen and (max-width : #{$breakpoint-m})" !default;
+$m-only: "only screen and (min-width : #{$breakpoint-s + 1}) and (max-width : #{$breakpoint-m})" !default;
