@@ -2,11 +2,43 @@
 
 A pixel perfect SCSS stylesheets to get you going.
 
-# How to install
+# How to use
+ 
+Download the source code or use NPM to install pixel-perfect.
 
 ```
 $ npm i pixel-perfect --save
 ```
+
+Import the three stylesheets in the following order.
+```
+@import "../../node_modules/pixel-perfect/base";
+@import "../../node_modules/pixel-perfect/components";
+@import "../../node_modules/pixel-perfect/layout";
+```
+
+If you wish to customize the variables, import the variables overwriting the pixel-perfect variables before importing the styles.
+```
+$font-size-h1: 20rem;
+$font-size-h2: 17rem;
+...
+
+@import "../../node_modules/pixel-perfect/base";
+...
+```
+
+## Base
+
+The base stylesheet contains variables, mixins and functions.
+
+## Components
+
+The components stylesheet contains classes for components (eg. input fields and buttons).
+
+## Layout
+
+The layout stylesheet contains classes for the grid, colors, typography, global styles and normalization.
+
 
 # SCSS naming
 
