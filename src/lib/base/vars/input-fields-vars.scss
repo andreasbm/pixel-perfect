@@ -2,19 +2,22 @@
 @import "typography-vars";
 @import "grid-vars";
 
-/* Colors */
+/* Input and textarea colors */
 $input-color-placeholder: color("gray", "lighten-3") !default;
-$input-color-bg: color("gray", "lighten-5") !default;
-$input-color-border: $input-color-bg !default;
-$input-color-invalid: color("error") !default;
-$input-color-invalid-left: color("error") !default;
-$input-color-success: color("success") !default;
-$input-color-focus: color("primary") !default;
-$input-color-bg-disabled: color("white", "darken") !default;
-$input-color-disabled: color("gray", "lighten-5") !default;
-$input-color-border-disabled: $input-color-bg-disabled !default;
+$input-bg-color: color("gray", "lighten-5") !default;
+$input-border-color: $input-bg-color !default;
 
-/* Input sizes */
+$input-color-state-invalid: color("error") !default;
+$input-color-state-success: color("success") !default;
+$input-color-state-focus: color("primary") !default;
+$input-color-state-disabled: color("gray", "lighten-5") !default;
+
+$input-bg-color-state-disabled: color("white", "darken") !default;
+
+$input-border-color-left-state-invalid: color("error") !default;
+$input-border-color-state-disabled: $input-bg-color-state-disabled !default;
+
+/* Input */
 $input-padding: pxToRem(18) pxToRem(20) !default;
 $input-border-width: pxToRem(2) !default;
 $input-margin-bottom: $spacing-m !default;
@@ -22,10 +25,8 @@ $input-border-radius: pxToRem(6) !default;
 $input-transition: border-color .3s !default;
 
 $input-font-size: $font-size-m !default;
-$input-font-size-s: $font-size-s !default;
-$input-font-size-l: $font-size-l !default;
-$input-border: $input-border-width solid $input-color-border !default;
+$input-border: $input-border-width solid $input-border-color !default;
 
-/* Textarea sizes */
+/* Textarea */
 $textarea-padding: pxToRem(18) pxToRem(20) !default;
 $textarea-height: pxToRem(106) !default;

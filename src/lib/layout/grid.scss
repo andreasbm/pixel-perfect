@@ -5,11 +5,11 @@
   max-width: $container-max-width;
   margin: 0 auto;
 
-  @media #{$m-and-up} {
-    width: $container-width-m;
+  @media #{$screen-m-and-up} {
+    width: $container-width-screen-m;
   }
-  @media #{$l-and-up} {
-    width: $container-width-l;
+  @media #{$screen-l-and-up} {
+    width: $container-width-screen-l;
   }
 
   &.container-thin {
@@ -119,7 +119,7 @@ section {
 
     // Medium and up
     @while $i <= $stack-num-cols {
-      @media #{$m-and-up} {
+      @media #{$screen-m-and-up} {
         &.m#{$i} {
           @include gridItemCSS($i, $stack-num-cols);
         }
@@ -130,7 +130,7 @@ section {
     $i: 1;
     // Large and up
     @while $i <= $stack-num-cols {
-      @media #{$l-and-up} {
+      @media #{$screen-l-and-up} {
         &.l#{$i} {
           @include gridItemCSS($i, $stack-num-cols);
         }

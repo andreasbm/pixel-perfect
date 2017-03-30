@@ -2,9 +2,9 @@
 
 $font-family-default: 'Lato', Roboto, "Helvetica Neue", Arial, sans-serif !default;
 
-$font-size-base-l-screen:   17px !default;
-$font-size-base-m-screen:   16px !default;
-$font-size-base-s-screen:   16px !default;
+$font-size-base-screen-l:   17px !default;
+$font-size-base-screen-m:   16px !default;
+$font-size-base-screen-s:   16px !default;
 
 $font-size-l:   pxToRem(18) !default;
 $font-size-m:   pxToRem(15) !default; // Assumes the browser default, typically `16px`
@@ -47,7 +47,7 @@ $margin-span:           0 !default;
 $margin-header:         0.1em 0 0.2em 0 !default;
 
 /* Colors */
-$color-html: color("black") !default;
+$color-html: 				color("black") !default;
 
 $color-link: (
 				"default":  color("primary"),

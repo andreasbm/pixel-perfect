@@ -50,46 +50,46 @@ $vendors: webkit moz ms o;
     &.#{$class-name} { @content; }
 
     &.s-only-#{$class-name} {
-      @media #{$s-and-down} { @content; }
+      @media #{$screen-s-and-down} { @content; }
     }
 
     &.m-down-#{$class-name} {
-      @media #{$m-and-down} { @content; }
+      @media #{$screen-m-and-down} { @content; }
     }
 
     &.m-#{$class-name} {
-      @media #{$m-and-up} { @content; }
+      @media #{$screen-m-and-up} { @content; }
     }
 
     &.m-only#{$class-name} {
-      @media #{$m-only} { @content; }
+      @media #{$screen-m-only} { @content; }
     }
 
     &.l-#{$class-name} {
-      @media #{$l-and-up} { @content; }
+      @media #{$screen-l-and-up} { @content; }
     }
 
   } @else {
     .#{$class-name} { @content; }
 
     .s-only-#{$class-name} {
-      @media #{$s-and-down} { @content; }
+      @media #{$screen-s-and-down} { @content; }
     }
 
     .m-down-#{$class-name} {
-      @media #{$m-and-down} { @content; }
+      @media #{$screen-m-and-down} { @content; }
     }
 
     .m-#{$class-name} {
-      @media #{$m-and-up} { @content; }
+      @media #{$screen-m-and-up} { @content; }
     }
 
     .m-only#{$class-name} {
-      @media #{$m-only} { @content; }
+      @media #{$screen-m-only} { @content; }
     }
 
     .l-#{$class-name} {
-      @media #{$l-and-up} { @content; }
+      @media #{$screen-l-and-up} { @content; }
     }
   }
 }

@@ -41,7 +41,7 @@ input[type=file],
 .input,
 select,
 textarea {
-  background-color: $input-color-bg;
+  background-color: $input-bg-color;
   border: $input-border;
   border-radius: $input-border-radius;
   margin-bottom: $input-margin-bottom;
@@ -60,15 +60,15 @@ textarea {
 
   // Disabled input style
   &:disabled, &.ng-disabled, &.disabled, &[readonly="readonly"], &[disabled="disabled"] {
-    color: $input-color-disabled;
-    background: $input-color-bg-disabled;
-    border-color: $input-color-border-disabled;
+    color: $input-color-state-disabled;
+    background: $input-bg-color-state-disabled;
+    border-color: $input-border-color-state-disabled;
     cursor: not-allowed;
   }
 
   // Focused input style
   &:focus:not([readonly]), &.active {
-    border-color: $input-color-focus;
+    border-color: $input-color-state-focus;
   }
 }
 

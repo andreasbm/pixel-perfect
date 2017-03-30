@@ -34,11 +34,9 @@ img, input, textarea {
   visibility: hidden;
 }
 
-// Cover
-.background-cover {
-  background-position: center center;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+.cover {
+  background: no-repeat center;
+  background-size: cover;
 }
 
 .dark-overlay {

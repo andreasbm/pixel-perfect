@@ -3,17 +3,17 @@
 html {
   color: $color-html;
   font-family: $font-family-default;
-  font-size: $font-size-base-s-screen;
+  font-size: $font-size-base-screen-s;
 
   line-height: $line-height-html;
   font-weight: normal;
 
   @media only screen and (min-width: $breakpoint-m) {
-    font-size: $font-size-base-m-screen;
+    font-size: $font-size-base-screen-m;
   }
 
   @media only screen and (min-width: $breakpoint-l) {
-    font-size: $font-size-base-l-screen;
+    font-size: $font-size-base-screen-l;
   }
 }
 
