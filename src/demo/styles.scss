@@ -1,8 +1,17 @@
 // Overwrite vars
 $font-size-base-l-screen: 17px;
-@import "theme-custom";
 
-// Lib
-@import "../lib/base";
-@import "../lib/layout";
-@import "../lib/components";
+@import "styles/base";
+@import "styles/demo-theme";
+
+@include pp-layout();
+
+.theme-light {
+	@include pp-color-classes($theme-light);
+	@include demo-theme($theme-light);
+}
+
+.theme-dark {
+	@include pp-color-classes($theme-dark);
+	@include demo-theme($theme-dark);
+}

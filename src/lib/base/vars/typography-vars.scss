@@ -1,53 +1,62 @@
 @import "../functions";
 
-$font-family-default: 'Lato', Roboto, "Helvetica Neue", Arial, sans-serif !default;
+/** ==============================
+ * Family
+ * ============================== */
+$font-family-base: "sofia-pro-soft", "Helvetica Neue", Roboto, Arial, sans-serif !default;
 
-$font-size-base-screen-l:   17px !default;
-$font-size-base-screen-m:   16px !default;
-$font-size-base-screen-s:   16px !default;
+/** ==============================
+ * Font size
+ * ============================== */
+$font-size-base-screen-l: 17px !default;
+$font-size-base-screen-m: 16px !default;
+$font-size-base-screen-s: 16px !default;
 
-$font-size-l:   pxToRem(18) !default;
-$font-size-m:   pxToRem(15) !default; // Assumes the browser default, typically `16px`
-$font-size-s:   pxToRem(13) !default;
-$font-size-xs:  pxToRem(10) !default;
+$font-size-l: px-to-rem(20) !default;
+$font-size-m: px-to-rem(14) !default;
+$font-size-s: px-to-rem(13) !default;
+$font-size-xs: px-to-rem(12) !default;
 
-$font-size-h1:  pxToRem(50) !default;
-$font-size-h2:  pxToRem(32) !default;
-$font-size-h3:  pxToRem(24) !default;
-$font-size-h4:  pxToRem(20) !default;
-$font-size-h5:  $font-size-l !default;
-$font-size-h6:  $font-size-m !default;
+$font-size-h1: px-to-rem(30) !default;
+$font-size-h2: px-to-rem(24) !default;
+$font-size-h3: px-to-rem(20) !default;
+$font-size-h4: px-to-rem(16) !default;
+$font-size-h5: px-to-rem(13) !default;
+$font-size-h6: px-to-rem(12) !default;
 
 $font-size-label: $font-size-s !default;
 
-/* Font weights */
-$font-weight-bolder:  600 !default;
-$font-weight-bold:    700 !default;
-$font-weight-base:    normal !default
-$font-weight-strong:  500 !default;
-$font-weight-thin:    300 !default;
+/** ==============================
+ * Font weight
+ * ============================== */
+$font-weight-bolder: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-base: normal !default;
+$font-weight-strong: 500 !default;
+$font-weight-thin: 300 !default;
 
-$font-weight-h1:  $font-weight-bold !default;
-$font-weight-h2:  $font-weight-thin !default;
-$font-weight-h3:  $font-weight-thin !default;
-$font-weight-h4:  $font-weight-thin !default;
-$font-weight-h5:  $font-weight-thin !default;
-$font-weight-h6:  $font-weight-bold !default;
+$font-weight-h1: $font-weight-bold !default;
+$font-weight-h2: $font-weight-thin !default;
+$font-weight-h3: $font-weight-thin !default;
+$font-weight-h4: $font-weight-thin !default;
+$font-weight-h5: $font-weight-thin !default;
+$font-weight-h6: $font-weight-bold !default;
 
-$font-weight-label: 	$font-weight-bolder;
+$font-weight-label: $font-weight-bolder !default;
 
-/* Line height */
-$line-height-html:      1.5em !default;
-$line-height-label:     180% !default;
+/** ==============================
+ * Line height
+ * ============================== */
+$line-height-html: 1.5em !default;
+$line-height-label: 180% !default;
 $line-height-paragraph: 180% !default;
-$line-height-span:      180% !default;
-$line-height-base:      1.5 !default;
-$line-height-header:    150% !default;
+$line-height-span: 180% !default;
+$line-height-base: 1.5 !default;
+$line-height-header: 150% !default;
 
-/* Margins */
-$margin-paragraph:      pxToRem(15) 0 pxToRem(15) 0 !default; // 0.8em 0 !default;
-$margin-header:         pxToRem(15) 0 pxToRem(15) 0 !default; // 0.1em 0 0.2em 0 !default;
+/** ==============================
+ * Margins
+ * ============================== */
+$margin-paragraph: px-to-rem(15) 0 px-to-rem(15) 0 !default;
+$margin-header: px-to-rem(15) 0 px-to-rem(15) 0 !default;
 
-/* Colors */
-$color-html: 				color("black");
-$color-label:				color("gray");

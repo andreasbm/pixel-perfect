@@ -1,0 +1,10 @@
+<h1>Theming</h1>
+
+<ng-container *ngFor="let contrast of contrasts">
+  <ng-container *ngFor="let color of colors">
+    <ng-container *ngFor="let variant of variants">
+      <div class="color" [ngClass]="[ color + '-bg', variant + '-bg', color, contrast]">{{ color | uppercase }} - {{ variant }}</div>
+      <div class="color" [ngClass]="[ color, variant, color + '-bg', contrast + '-bg']">{{ color | uppercase }} - {{ variant }}</div>
+    </ng-container>
+  </ng-container>
+</ng-container>

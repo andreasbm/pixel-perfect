@@ -1,8 +1,24 @@
-@import "functions/color-function";
+@import "functions/theming";
 
 $px-to-rem-base-size: 17 !default;
 
-@function pxToRem($size-px) {
-	$remSize: $size-px / $px-to-rem-base-size;
-	@return #{$remSize}rem;
+@function px-to-rem($size-px) {
+  $remSize: $size-px / $px-to-rem-base-size;
+  @return #{$remSize}rem;
+}
+
+@function rem-to-px($size-rem) {
+  $pxSize: $size-rem * $px-to-rem-base-size;
+  @return #{$pxSize}px;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function pp-strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
 }

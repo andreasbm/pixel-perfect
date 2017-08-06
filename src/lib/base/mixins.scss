@@ -1,95 +1,111 @@
-@import "mixins/flexbox";
+@import "mixins/elevation";
+@import "mixins/vendor-prefix";
+@import "mixins/button-common";
+@import "mixins/color-classes";
+@import "vars";
 
-$vendors: webkit moz ms o;
-@mixin vendor-prefix($property, $value) {
-  @each $vendor in $vendors {
-    #{"-" + $vendor + "-" + $property}: #{$value};
-  }
-  #{$property}: #{$value};
+@mixin pp-size($size) {
+	width: $size;
+	height: $size;
 }
 
-@mixin createColor($color_name, $color_variant, $color_value) {
-  @if $color_variant == "base" {
-
-    // Base colors
-    .#{$color_name}-bg {
-      background-color: $color_value !important;
-    }
-    .#{$color_name} {
-      color: $color_value !important;
-    }
-    .#{$color_name}-border {
-      border: 1px solid $color_value !important;
-    }
-
-  } @else {
-
-    // Variants
-    .#{$color_name}-bg.#{$color_variant}-bg {
-      background-color: $color_value !important;
-    }
-    .#{$color_name}.#{$color_variant} {
-      color: $color_value !important;
-    }
-    .#{$color_name}.#{$color_variant}-border {
-      border-color: $color_value !important;
-    }
-  }
+@mixin pp-webkit-scrolling() {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translateZ(0px);
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-perspective: 1000;
 }
 
-@mixin createColors($colors) {
-  @each $color_name, $color in $colors {
-    @each $color_variant, $color_value in $color {
-      @include createColor($color_name, $color_variant, $color_value);
-    }
-  }
+@mixin pp-gradient($from, $to, $deg: 110deg) {
+	background: linear-gradient($deg, $from, $to);
 }
 
-@mixin breakpointify($class-name, $is-inline: false) {
-  @if $is-inline == true {
-    &.#{$class-name} { @content; }
+@mixin pp-overlay($position: absolute) {
+	position: $position;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 
-    &.s-only-#{$class-name} {
-      @media #{$screen-s-and-down} { @content; }
-    }
+@mixin pp-breakpointify($class-name, $is-inline: false) {
+	@if $is-inline == true {
+		&.#{$class-name} {
+			@content;
+		}
 
-    &.m-down-#{$class-name} {
-      @media #{$screen-m-and-down} { @content; }
-    }
+		&.s-only-#{$class-name} {
+			@media #{$screen-s-and-down} {
+				@content;
+			}
+		}
 
-    &.m-#{$class-name} {
-      @media #{$screen-m-and-up} { @content; }
-    }
+		&.m-down-#{$class-name} {
+			@media #{$screen-m-and-down} {
+				@content;
+			}
+		}
 
-    &.m-only#{$class-name} {
-      @media #{$screen-m-only} { @content; }
-    }
+		&.m-#{$class-name} {
+			@media #{$screen-m-and-up} {
+				@content;
+			}
+		}
 
-    &.l-#{$class-name} {
-      @media #{$screen-l-and-up} { @content; }
-    }
+		&.m-only#{$class-name} {
+			@media #{$screen-m-only} {
+				@content;
+			}
+		}
 
-  } @else {
-    .#{$class-name} { @content; }
+		&.l-#{$class-name} {
+			@media #{$screen-l-and-up} {
+				@content;
+			}
+		}
 
-    .s-only-#{$class-name} {
-      @media #{$screen-s-and-down} { @content; }
-    }
+	} @else {
+		.#{$class-name} {
+			@content;
+		}
 
-    .m-down-#{$class-name} {
-      @media #{$screen-m-and-down} { @content; }
-    }
+		.s-only-#{$class-name} {
+			@media #{$screen-s-and-down} {
+				@content;
+			}
+		}
 
-    .m-#{$class-name} {
-      @media #{$screen-m-and-up} { @content; }
-    }
+		.m-down-#{$class-name} {
+			@media #{$screen-m-and-down} {
+				@content;
+			}
+		}
 
-    .m-only#{$class-name} {
-      @media #{$screen-m-only} { @content; }
-    }
+		.m-#{$class-name} {
+			@media #{$screen-m-and-up} {
+				@content;
+			}
+		}
 
-    .l-#{$class-name} {
-      @media #{$screen-l-and-up} { @content; }
-    }
-  }
+		.m-only#{$class-name} {
+			@media #{$screen-m-only} {
+				@content;
+			}
+		}
+
+		.l-#{$class-name} {
+			@media #{$screen-l-and-up} {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin pp-button-reset {
+	@include user-select(none);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	appearance: none;
 }

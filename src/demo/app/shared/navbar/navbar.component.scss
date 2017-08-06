@@ -1,0 +1,35 @@
+@import "../../../styles/base";
+
+$navbar-height: px-to-rem(50);
+
+nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding: 0 px-to-rem(10);
+	height: $navbar-height;
+
+	.stack {
+		height: 100%;
+	}
+
+	a:not(:last-child) {
+		margin-right: px-to-rem(12);
+	}
+
+	a, span {
+		color: inherit;
+	}
+
+	a {
+		&.active {
+			text-decoration: underline;
+		}
+	}
+}
+
+:host {
+	height: $navbar-height;
+	display: block;
+}

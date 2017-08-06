@@ -1,5 +1,12 @@
 @import "layout/normalize";
 @import "layout/typography";
 @import "layout/grid";
-@import "layout/color-classes";
 @import "layout/global";
+
+@mixin pp-layout() {
+	@include pp-normalize();
+	@include pp-global();
+	@include pp-typography();
+	@include pp-grid();
+}
+

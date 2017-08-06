@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 
 const template = `
-<a routerLink="playground">Playground</a>
-<router-outlet></router-outlet>
+<pp-navbar></pp-navbar>
+<div style="padding: 12px;">
+  <router-outlet></router-outlet>
+</div>
+
 `;
 
 @Component({
@@ -10,6 +13,8 @@ const template = `
   template: template
 })
 export class AppComponent {
+
+
 
   constructor() {
   }

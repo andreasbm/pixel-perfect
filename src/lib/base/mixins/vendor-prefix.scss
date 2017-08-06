@@ -1,0 +1,42 @@
+$vendors: webkit moz ms o;
+@mixin vendor-prefix($property, $value) {
+  @each $vendor in $vendors {
+    #{"-" + $vendor + "-" + $property}: #{$value};
+  }
+  #{$property}: #{$value};
+}
+
+@mixin user-select($value) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin input-placeholder {
+  &::placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin cursor-grab {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+@mixin cursor-grabbing {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}

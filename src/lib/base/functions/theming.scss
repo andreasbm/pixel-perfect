@@ -1,0 +1,104 @@
+// For a given hue in a palette, return the contrast color from the map of contrast palettes.
+// @param $color-map
+// @param $hue
+@function pp-contrast($palette, $hue) {
+	@return map-get(map-get($palette, contrast), $hue);
+}
+
+// Creates a map of hues to colors for a theme.
+// @param $color-map
+// @param $primary
+// @param $lighter
+@function pp-palette($base-palette, $default: 500, $lighter: 400, $darker: 600) {
+	$result: map_merge($base-palette, (
+		default: map-get($base-palette, $default),
+		lighter: map-get($base-palette, $lighter),
+		darker: map-get($base-palette, $darker),
+		default-contrast: pp-contrast($base-palette, $default),
+		lighter-contrast: pp-contrast($base-palette, $lighter),
+		darker-contrast: pp-contrast($base-palette, $darker)
+	));
+
+	// For each hue in the palette, add a "-contrast" color to the map.
+	@each $hue, $color in $base-palette {
+		$result: map_merge($result, (
+			'#{$hue}-contrast': pp-contrast($base-palette, $hue)
+		));
+	}
+
+	@return $result;
+}
+
+// Gets a color from a theme palette (the output of nk-palette).
+//
+// @param $color-map The theme palette (output of nk-palette).
+// @param $hue The hue from the palette to use. If this is a value between 0 and 1, it will be treated as opacity.
+// @param $opacity The alpha channel value for the color.
+@function pp-color($palette, $hue: default, $opacity: null) {
+
+	// If hueKey is a number between zero and one, then it actually contains an
+	// opacity value, so recall this function with the default hue and that given opacity.
+	@if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
+		@return pp-color($palette, default, $hue);
+	}
+
+	$color: map-get($palette, $hue);
+
+	// Verify that the color is in fact a color.
+	@if type-of($color) != color {
+		@error "'#{color}' must be a color. Verify that the hue '#{$hue}' is present and valid in palette '#{$palette}'.";
+	}
+
+	$opacity: if($opacity == null, opacity($color), $opacity);
+
+	@return rgba($color, $opacity);
+}
+
+// Creates a container object for a theme to be given to individual component theme mixins.
+@function pp-theme($primary-palette, $accent-palette, $warn-palette, $error-palette, $success-palette, $is-dark, $foreground-vars, $background-vars) {
+	@return (
+		primary: $primary-palette,
+		accent: $accent-palette,
+		warn: $warn-palette,
+		error: $error-palette,
+		success: $success-palette,
+		is-dark: $is-dark,
+		foreground: $foreground-vars,
+		background: $background-vars,
+	);
+}
+
+// Returns the background property from the theme object
+@function pp-theme-background($theme) {
+	@return map-get($theme, "background");
+}
+
+// Returns the foreground property from the theme object
+@function pp-theme-foreground($theme) {
+	@return map-get($theme, "foreground");
+}
+
+// Returns the primary palette from the theme object
+@function pp-theme-primary($theme) {
+	@return map-get($theme, "primary");
+}
+
+// Returns the accent palette from the theme object
+@function pp-theme-accent($theme) {
+	@return map-get($theme, "accent");
+}
+
+// Returns the warn palette from the theme object
+@function pp-theme-warn($theme) {
+	@return map-get($theme, "warn");
+}
+
+// Returns the error palette from the theme object
+@function pp-theme-error($theme) {
+	@return map-get($theme, "error");
+}
+
+// Returns the success palette from the theme object
+@function pp-theme-success($theme) {
+	@return map-get($theme, "success");
+}

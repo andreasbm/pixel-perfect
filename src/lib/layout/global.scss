@@ -1,91 +1,64 @@
 @import "../base";
 
-/* ==========================================================================
-   Global
-   ========================================================================== */
+@mixin pp-global() {
 
-// Default styles
-html {
-  box-sizing: border-box;
-  overflow-wrap: break-word;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+  html {
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+  }
 
-// Remove tap highlight on iOS
-input,
-textarea,
-button,
-select,
-label,
-div,
-a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-}
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
-// Max widths
-img, input, textarea {
-  max-width: 100%;
-}
+  img, input, textarea {
+    max-width: 100%;
+  }
 
-[hidden] {
-  visibility: hidden;
-}
+  [hidden] {
+    visibility: hidden;
+  }
 
-.cover {
-  background: no-repeat center;
-  background-size: cover;
-}
+  @include pp-breakpointify("hide") {
+    display: none;
+  }
+  @include pp-breakpointify("show") {
+    display: block;
+  }
+  @include pp-breakpointify("inline-block") {
+    display: inline-block;
+  }
+  @include pp-breakpointify("inline") {
+    display: inline;
+  }
+  @include pp-breakpointify("block") {
+    display: block;
+  }
+  @include pp-breakpointify("left-align") {
+    text-align: left;
+  }
+  @include pp-breakpointify("right-align") {
+    text-align: right;
+  }
+  @include pp-breakpointify("center-align") {
+    text-align: center;
+  }
 
-.dark-overlay {
-  @extend %overlay;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  .cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-transform: none;
+    width: 1px;
+  }
 
-
-/* ==========================================================================
-   Utility Classes
-   ========================================================================== */
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed;  }
-
-/* ==========================================================================
-   Media Query Classes
-   ========================================================================== */
-@include breakpointify("hide") { display: none !important; }
-@include breakpointify("show") { display: block !important; }
-@include breakpointify("inline-block") { display: inline-block !important; }
-@include breakpointify("inline") { display: inline !important; }
-@include breakpointify("block") { display: block !important; }
-@include breakpointify("left-align") { text-align: left !important; }
-@include breakpointify("right-align") { text-align: right !important; }
-@include breakpointify("center-align") { text-align: center !important; }
-
-/* ==========================================================================
-   Z-depth
-   ========================================================================== */
-[class*="z-depth-"] {
-  transition: .1s ease box-shadow;
-}
-
-.z-depth-0, .z-depth-0-hover:hover {
-  box-shadow: none !important;
-}
-.z-depth-1, .z-depth-1-hover:hover {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
-}
-.z-depth-2-half, .z-depth-2-hover:hover{
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
-}
-.z-depth-3, .z-depth-3-hover:hover{
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-}
-.z-depth-4, .z-depth-4-hover:hover{
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19) !important;
-}
-.z-depth-5, .z-depth-5-hover:hover{
-  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21) !important;
+  @for $zValue from 0 through 10 {
+    .pp-elevation-z#{$zValue} {
+      @include pp-elevation($zValue);
+    }
+  }
 }

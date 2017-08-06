@@ -1,0 +1,14 @@
+<nav>
+	<div class="stack stack-distribution-space">
+		<div>
+			<span>Pixel Perfect</span>
+		</div>
+		<div>
+			<a (click)="setTheme('light')" [class.active]="currentTheme === 'light'">light</a>
+			<a (click)="setTheme('dark')" [class.active]="currentTheme === 'dark'">dark</a>
+		</div>
+		<div>
+			<a *ngFor="let route of routes" [routerLink]="route" routerLinkActive="active">{{ route }}</a>
+		</div>
+	</div>
+</nav>

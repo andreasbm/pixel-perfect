@@ -1,0 +1,68 @@
+.colored-stack {
+	background: darkgray;
+
+	.container {
+		border-right: dashed 2px black;
+		border-left: dashed 2px black;
+	}
+
+	.item {
+		padding: 12px;
+
+		&:nth-child(odd) {
+			background: blue;
+		}
+		&:nth-child(even) {
+			background: orange;
+		}
+
+		&:nth-child(1) {
+			background: brown;
+		}
+		&:nth-child(2) {
+			background: turquoise;
+		}
+		&:nth-child(3) {
+			background: lime;
+		}
+		&:nth-child(4) {
+			background: pink;
+		}
+		&:nth-child(5) {
+			background: yellow;
+		}
+		&:nth-child(6) {
+			background: orange;
+		}
+		&:nth-child(7) {
+			background: lightBlue;
+		}
+		&:nth-child(8) {
+			background: red;
+		}
+		&:nth-child(9) {
+			background: violet;
+		}
+		&:nth-child(10) {
+			background: blue;
+		}
+		&:nth-child(11) {
+			background: white;
+		}
+		&:nth-child(12) {
+			background: black;
+		}
+
+		img {
+			max-height: 50px;
+			width: auto;
+		}
+	}
+
+	.stack-example {
+		.square {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}

@@ -1,0 +1,54 @@
+@import "../functions";
+
+@mixin _color-class-variant($theme, $color-name, $variant-name) {
+  $color: map-get($theme, $color-name);
+  $color-variant: pp-color($color, $variant-name);
+
+  .#{$color-name}.#{$variant-name} {
+    color: $color-variant;
+  }
+
+  .#{$color-name}-bg.#{$variant-name}-bg {
+    background-color: $color-variant;
+  }
+}
+
+@mixin _color-class($theme, $color-name) {
+  $variants: (
+    'lighter',
+    'darker',
+    'default-contrast',
+    'lighter-contrast',
+    'darker-contrast'
+  );
+
+  $color: map-get($theme, $color-name);
+
+  .#{$color-name} {
+    color: pp-color($color);
+  }
+
+  .#{$color-name}-bg {
+    background-color: pp-color($color);
+  }
+
+  @for $i from 0 to length($variants) {
+    $variant-name: unquote(nth($variants, $i+1));
+    @include _color-class-variant($theme, $color-name, $variant-name);
+  }
+}
+
+@mixin pp-color-classes($theme) {
+  $colors: (
+    'primary',
+    'accent',
+    'warn',
+    'error',
+    'success'
+  );
+
+  @for $i from 0 to length($colors) {
+    $color-name: unquote(nth($colors, $i+1));
+    @include _color-class($theme, $color-name);
+  }
+}
