@@ -12,8 +12,7 @@ $ npm i pixel-perfect --save
 
 ## Step 2: Import the library
 ```
-@import "~pixel-perfect/base.scss";
-@import "~pixel-perfect/layout.scss";
+@import "~pixel-perfect/pixel-perfect.scss";
 ```
 
 ## Step 3: Create a theme for your app (optional)

@@ -1,7 +1,7 @@
 {
   "name": "pixel-perfect",
   "version": "0.0.6",
-  "description": "Pixel perfect SCSS stylesheets.",
+  "description": "A pixel perfect SCSS stylesheets.",
   "author": "Appnest",
   "license": "MIT",
   "bugs": {

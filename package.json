@@ -13,10 +13,15 @@
 	"module": "index.js",
 	"types": "index.d.ts",
 	"scripts": {
-		"publish:lib": "cd dist/lib; npm publish; cd ..; cd ..;",
-		"build:lib": "mkdirp dist/lib && ncp src/lib/ dist/lib && cp README.md dist/lib",
+		"build": "mkdirp dist/lib && ncp src/lib/ dist && cp README.md dist/lib",
 		"serve": "ng serve -o",
-		"update": "ncu -ua; npm update"
+		"update": "ncu -ua; npm update",
+		"bump:patch": "cd src/lib && npm version patch && cd ../..;",
+		"bump:minor": "cd src/lib && npm version minor && cd ../..;",
+		"bump:major": "cd src/lib && npm version major && cd ../..;",
+		"publish:patch": "npm run bump:patch && npm run build && cd dist && npm publish && cd ..",
+		"publish:minor": "npm run bump:minor && npm run build && cd dist && npm publish && cd ..",
+		"publish:major": "npm run bump:major && npm run build && cd dist && npm publish && cd .."
 	},
 	"repository": {
 		"type": "git",
