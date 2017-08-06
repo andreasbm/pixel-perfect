@@ -2,8 +2,8 @@
 @import "../app/shared/navbar/navbar-theme";
 
 @mixin demo-theme($theme) {
-	$foreground: map-get($theme, "foreground");
-	$background: map-get($theme, "background");
+	$foreground: pp-theme-foreground($theme);
+	$background: pp-theme-background($theme);
 
 	body {
 		color: map-get($foreground, "text");
