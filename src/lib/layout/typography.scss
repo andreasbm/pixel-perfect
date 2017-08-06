@@ -5,14 +5,14 @@ html {
   font-family: $font-family-default;
   font-size: $font-size-base-screen-s;
 
-  line-height: $line-height-html;
+  line-height: $line-height-base;
   font-weight: normal;
 
-  @media only screen and (min-width: $breakpoint-m) {
+  @media #{$screen-m-only} {
     font-size: $font-size-base-screen-m;
   }
 
-  @media only screen and (min-width: $breakpoint-l) {
+  @media #{$screen-l-and-up} {
     font-size: $font-size-base-screen-l;
   }
 }
@@ -21,26 +21,35 @@ body {
   font-size: $font-size-m;
 }
 
-// Text Styles
 em { font-style: italic; }
-strong, .strong { font-weight: $font-weight-strong; }
+
+// Weights
+.bolder { font-weight: $font-weight-bolder; }
 b, .bold { font-weight: $font-weight-bold; }
+strong, .strong { font-weight: $font-weight-strong; }
 .thin { font-weight: $font-weight-thin; }
+
+// Sizes
 .small, small { font-size: $font-size-s; }
 .medium { font-size: $font-size-m; }
 .large { font-size: $font-size-l; }
 
-@mixin headerStyle($font-size, $font-weight) {
-  font-size: $font-size;
+// Colors
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, span, label, a {
+  color: inherit;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
   line-height: $line-height-header;
-  font-weight: $font-weight;
   margin: $margin-header;
 }
 
-// Header Styles
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: map_get($color-header, "default");
+@mixin headerStyle($font-size, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
 }
+
 h1 { @include headerStyle($font-size-h1, $font-weight-h1); }
 h2 { @include headerStyle($font-size-h2, $font-weight-h2); }
 h3 { @include headerStyle($font-size-h3, $font-weight-h3); }
@@ -48,28 +57,30 @@ h4 { @include headerStyle($font-size-h4, $font-weight-h4); }
 h5 { @include headerStyle($font-size-h5, $font-weight-h5); }
 h6 { @include headerStyle($font-size-h6, $font-weight-h6); }
 
+// Paragraph
 p {
-  color: map_get($color-span-p, "default");
   line-height: $line-height-paragraph;
   margin: $margin-paragraph;
 }
 
+// Span
 span {
-  color: map_get($color-span-p, "default");
   line-height: $line-height-span;
-  margin: $margin-span;
 }
 
+// Label
 label {
-  color: map_get($color-label, "default");
-  font-weight: $font-weight-bold;
+  color: $color-label;
+  font-weight: $font-weight-label;
   font-size: $font-size-label;
   line-height: $line-height-label;
+
+  text-transform: uppercase;
   display: block;
 }
 
+// Anchor
 a {
-  color: map_get($color-link, "default");
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -81,39 +92,3 @@ a {
   // Gets rid of tap active state
   -webkit-tap-highlight-color: transparent;
 }
-
-.section-light a, a.light {
-  color: map_get($color-link, "light");
-}
-
-.section-light span, .section-light p, span.light, p.light {
-  color: map_get($color-span-p, "light");
-}
-
-.section-light label, label.light {
-  color: map_get($color-label, "light");
-}
-
-.section-light h1, .section-light h2, .section-light h3, .section-light h4, .section-light h5, .section-light h6,
-h1.light, h2.light, h3.light, h4.light, h5.light {
-  color: map_get($color-header, "light");
-}
-
-.section-dark a, a.dark {
-  color: map_get($color-link, "dark");
-}
-
-.section-dark span, .section-dark p, span.dark, p.dark {
-  color: map_get($color-span-p, "dark");
-}
-
-.section-dark label, label.dark {
-  color: map_get($color-label, "default");
-}
-
-.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4, .section-dark h5, .section-dark h6,
-h1.dark, h2.dark, h3.dark, h4.dark, h5.dark {
-  color: map_get($color-header, "dark");
-}
-
-.color-inherit { color: inherit; }

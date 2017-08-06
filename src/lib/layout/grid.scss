@@ -189,6 +189,10 @@ section {
 }
 
 /* Space */
+[class*="space-horizontal-"], [class*="space-vertical-"] {
+  flex: 0 0 auto;
+}
+
 @include breakpointify("space-horizontal-s") { width: $spacing-s; }
 @include breakpointify("space-horizontal-m") { width: $spacing-m; }
 @include breakpointify("space-horizontal-l") { width: $spacing-l; }

@@ -271,7 +271,7 @@ module.exports = {
     new AotPlugin({
       "mainPath": "./src/demo/main.ts",
       "exclude": [],
-      "tsConfigPath": "./tsconfig.demo.json",
+      "tsConfigPath": "./tsconfig.app.json",
       "skipCodeGeneration": true
     })
   ],
