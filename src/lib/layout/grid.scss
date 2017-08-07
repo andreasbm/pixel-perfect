@@ -70,70 +70,16 @@
 		}
 	}
 
-	/* Padding */
-	@include pp-breakpointify("padding-top-m") {
-		padding-top: $section-top-bottom-spacing-m !important;
-	}
-	@include pp-breakpointify("padding-bottom-m") {
-		padding-bottom: $section-top-bottom-spacing-m !important;
-	}
-
-	@include pp-breakpointify("padding-top-s") {
-		padding-top: $section-top-bottom-spacing-s !important;
-	}
-	@include pp-breakpointify("padding-bottom-s") {
-		padding-bottom: $section-top-bottom-spacing-s !important;
-	}
-
-	@include pp-breakpointify("padding-top-l") {
-		padding-top: $section-top-bottom-spacing-l !important;
-	}
-	@include pp-breakpointify("padding-bottom-l") {
-		padding-bottom: $section-top-bottom-spacing-l !important;
-	}
-
-	@include pp-breakpointify("padding-top-no") {
-		padding-top: 0 !important;
-	}
-	@include pp-breakpointify("padding-bottom-no") {
-		padding-bottom: 0 !important;
-	}
-
-	/* Margin */
-	@include pp-breakpointify("margin-top-m") {
-		margin-top: $section-top-bottom-spacing-m !important;
-	}
-	@include pp-breakpointify("margin-bottom-m") {
-		margin-bottom: $section-top-bottom-spacing-m !important;
-	}
-
-	@include pp-breakpointify("margin-top-s") {
-		margin-top: $section-top-bottom-spacing-s !important;
-	}
-	@include pp-breakpointify("margin-bottom-s") {
-		margin-bottom: $section-top-bottom-spacing-s !important;
-	}
-
-	@include pp-breakpointify("margin-top-l") {
-		margin-top: $section-top-bottom-spacing-l !important;
-	}
-	@include pp-breakpointify("margin-bottom-l") {
-		margin-bottom: $section-top-bottom-spacing-l !important;
-	}
-
-	@include pp-breakpointify("margin-top-no") {
-		margin-top: 0 !important;
-	}
-	@include pp-breakpointify("margin-bottom-no") {
-		margin-bottom: 0 !important;
-	}
-
-
-
-
-
 	.stack-grid {
 		display: flex;
+	}
+
+	.stack-grid-inline {
+		display: inline-flex;
+	}
+
+	.stack-grid, .stack-grid-inline {
+
 		flex-wrap: wrap;
 		justify-content: space-between;
 
@@ -182,11 +128,18 @@
 	/* Horizontal grids */
 	.stack {
 		display: flex;
+	}
+
+	.stack-inline {
+		display: inline-flex;
+	}
+
+	.stack, .stack-inline {
 		flex-flow: row nowrap;
 		align-items: center;
 	}
 
-	.stack, .stack-grid {
+	.stack, .stack-inline, .stack-grid, .stack-grid-inline {
 
 		/* Wrap */
 		@include pp-breakpointify("stack-wrap", true) {
