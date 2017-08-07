@@ -64,13 +64,13 @@ $font-size-h2: 17rem;
 Here is an example of what your theme could look like
 ```
 @mixin demo-theme($theme) {
-  $foreground: pp-theme-foreground($theme);
-  $background: pp-theme-background($theme);
   $primary: pp-theme-primary($theme);
+  $foreground: pp-foreground-vars($theme);
+  $background: pp-background-vars($theme);
 
   body {
-    color: map-get($foreground, "text");
-    background: map-get($background, "app");
+    color: pp-theme-var($foreground, "text");
+    background: pp-theme-var($background, "app");
   }
 
   .gray-text {
