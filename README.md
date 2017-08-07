@@ -1,6 +1,10 @@
 # Pixel Perfect
 
-A pixel perfect SCSS stylesheets to get you going.
+A pixel perfect SCSS stylesheets to get you started.
+
+Pixel perfect definition:
+
+> Each pixel is being used to the fullest for the sharpest, cleanest look. Nothing is unintentionally muddied by aliasing. Nothing is unintentionally muddied by compression algorithms. Everything is clean, sharp, and intentional.
 
 # How to use
 
@@ -15,7 +19,21 @@ $ npm i pixel-perfect --save
 @import "~pixel-perfect/pixel-perfect.scss";
 ```
 
-## Step 3: Create a theme for your app (optional)
+## Step 3: Include the layout
+
+You can include everything from the layout.
+
+```
+@include pp-layout();
+```
+
+Or you can handpick the styles you want. Let's say you only want the grid and the typography.
+```
+@include pp-grid();
+@include pp-typography();
+```
+
+## Step 4: Create a theme for your app (optional)
 ```
 $theme-light: pp-theme(
   pp-palette($pp-blue),
@@ -35,21 +53,7 @@ $theme-light: pp-theme(
 );
 ```
 
-## Step 4: Include the layout (optional)
-
-You can include everything from the layout.
-
-```
-@include pp-layout();
-```
-
-Or you can handpick the styles you wish. Let's say you only want the grid and the typography.
-```
-@include pp-grid();
-@include pp-typography();
-```
-
-## Step 5: Customize the variables
+## Step 5: Customize the variables (optional)
 If you wish to customize the variables, import the variables overwriting the pixel-perfect variables before importing the layout.
 ```
 $font-size-h1: 20rem;
@@ -60,8 +64,8 @@ $font-size-h2: 17rem;
 ...
 ```
 
-## Step 6: Create your app-theme
-Here is an example of what your theme could look like
+## Step 6: Create your app-theme (optional)
+Here is an example of what your theme could look like.
 ```
 @mixin demo-theme($theme) {
   $primary: pp-theme-primary($theme);
