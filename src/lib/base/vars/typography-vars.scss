@@ -24,7 +24,7 @@ $font-size-h4: px-to-rem(16) !default;
 $font-size-h5: px-to-rem(13) !default;
 $font-size-h6: px-to-rem(12) !default;
 
-$font-size-label: $font-size-s !default;
+$font-size-label: $font-size-m !default;
 $font-size-span: inherit !default;
 $font-size-paragraph: inherit !default;
 
@@ -44,7 +44,7 @@ $font-weight-h4: $font-weight-thin !default;
 $font-weight-h5: $font-weight-thin !default;
 $font-weight-h6: $font-weight-bold !default;
 
-$font-weight-label: $font-weight-bolder !default;
+$font-weight-label: inherit !default;
 $font-weight-span: inherit !default;
 $font-weight-paragraph: inherit !default;
 
