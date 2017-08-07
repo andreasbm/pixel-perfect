@@ -29,9 +29,9 @@
 	@return $result;
 }
 
-// Gets a color from a theme palette (the output of nk-palette).
+// Gets a color from a theme palette (the output of pp-palette).
 //
-// @param $color-map The theme palette (output of nk-palette).
+// @param $color-map The theme palette (output of pp-palette).
 // @param $hue The hue from the palette to use. If this is a value between 0 and 1, it will be treated as opacity.
 // @param $opacity The alpha channel value for the color.
 @function pp-color($palette, $hue: default, $opacity: null) {
@@ -68,37 +68,54 @@
 	);
 }
 
+@function pp-theme-prop($theme, $key) {
+	@if type-of($theme) != map {
+		@error "The theme is not a valid map. Ensure the theme is a valid map.";
+	}
+	
+	@if map-has-key($theme, $key) == false {
+		@error "The theme must contain the key '#{$key}'. Verify that the key '#{$key}' is present and valid in theme '#{$theme}'.";
+	}
+	
+	@return map-get($theme, $key); 
+}
+
 // Returns the background property from the theme object
-@function pp-theme-background($theme) {
-	@return map-get($theme, "background");
+@function pp-background-vars($theme) {
+	@return pp-theme-prop($theme, "background");
 }
 
 // Returns the foreground property from the theme object
-@function pp-theme-foreground($theme) {
-	@return map-get($theme, "foreground");
+@function pp-foreground-vars($theme) {
+	@return pp-theme-prop($theme, "foreground");
+}
+
+// Returns the property with the given key from the theme vars object
+@function pp-theme-var($vars, $key) {
+	@return pp-theme-prop($vars, $key);
 }
 
 // Returns the primary palette from the theme object
-@function pp-theme-primary($theme) {
-	@return map-get($theme, "primary");
+@function pp-primary-palette($theme) {
+	@return pp-theme-prop($theme, "primary");
 }
 
 // Returns the accent palette from the theme object
-@function pp-theme-accent($theme) {
-	@return map-get($theme, "accent");
+@function pp-accent-palette($theme) {
+	@return pp-theme-prop($theme, "accent");
 }
 
 // Returns the warn palette from the theme object
-@function pp-theme-warn($theme) {
-	@return map-get($theme, "warn");
+@function pp-warn-palette($theme) {
+	@return pp-theme-prop($theme, "warn");
 }
 
 // Returns the error palette from the theme object
-@function pp-theme-error($theme) {
-	@return map-get($theme, "error");
+@function pp-error-palette($theme) {
+	@return pp-theme-prop($theme, "error");
 }
 
 // Returns the success palette from the theme object
-@function pp-theme-success($theme) {
-	@return map-get($theme, "success");
+@function pp-success-palette($theme) {
+	@return pp-theme-prop($theme, "success");
 }

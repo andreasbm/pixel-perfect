@@ -1,6 +1,14 @@
 @import "../../styles/base";
 
 
+[class^="pp-elevation-z"] {
+	width: px-to-rem(100);
+	height: px-to-rem(100);
+	margin: px-to-rem(12);
+	display: inline-block;
+	background: pp-color($pp-blue, 500);
+}
+
 
 
 

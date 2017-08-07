@@ -44,18 +44,6 @@
     text-align: center;
   }
 
-  .cdk-visually-hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    text-transform: none;
-    width: 1px;
-  }
-
   @for $zValue from 0 through 10 {
     .pp-elevation-z#{$zValue} {
       @include pp-elevation($zValue);

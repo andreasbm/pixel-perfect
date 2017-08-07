@@ -14,7 +14,7 @@
 	"types": "index.d.ts",
 	"scripts": {
 		"build": "mkdirp dist && ncp src/lib/ dist && cp README.md dist",
-		"serve": "ng serve -o",
+		"start": "ng serve -o",
 		"update": "ncu -ua; npm update",
 		"bump:patch": "cd src/lib && npm version patch && cd ../..;",
 		"bump:minor": "cd src/lib && npm version minor && cd ../..;",
