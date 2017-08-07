@@ -1,112 +1,113 @@
 @import "../pixel-perfect";
 
+@mixin _text-style($size, $weight, $line-height) {
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $line-height;
+}
+
+@mixin _header-style($font-size, $font-weight) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+}
+
 @mixin pp-typography() {
-  html {
-    font-family: $font-family-base;
-    font-weight: $font-weight-base;
-    line-height: $line-height-base;
-    font-size: $font-size-base-screen-s;
+	html {
+		font-family: $font-family-base;
+		@include _text-style($font-size-base-screen-s, $font-weight-base, $line-height-base);
 
-    @media #{$screen-m-only} {
-      font-size: $font-size-base-screen-m;
-    }
+		@media #{$screen-m-only} {
+			font-size: $font-size-base-screen-m;
+		}
 
-    @media #{$screen-l-and-up} {
-      font-size: $font-size-base-screen-l;
-    }
-  }
+		@media #{$screen-l-and-up} {
+			font-size: $font-size-base-screen-l;
+		}
+	}
 
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, span, label, a {
-    color: inherit;
-  }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, span, label, a {
+		color: inherit;
+	}
 
-  .bolder {
-    font-weight: $font-weight-bolder;
-  }
-  b, .bold {
-    font-weight: $font-weight-bold;
-  }
-  strong, .strong {
-    font-weight: $font-weight-strong;
-  }
-  .thin {
-    font-weight: $font-weight-thin;
-  }
+	// Weights
+	.bolder {
+		font-weight: $font-weight-bolder;
+	}
+	b, .bold {
+		font-weight: $font-weight-bold;
+	}
+	strong, .strong {
+		font-weight: $font-weight-strong;
+	}
+	.thin {
+		font-weight: $font-weight-thin;
+	}
 
-  .small, small {
-    font-size: $font-size-s;
-  }
-  .medium {
-    font-size: $font-size-m;
-  }
-  .large {
-    font-size: $font-size-l;
-  }
+	.small, small {
+		font-size: $font-size-s;
+	}
+	.medium {
+		font-size: $font-size-m;
+	}
+	.large {
+		font-size: $font-size-l;
+	}
 
-  /** ==============================
-     * Headers
-     * ============================== */
-  h1, h2, h3, h4, h5, h6 {
-    line-height: $line-height-header;
-    margin: $margin-header;
-  }
+	/** ==============================
+		 * Headers
+		 * ============================== */
+	h1, h2, h3, h4, h5, h6 {
+		line-height: $line-height-header;
+		margin: $margin-header;
+	}
 
-  @mixin headerStyle($font-size, $font-weight) {
-    font-size: $font-size;
-    font-weight: $font-weight;
-  }
+	h1 {
+		@include _header-style($font-size-h1, $font-weight-h1);
+	}
+	h2 {
+		@include _header-style($font-size-h2, $font-weight-h2);
+	}
+	h3 {
+		@include _header-style($font-size-h3, $font-weight-h3);
+	}
+	h4 {
+		@include _header-style($font-size-h4, $font-weight-h4);
+	}
+	h5 {
+		@include _header-style($font-size-h5, $font-weight-h5);
+	}
+	h6 {
+		@include _header-style($font-size-h6, $font-weight-h6);
+	}
 
-  h1 {
-    @include headerStyle($font-size-h1, $font-weight-h1);
-  }
-  h2 {
-    @include headerStyle($font-size-h2, $font-weight-h2);
-  }
-  h3 {
-    @include headerStyle($font-size-h3, $font-weight-h3);
-  }
-  h4 {
-    @include headerStyle($font-size-h4, $font-weight-h4);
-  }
-  h5 {
-    @include headerStyle($font-size-h5, $font-weight-h5);
-  }
-  h6 {
-    @include headerStyle($font-size-h6, $font-weight-h6);
-  }
+	/** ==============================
+		 * Text
+		 * ============================== */
+	// Paragraph
+	p {
+		@include _text-style($font-size-paragraph, $font-weight-paragraph, $line-height-paragraph);
+		margin: $margin-paragraph;
+	}
 
-  /** ==============================
-     * Text
-     * ============================== */
-  // Paragraph
-  p {
-    line-height: $line-height-paragraph;
-    margin: $margin-paragraph;
-  }
+	// Span
+	span, a {
+		@include _text-style($font-size-span, $font-weight-span, $line-height-span);
+	}
 
-  // Span
-  span, a, label {
-    line-height: $line-height-span;
+	// Label
+	label, .label {
+		@include _text-style($font-size-label, $font-weight-label, $line-height-label);
+		display: block;
+	}
 
-    // Label
-    &.label {
-      font-weight: $font-weight-label;
-      font-size: $font-size-label;
-      line-height: $line-height-label;
+	// Anchor
+	a {
+		text-decoration: none;
+		cursor: pointer;
+		user-select: none;
 
-      text-transform: uppercase;
-      display: block;
-    }
-  }
-
-  // Anchor
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-
-    &.link:hover {
-      text-decoration: underline;
-    }
-  }
+		&.link:hover {
+			text-decoration: underline;
+		}
+	}
 }
