@@ -68,7 +68,7 @@
 	);
 }
 
-@function pp-theme-prop($theme, $key) {
+@function pp-theme-var($theme, $key) {
 	@if type-of($theme) != map {
 		@error "The theme is not a valid map. Ensure the theme is a valid map.";
 	}
@@ -82,40 +82,35 @@
 
 // Returns the background property from the theme object
 @function pp-background-vars($theme) {
-	@return pp-theme-prop($theme, "background");
+	@return pp-theme-var($theme, "background");
 }
 
 // Returns the foreground property from the theme object
 @function pp-foreground-vars($theme) {
-	@return pp-theme-prop($theme, "foreground");
-}
-
-// Returns the property with the given key from the theme vars object
-@function pp-theme-var($vars, $key) {
-	@return pp-theme-prop($vars, $key);
+	@return pp-theme-var($theme, "foreground");
 }
 
 // Returns the primary palette from the theme object
 @function pp-primary-palette($theme) {
-	@return pp-theme-prop($theme, "primary");
+	@return pp-theme-var($theme, "primary");
 }
 
 // Returns the accent palette from the theme object
 @function pp-accent-palette($theme) {
-	@return pp-theme-prop($theme, "accent");
+	@return pp-theme-var($theme, "accent");
 }
 
 // Returns the warn palette from the theme object
 @function pp-warn-palette($theme) {
-	@return pp-theme-prop($theme, "warn");
+	@return pp-theme-var($theme, "warn");
 }
 
 // Returns the error palette from the theme object
 @function pp-error-palette($theme) {
-	@return pp-theme-prop($theme, "error");
+	@return pp-theme-var($theme, "error");
 }
 
 // Returns the success palette from the theme object
 @function pp-success-palette($theme) {
-	@return pp-theme-prop($theme, "success");
+	@return pp-theme-var($theme, "success");
 }
