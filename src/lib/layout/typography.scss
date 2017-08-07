@@ -1,4 +1,4 @@
-@import "../pixel-perfect";
+@import "../base";
 
 @mixin _text-style($size, $weight, $line-height) {
 	font-size: $size;

@@ -56,7 +56,7 @@ $font-size-h1: 20rem;
 $font-size-h2: 17rem;
 ...
 
-@import "~pixel-perfect/base.scss";
+@import "~pixel-perfect/pixel-perfect.scss";
 ...
 ```
 

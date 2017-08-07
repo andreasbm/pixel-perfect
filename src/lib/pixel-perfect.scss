@@ -1,14 +1,6 @@
-@import "base/abstract-classes";
-@import "base/functions";
-@import "base/mixins";
-@import "base/vars";
-
+@import "base";
+@import "layout";
 @import "palettes/palette";
-
-@import "layout/normalize";
-@import "layout/typography";
-@import "layout/grid";
-@import "layout/global";
 
 @mixin pp-layout() {
 	@include pp-normalize();

@@ -1,4 +1,31 @@
-@import "../pixel-perfect";
+@import "../base";
+
+@function get-stack-spacing($with-unit: false) {
+	@if $with-unit {
+		@return #{$stack-spacing}#{$stack-spacing-unit};
+	} @else {
+		@return #{$stack-spacing};
+	}
+}
+
+@function get-stack-spacing-for-index($index, $max-cols, $with-unit: false) {
+	@if $with-unit {
+		@return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
+	} @else {
+		@return #{$stack-spacing / ($max-cols/$index)};
+	}
+}
+
+@mixin _grid-item-style($index, $max-cols) {
+	$perc: ($index / $max-cols) * 100%;
+
+	/* Only add gap if the size of the column is not 100% */
+	@if $perc != 100% {
+		max-width: calc(#{$perc} - #{get-stack-spacing(true)} + #{get-stack-spacing-for-index($index, $max-cols, true)});
+		flex-basis: calc(#{$perc} - #{get-stack-spacing(true)} + #{get-stack-spacing-for-index($index, $max-cols, true)});
+
+	}
+}
 
 @mixin pp-grid() {
 	.container {
@@ -101,32 +128,9 @@
 		margin-bottom: 0 !important;
 	}
 
-	@function getStackSpacing($with-unit: false) {
-		@if $with-unit {
-			@return #{$stack-spacing}#{$stack-spacing-unit};
-		} @else {
-			@return #{$stack-spacing};
-		}
-	}
 
-	@function getStackSpacingForIndex($index, $max-cols, $with-unit: false) {
-		@if $with-unit {
-			@return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
-		} @else {
-			@return #{$stack-spacing / ($max-cols/$index)};
-		}
-	}
 
-	@mixin gridItemCSS($index, $max-cols) {
-		$perc: ($index / $max-cols) * 100%;
 
-		/* Only add gap if the size of the column is not 100% */
-		@if $perc != 100% {
-			max-width: calc(#{$perc} - #{getStackSpacing(true)} + #{getStackSpacingForIndex($index, $max-cols, true)});
-			flex-basis: calc(#{$perc} - #{getStackSpacing(true)} + #{getStackSpacingForIndex($index, $max-cols, true)});
-
-		}
-	}
 
 	.stack-grid {
 		display: flex;
@@ -145,7 +149,7 @@
 			@while $i <= $stack-num-cols {
 				&.s#{$i} {
 
-					@include gridItemCSS($i, $stack-num-cols);
+					@include _grid-item-style($i, $stack-num-cols);
 				}
 				$i: $i + 1;
 			}
@@ -156,7 +160,7 @@
 			@while $i <= $stack-num-cols {
 				@media #{$screen-m-and-up} {
 					&.m#{$i} {
-						@include gridItemCSS($i, $stack-num-cols);
+						@include _grid-item-style($i, $stack-num-cols);
 					}
 				}
 				$i: $i + 1;
@@ -167,7 +171,7 @@
 			@while $i <= $stack-num-cols {
 				@media #{$screen-l-and-up} {
 					&.l#{$i} {
-						@include gridItemCSS($i, $stack-num-cols);
+						@include _grid-item-style($i, $stack-num-cols);
 					}
 				}
 				$i: $i + 1;
