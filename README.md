@@ -4,7 +4,7 @@ A pixel perfect SCSS stylesheets to get you started.
 
 Pixel perfect definition:
 
-> Each pixel is being used to the fullest for the sharpest, cleanest look. Nothing is unintentionally muddied by aliasing. Nothing is unintentionally muddied by compression algorithms. Everything is clean, sharp, and intentional.
+> Each pixel is intentionally being used to the fullest for the sharpest, cleanest look.
 
 # How to use
 
