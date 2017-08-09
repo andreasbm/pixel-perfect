@@ -38,10 +38,10 @@ $font-weight-strong: 500 !default;
 $font-weight-thin: 300 !default;
 
 $font-weight-h1: $font-weight-bold !default;
-$font-weight-h2: $font-weight-thin !default;
-$font-weight-h3: $font-weight-thin !default;
-$font-weight-h4: $font-weight-thin !default;
-$font-weight-h5: $font-weight-thin !default;
+$font-weight-h2: $font-weight-base !default;
+$font-weight-h3: $font-weight-base !default;
+$font-weight-h4: $font-weight-base !default;
+$font-weight-h5: $font-weight-base !default;
 $font-weight-h6: $font-weight-bold !default;
 
 $font-weight-label: inherit !default;
@@ -52,9 +52,9 @@ $font-weight-paragraph: inherit !default;
  * Line height
  * ============================== */
 $line-height-html: 1.5em !default;
-$line-height-label: 180% !default;
-$line-height-paragraph: 180% !default;
-$line-height-span: 180% !default;
+$line-height-label: 150% !default;
+$line-height-paragraph: 150% !default;
+$line-height-span: 150% !default;
 $line-height-base: 1.5 !default;
 $line-height-header: 150% !default;
 

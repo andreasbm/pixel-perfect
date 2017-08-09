@@ -20,3 +20,17 @@ $px-to-rem-base-size: 17 !default;
 
 	@return $number;
 }
+
+/**
+	Merges a set of maps.
+	@param {Map[]} $maps - The mats to merge
+	@return {Map} - All the maps merged
+ */
+@function map-collect($maps...) {
+	$collection: ();
+
+	@each $map in $maps {
+		$collection: map-merge($collection, $map);
+	}
+	@return $collection;
+}
