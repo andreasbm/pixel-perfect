@@ -36,19 +36,21 @@ Or you can handpick the styles you want. Let's say you only want the grid and th
 ## Step 4: Create a theme for your app (optional)
 ```
 $theme-light: pp-theme(
-  pp-palette($pp-blue),
-  pp-palette($pp-lime),
-  pp-palette($pp-orange),
-  pp-palette($pp-red),
-  pp-palette($pp-lime),
-  false,
-  (
-    "text": black,
-    "navbar": map-get($pp-grey, 300)
-  ),
-  (
-    "app": white,
-    "navbar": map-get($pp-blue, 500)
+  $primary: pp-palette($pp-blue),
+  $accent: pp-palette($pp-lime),
+  $warn: pp-palette($pp-orange),
+  $error: pp-palette($pp-red),
+  $success: pp-palette($pp-lime),
+  $is-dark: false,
+  $theme-vars: (
+    "foreground": (
+      "text": black,
+      "navbar": map-get($pp-grey, 300)
+    ),
+    "background": (
+      "app": white,
+      "navbar": map-get($pp-blue, 500)
+    )
   )
 );
 ```

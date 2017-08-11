@@ -8,13 +8,16 @@ $theme-light: pp-theme(
 		pp-palette($pp-lime),
 		false,
 		(
-			"text": black,
-			"navbar": map-get($pp-grey, 300)
-		),
-		(
-			"app": white,
-			"navbar": map-get($pp-blue, 500)
+			"foreground": (
+				"text": black,
+				"navbar": map-get($pp-grey, 300)
+			),
+			"background": (
+				"app": white,
+				"navbar": map-get($pp-blue, 500)
+			)
 		)
+
 );
 
 $theme-dark: pp-theme(
@@ -25,12 +28,14 @@ $theme-dark: pp-theme(
 		pp-palette($pp-black-dirty),
 		true,
 		(
-			"text": white,
-			"navbar": black
-		),
-		(
-			"app": black,
-			"navbar": map-get($pp-yellow, 500)
+			"foreground": (
+				"text": white,
+				"navbar": black
+			),
+			"background": (
+				"app": black,
+				"navbar": map-get($pp-yellow, 500)
+			)
 		)
 );
 
