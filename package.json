@@ -15,15 +15,14 @@
 	"scripts": {
 		"clean": "rimraf dist/*",
 		"build": "npm run clean; node build.js",
-		"build_old": "mkdirp dist && ncp src/lib/ dist && cp README.md dist",
 		"start": "ng serve -o",
 		"update": "ncu -ua; npm update",
 		"bump:patch": "cd src/lib && npm version patch && cd ../..;",
 		"bump:minor": "cd src/lib && npm version minor && cd ../..;",
 		"bump:major": "cd src/lib && npm version major && cd ../..;",
-		"publish:patch": "npm run bump:patch && npm run build && cd dist && npm publish && cd ..",
-		"publish:minor": "npm run bump:minor && npm run build && cd dist && npm publish && cd ..",
-		"publish:major": "npm run bump:major && npm run build && cd dist && npm publish && cd .."
+		"publish:patch": "npm run bump:patch; npm run build; cd dist; npm publish && cd ..",
+		"publish:minor": "npm run bump:minor; npm run build; cd dist; npm publish && cd ..",
+		"publish:major": "npm run bump:major; npm run build; cd dist; npm publish && cd .."
 	},
 	"repository": {
 		"type": "git",

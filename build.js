@@ -17,11 +17,11 @@ const distFolder = path.join(rootFolder, "dist");
 
 return Promise.resolve()
 	.then(() => Promise.resolve()
+		.then(() => _recursiveMkDir(distFolder))
 		.then(() => generateSASS())
 		.then(() => console.log("SASS successfully generated"))
 	)
 	.then(() => Promise.resolve()
-
 		.then(() => _relativeCopy("package.json", srcFolder, distFolder))
 		.then(() => _relativeCopy("README.md", rootFolder, distFolder))
 		.then(() => console.log("Package files copy succeeded."))
