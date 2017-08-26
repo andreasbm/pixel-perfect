@@ -74,3 +74,13 @@ $px-to-rem-base-size: 17 !default;
 @function is-unitless($number) {
 	@return type-of($number) == number and unitless($number);
 }
+
+@function pp-map-get($map, $key) {
+	$value: map-get($map, $key);
+
+	@if $value == null {
+		@error "The #{key} was not found in #{theme}."
+	}
+
+	@return $value;
+}
