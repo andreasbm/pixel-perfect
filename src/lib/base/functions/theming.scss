@@ -61,7 +61,7 @@
 }
 
 @function pp-theme-var($theme, $key) {
-	@return map-get(pp-ensure-theme($theme), $key);
+	@return map-get($theme, $key);
 }
 
 // Returns the background property from the theme object
