@@ -79,7 +79,7 @@ $px-to-rem-base-size: 17 !default;
 	$value: map-get($map, $key);
 
 	@if $value == null {
-		@error "The #{key} was not found in #{theme}."
+		@error "The #{$key} was not found in #{$map}."
 	}
 
 	@return $value;
