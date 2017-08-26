@@ -1,41 +1,38 @@
 @import "../../lib/pixel-perfect";
 
-$theme-light: pp-theme(
-		pp-palette($pp-blue),
-		pp-palette($pp-lime),
-		pp-palette($pp-orange),
-		pp-palette($pp-red),
-		pp-palette($pp-lime),
-		false,
-		(
-			"foreground": (
-				"text": black,
-				"navbar": map-get($pp-grey, 300)
-			),
-			"background": (
-				"app": white,
-				"navbar": map-get($pp-blue, 500)
-			)
+$theme-light: pp-ensure-theme(
+	(
+		"primary": pp-palette($pp-blue),
+		"accent": pp-palette($pp-lime),
+		"warn": pp-palette($pp-orange),
+		"error": pp-palette($pp-red),
+		"success": pp-palette($pp-lime),
+		"navbar": (
+			"color": map-get($pp-grey, 300),
+			"background": map-get($pp-blue, 500)
+		),
+		"app": (
+			"text": black,
+			"background": white
 		)
-
+	)
 );
 
-$theme-dark: pp-theme(
-		pp-palette($pp-yellow),
-		pp-palette($pp-orange),
-		pp-palette($pp-red),
-		pp-palette($pp-orange),
-		pp-palette($pp-black-dirty),
-		true,
-		(
-			"foreground": (
-				"text": white,
-				"navbar": black
-			),
-			"background": (
-				"app": black,
-				"navbar": map-get($pp-yellow, 500)
-			)
+$theme-dark: pp-ensure-theme(
+	(
+		"primary": pp-palette($pp-yellow),
+		"accent": pp-palette($pp-orange),
+		"warn": pp-palette($pp-red),
+		"error": pp-palette($pp-orange),
+		"success": pp-palette($pp-black-dirty),
+		"navbar": (
+			"color": black,
+			"background": map-get($pp-yellow, 500)
+		),
+		"app": (
+			"text": white,
+			"background": black
 		)
+	)
 );
 

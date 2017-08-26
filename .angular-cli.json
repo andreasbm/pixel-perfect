@@ -23,6 +23,7 @@
 	],
 	"defaults": {
 		"styleExt": "scss",
+		"port": 1234,
 		"prefixInterfaces": true,
 		"inline": {
 			"style": false,

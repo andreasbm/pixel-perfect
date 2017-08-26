@@ -1,3 +1,5 @@
+@import "util";
+
 // For a given hue in a palette, return the contrast color from the map of contrast palettes.
 // @param $color-map
 // @param $hue
@@ -54,44 +56,22 @@
 	@return rgba($color, $opacity);
 }
 
-// Creates a container object for a theme to be given to individual component theme mixins.
-@function pp-theme($primary-palette, $accent-palette, $warn-palette, $error-palette, $success-palette, $is-dark, $theme-vars) {
-	@return (
-		primary: $primary-palette,
-		accent: $accent-palette,
-		warn: $warn-palette,
-		error: $error-palette,
-		success: $success-palette,
-		is-dark: $is-dark,
-		theme-vars: $theme-vars
-	);
+@function pp-ensure-theme($theme, $required-keys: ("primary", "accent", "warn", "error", "success")) {
+	@return pp-ensure-keys($theme, $required-keys);
 }
 
-@function pp-theme-var($map, $key) {
-	@if type-of($map) != map {
-		@error "The theme is not a valid map. Ensure the variables is a valid map.";
-	}
-	
-	@if map-has-key($map, $key) == false {
-		@error "The theme must contain the key '#{$key}'. Verify that the key '#{$key}' is present and valid in theme '#{$map}'.";
-	}
-	
-	@return map-get($map, $key);
-}
-
-// Returns the theme variables from the theme object
-@function pp-theme-vars($theme) {
-	@return pp-theme-var($theme, "theme-vars");
+@function pp-theme-var($theme, $key) {
+	@return map-get(pp-ensure-theme($theme), $key);
 }
 
 // Returns the background property from the theme object
 @function pp-background-vars($theme) {
-	@return pp-theme-var(pp-theme-vars($theme), "background");
+	@return pp-theme-var($theme, "background");
 }
 
 // Returns the foreground property from the theme object
 @function pp-foreground-vars($theme) {
-	@return pp-theme-var(pp-theme-vars($theme), "foreground");
+	@return pp-theme-var($theme, "foreground");
 }
 
 // Returns the primary palette from the theme object

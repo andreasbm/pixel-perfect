@@ -2,12 +2,11 @@
 @import "../app/shared/navbar/navbar-theme";
 
 @mixin demo-theme($theme) {
-	$foreground: pp-foreground-vars($theme);
-	$background: pp-background-vars($theme);
+	$app: pp-theme-var($theme, "app");
 
 	body {
-		color: pp-theme-var($foreground, "text");
-		background: pp-theme-var($background, "app");
+		color: map-get($app, "text");
+		background: map-get($app, "background");
 	}
 
 	@include demo-navbar-theme($theme);

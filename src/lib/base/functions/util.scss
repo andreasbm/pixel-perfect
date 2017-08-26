@@ -1,13 +1,5 @@
 $px-to-rem-base-size: 17 !default;
 
-@function px-to-rem($size-px) {
-	@return #{$size-px / $px-to-rem-base-size}rem;
-}
-
-@function px-to-em($base-size-px, $size-px) {
-	@return #{$size-px / $base-size-px}em;
-}
-
 /// Remove the unit of a length
 /// @param {Number} $number - Number to remove unit from
 /// @return {Number} - Unitless number
@@ -31,4 +23,54 @@ $px-to-rem-base-size: 17 !default;
 		$collection: map-merge($collection, $map);
 	}
 	@return $collection;
+}
+
+@function clamp($value, $min, $max) {
+	@return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+@function rem($value) {
+	@return #{$value}rem;
+}
+
+@function px($value) {
+	@return #{$value}px;
+}
+
+@function em($value) {
+	@return #{$value}em;
+}
+
+@function px-to-rem($size-px) {
+	@return rem(#{pp-strip-unit($size-px) / pp-strip-unit($px-to-rem-base-size)});
+}
+
+@function rem-to-px($size-rem) {
+	@return px(#{pp-strip-unit($size-rem) * pp-strip-unit($px-to-rem-base-size)});
+}
+
+@function px-to-em($base-size-px, $size-px) {
+	@return em(#{pp-strip-unit($size-px) / pp-strip-unit($base-size-px)});
+}
+
+@function em-to-px($base-size-px, $size-em) {
+	@return px(#{pp-strip-unit($size-em) / pp-strip-unit($base-size-px)});
+}
+
+@function pp-ensure-keys($map, $required-keys) {
+	@if type-of($map) != map {
+		@error "The input is not a valid map.";
+	}
+
+	@each $key in $required-keys {
+		@if map-has-key($map, $key) == false {
+			@error "The map must contain the key '#{$key}'. Verify that the key '#{$key}' is present and valid in the map '#{$map}'.";
+		}
+	}
+
+	@return $map;
+}
+
+@function is-unitless($number) {
+	@return type-of($number) == number and unitless($number);
 }

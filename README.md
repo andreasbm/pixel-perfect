@@ -35,22 +35,21 @@ Or you can handpick the styles you want. Let's say you only want the grid and th
 
 ## Step 4: Create a theme for your app (optional)
 ```
-$theme-light: pp-theme(
-  $primary: pp-palette($pp-blue),
-  $accent: pp-palette($pp-lime),
-  $warn: pp-palette($pp-orange),
-  $error: pp-palette($pp-red),
-  $success: pp-palette($pp-lime),
-  $is-dark: false,
-  $theme-vars: (
-    "foreground": (
-      "text": black,
-      "navbar": map-get($pp-grey, 300)
-    ),
-    "background": (
-      "app": white,
-      "navbar": map-get($pp-blue, 500)
-    )
+$theme-light: pp-ensure-theme(
+  (
+    "primary": pp-palette($pp-blue),
+    "accent": pp-palette($pp-lime),
+    "warn": pp-palette($pp-orange),
+    "error": pp-palette($pp-red),
+	"success": pp-palette($pp-lime),
+	"navbar": (
+	  "color": map-get($pp-grey, 300),
+	  "background": map-get($pp-blue, 500)
+	,
+	"app": (
+	  "text": black,
+	  "background": white
+	)
   )
 );
 ```
@@ -71,19 +70,18 @@ Here is an example of what your theme could look like.
 ```
 @mixin demo-theme($theme) {
   $primary: pp-theme-primary($theme);
-  $foreground: pp-foreground-vars($theme);
-  $background: pp-background-vars($theme);
+  $navbar: pp-theme-var($theme, "navbar");
 
-  body {
-    color: pp-theme-var($foreground, "text");
-    background: pp-theme-var($background, "app");
+  nav {
+    color: map-get($navbar, "color");
+    background: map-get($navbar, "background");
   }
 
-  .gray-text {
+  .primary-text {
     color: pp-color($primary, 500);
   }
 
-  .gray-text-lighter {
+  .primary-text-lighter {
     color: pp-color($primary, "lighter");
   }
 }
