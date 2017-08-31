@@ -11,6 +11,9 @@ $css-vars: ();
 */
 $css-vars-use-native: false !default;
 
+/** Enables allowing non existing variables */
+$css-vars-allow-non-existing-vars: false !default;
+
 /** enables the output of debug messages */
 $css-vars-debug-log: false !default;
 
@@ -45,32 +48,36 @@ $css-vars-debug-log: false !default;
  background: var(--main-bg, green);
 */
 @function var($args...) {
-	@if (length($args)==0) {
+	@if (length($args) == 0) {
 		@error "Variable name is expected to be passed to the var() function";
 	}
 
 	@if (str-length(nth($args, 1)) < 2 or str-slice(nth($args, 1), 0, 2) != '--') {
-		@error "Variable name is expected to start from '--'";
+		@error "Variable name is expected to start with '--'";
 	}
 
 	$varName: unquote(nth($args, 1));
 	$varValue: map-get($css-vars, $varName);
 
-	@if ($css-vars-debug-log or not $css-vars-use-native) {
-		@if ($varValue==null) {
-			@if (length($args)==2) {
-				@if ($css-vars-debug-log) {
-					@warn "Provided default value is used for the variable: '#{$varName}'";
-				}
-				$varValue: nth($args, 2);
-			} @else if ($css-vars-debug-log) {
-				@warn "Variable '#{$varName}' is not assigned";
-				@if (not $css-vars-use-native) {
-					@warn "The var() declaration used it will be skipped in the result CSS";
-				}
+	// If the value is null, the variable doesn't exist.
+	@if ($varValue == null) {
+
+		// Check if a default value was provided.
+		@if (length($args) == 2) {
+			@if ($css-vars-debug-log) {
+				@warn "Provided default value is used for the variable: '#{$varName}'";
+			}
+			$varValue: nth($args, 2);
+
+		} @else {
+			@if (not $css-vars-allow-non-existing-vars) {
+				@error "The variable '#{$varName}' is not assigned";
+			} @else {
+				@warn "The var() declaration for '#{$varName} used it will be skipped in the result CSS";
 			}
 		}
 	}
+
 
 	@if ($css-vars-use-native) {
 		// Native CSS: don't process function in case of native
@@ -92,19 +99,17 @@ $css-vars-debug-log: false !default;
  ));
 */
 @mixin css-vars($varMap: null, $root: false) {
-	@if ($varMap==null) {
+	@if ($varMap == null) {
 		@error "Map of variables is expected, instead got: null";
 	}
 
-	@if (type_of($varMap)!=map) {
+	@if (type-of($varMap) != map) {
 		@error "Map of variables is expected, instead got another type passed: #{type_of($varMap)}";
 	}
 
-	@if ($css-vars-debug-log or not $css-vars-use-native) {
-		// Merge variables and values to the global map (provides no output)
-		@each $varName, $varValue in $varMap {
-			$css-vars: _cssVarAssign($varName, $varValue) !global; // store in global variable
-		}
+	// Merge variables and values to the global map (provides no output)
+	@each $varName, $varValue in $varMap {
+		$css-vars: _cssVarAssign($varName, $varValue) !global; // store in global variable
 	}
 
 	// Native CSS: assign CSS custom properties to the global scope
