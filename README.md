@@ -101,7 +101,7 @@ $pp-blue: (
 
 ## Step 5: Decide whether you want custom CSS variables or SASS variables.
 
-The variables can be used in your stylesheets by using the `var(args...)` function. If you want the primary default color you could grab it by using `var(--primary-default)`. The theming in pixel-perfect uses custom CSS variables out of the box. Unfortunately, not all browsers support custom CSS variables yet. Therefore you can set the flag `$css-vars-use-native: false;` to tell pixel-perfect to use SASS variables instead. We recommend that you use custom CSS variables to get all the sweet benefits and serve at seperate stylesheet for browsers without custom CSS variables.
+The variables can be used in your stylesheets by using the `var(args...)` function. If you want the primary default color you could grab it by using `var(--primary-default)`. The theming in pixel-perfect uses custom CSS variables out of the box. Unfortunately, not all browsers support custom CSS variables yet ([See current state](http://caniuse.com/#feat=css-variables)). Therefore you can set the flag `$css-vars-use-native: false;` to tell pixel-perfect to use SASS variables instead. We recommend that you use custom CSS variables to get all the sweet benefits and serve at seperate stylesheet for browsers without custom CSS variables.
 
 If you want to deactive (we DON'T recommend this!!) you can do the following by extracting all of your theme related sass into one mixin that you can reuse with different variables:
 
@@ -137,23 +137,14 @@ $space-l: 15rem;
 ```
 
 ## Step 7: Create your app-theme
+
 Here is an example of what your theme could look like.
+
 ```
-@mixin demo-theme($theme) {
-  $primary: pp-theme-primary($theme);
-  $navbar: pp-theme-var($theme, "navbar");
-
-  nav {
-    color: map-get($navbar, "color");
-    background: map-get($navbar, "background");
-  }
-
-  .primary-text {
-    color: pp-color($primary, 500);
-  }
-
-  .primary-text-lighter {
-    color: pp-color($primary, "lighter");
+@mixin demo-theme() {
+  body {
+    color: var(--app-text);
+    background: var(--app-bg);
   }
 }
 ```
@@ -161,6 +152,7 @@ Here is an example of what your theme could look like.
 # SCSS naming
 
 Go from general to concrete in the naming. Examples could be "property-element" or "property-state".
+
 ```
 $font-size-base-screen-l:   17px !default;
 
