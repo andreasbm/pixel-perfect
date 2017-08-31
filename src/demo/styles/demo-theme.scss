@@ -1,16 +1,9 @@
 @import "base";
-@import "../app/shared/navbar/navbar-theme";
 
 @mixin demo-theme() {
 	body {
 		color: var(--app-text);
 		background: var(--app-bg);
 	}
-
-	[class^="pp-elevation-z"] {
-		background: var(--primary-default);
-	}
-
-	@include demo-navbar-theme();
 }
 

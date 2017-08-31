@@ -1,17 +1,29 @@
 @import "../../lib/pixel-perfect";
 
-@mixin light-theme() {
-	@include css-vars(palette("primary", $pp-blue));
-	@include css-vars(palette("accent", $pp-lime));
-	@include css-vars(palette("warn", $pp-orange));
-	@include css-vars(palette("error", $pp-red));
-	@include css-vars(palette("success", $pp-lime));
-	@include css-vars((
+$font-size-base-l-screen: 17px;
+$css-vars-use-native: true;
+$css-vars-debug-log: true;
+$css-vars-allow-non-existing-vars: false;
+
+$light-theme: pp-map-collect(
+	palette("primary", $pp-blue),
+	palette("accent", $pp-lime),
+	palette("warn", $pp-orange),
+	palette("error", $pp-red),
+	palette("success", $pp-lime),
+	(
 		--navbar-color: map-get($pp-grey, 300),
 		--navbar-bg: map-get($pp-blue, 500),
 		--app-text: black,
 		--app-bg: white
-	));
+	)
+);
+
+// Nessesary to make the encapsulated angular components happy when NOT using native css variables.
+$css-vars-backup: $light-theme;
+
+@mixin light-theme() {
+	@include css-vars($light-theme);
 }
 
 @mixin dark-theme() {

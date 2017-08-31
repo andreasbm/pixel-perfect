@@ -31,9 +31,3 @@
 
 	@return $vars;
 }
-
-//@mixin theme-vars($theme-map) {
-//	@each $key, $palette in $theme-map {
-//		@include palette-vars($key, $palette);
-//	}
-//}

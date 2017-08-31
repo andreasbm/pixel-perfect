@@ -1,8 +1,0 @@
-@import "../../../styles/base";
-
-@mixin demo-navbar-theme() {
-	nav {
-		color: var(--navbar-color);
-		background: var(--navbar-bg);
-	}
-}

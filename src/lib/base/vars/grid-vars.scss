@@ -21,11 +21,11 @@ $container-width-screen-l: 70% !default;
 $container-width-wide: 90% !default;
 $container-width-thin: 70% !default;
 
-$container-max-width: px-to-rem(1280) !default;
 $container-max-width-thin: px-to-rem(700) !default;
+$container-max-width: px-to-rem(1280) !default;
 $container-max-width-wide: px-to-rem(1430) !default;
 
 /* Section */
-$section-top-bottom-spacing-l: px-to-rem(150) !default;
-$section-top-bottom-spacing-m: px-to-rem(100) !default;
-$section-top-bottom-spacing-s: px-to-rem(50) !default;
+$section-top-bottom-spacing-s: $spacing-s !default;
+$section-top-bottom-spacing-l: $spacing-l !default;
+$section-top-bottom-spacing-m: $spacing-m !default;

@@ -3,7 +3,7 @@
  */
 
 /** Global map to be filled via variables */
-$css-vars: ();
+$_css-vars: ();
 
 /**
  The variable may be set to "true" anywhere in the code,
@@ -16,6 +16,9 @@ $css-vars-allow-non-existing-vars: false !default;
 
 /** enables the output of debug messages */
 $css-vars-debug-log: false !default;
+
+/** "Polyfill" for older browsers */
+$css-vars-backup: () !default;
 
 /**
 	Assigns a variable to the global map
@@ -30,11 +33,11 @@ $css-vars-debug-log: false !default;
 	}
 
 	// Assign the value to the global map
-	@if ($css-vars-debug-log and map-get($css-vars, $name)) {
+	@if ($css-vars-debug-log and map-get($_css-vars, $name)) {
 		@warn "'#{$name}' variable is reassigned";
 	}
 
-	@return map-merge($css-vars, ($name: $value));
+	@return map-merge($_css-vars, ($name: $value));
 }
 
 /**
@@ -57,7 +60,8 @@ $css-vars-debug-log: false !default;
 	}
 
 	$varName: unquote(nth($args, 1));
-	$varValue: map-get($css-vars, $varName);
+	$varValue: map-get($_css-vars, $varName);
+	$backupValue: map-get($css-vars-backup, $varName);
 
 	// If the value is null, the variable doesn't exist.
 	@if ($varValue == null) {
@@ -68,6 +72,9 @@ $css-vars-debug-log: false !default;
 				@warn "Provided default value is used for the variable: '#{$varName}'";
 			}
 			$varValue: nth($args, 2);
+
+		} @else if ($backupValue != null) {
+			$varValue: $backupValue;
 
 		} @else {
 			@if (not $css-vars-allow-non-existing-vars) {

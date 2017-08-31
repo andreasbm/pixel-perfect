@@ -3,6 +3,9 @@
 $navbar-height: px-to-rem(50);
 
 nav {
+	color: var(--navbar-color);
+	background: var(--navbar-bg);
+
 	position: fixed;
 	top: 0;
 	right: 0;

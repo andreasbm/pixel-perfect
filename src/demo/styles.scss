@@ -1,8 +1,4 @@
 // Overwrite vars
-$font-size-base-l-screen: 17px;
-$css-vars-use-native: true;
-$css-vars-debug-log: true;
-
 @import "styles/base";
 @import "styles/demo-theme";
 
@@ -15,8 +11,8 @@ $css-vars-debug-log: true;
 }
 
 @include pp-layout();
-@include demo-theme();
 @include pp-color-classes();
+@include demo-theme();
 
 .test {
 	width: 200px;
