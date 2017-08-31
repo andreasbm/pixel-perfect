@@ -1,100 +1,39 @@
 @import "util";
+@import "css-vars";
 
-// For a given hue in a palette, return the contrast color from the map of contrast palettes.
-// @param $color-map
-// @param $hue
+/**
+ For a given hue in a palette, return the contrast color from the map of contrast palettes.
+ @param $color-map
+ @param $hue
+ */
 @function pp-contrast($palette, $hue) {
-	@return map-get(map-get($palette, contrast), $hue);
+	@return pp-map-get(pp-map-get($palette, "contrast"), $hue);
 }
 
-// Creates a map of hues to colors for a theme.
-// @param $color-map
-// @param $primary
-// @param $lighter
-@function pp-palette($base-palette, $default: 500, $lighter: 400, $darker: 600) {
-	$result: map_merge($base-palette, (
-		default: map-get($base-palette, $default),
-		lighter: map-get($base-palette, $lighter),
-		darker: map-get($base-palette, $darker),
-		default-contrast: pp-contrast($base-palette, $default),
-		lighter-contrast: pp-contrast($base-palette, $lighter),
-		darker-contrast: pp-contrast($base-palette, $darker)
-	));
+@function palette($name, $palette, $default: 500, $lighter: 400, $darker: 600) {
+	$vars: (
+		"--#{$name}-default": pp-map-get($palette, $default),
+		"--#{$name}-lighter": pp-map-get($palette, $lighter),
+		"--#{$name}-darker": pp-map-get($palette, $darker),
+		"--#{$name}-default-contrast": pp-contrast($palette, $default),
+		"--#{$name}-lighter-contrast": pp-contrast($palette, $lighter),
+		"--#{$name}-darker-contrast": pp-contrast($palette, $darker)
+	);
 
-	// For each hue in the palette, add a "-contrast" color to the map.
-	@each $hue, $color in $base-palette {
-		$result: map_merge($result, (
-			'#{$hue}-contrast': pp-contrast($base-palette, $hue)
-		));
+	@each $hue, $color in $palette {
+		@if is-unitless($hue) {
+			$vars: pp-map-collect($vars, (
+				"--#{$name}-#{$hue}": $color,
+				"--#{$name}-#{$hue}-contrast": pp-contrast($palette, $hue)
+			));
+		}
 	}
 
-	@return $result;
+	@return $vars;
 }
 
-// Gets a color from a theme palette (the output of pp-palette).
-//
-// @param $color-map The theme palette (output of pp-palette).
-// @param $hue The hue from the palette to use. If this is a value between 0 and 1, it will be treated as opacity.
-// @param $opacity The alpha channel value for the color.
-@function pp-color($palette, $hue: default, $opacity: null) {
-
-	// If hueKey is a number between zero and one, then it actually contains an
-	// opacity value, so recall this function with the default hue and that given opacity.
-	@if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
-		@return pp-color($palette, default, $hue);
-	}
-
-	$color: map-get($palette, $hue);
-
-	// Verify that the color is in fact a color.
-	@if type-of($color) != color {
-		@error "'#{color}' must be a color. Verify that the hue '#{$hue}' is present and valid in palette '#{$palette}'.";
-	}
-
-	$opacity: if($opacity == null, opacity($color), $opacity);
-
-	@return rgba($color, $opacity);
-}
-
-@function pp-ensure-theme($theme, $required-keys: ("primary", "accent", "warn", "error", "success")) {
-	@return pp-ensure-keys($theme, $required-keys);
-}
-
-@function pp-theme-var($theme, $key) {
-	@return map-get($theme, $key);
-}
-
-// Returns the background property from the theme object
-@function pp-background-vars($theme) {
-	@return pp-theme-var($theme, "background");
-}
-
-// Returns the foreground property from the theme object
-@function pp-foreground-vars($theme) {
-	@return pp-theme-var($theme, "foreground");
-}
-
-// Returns the primary palette from the theme object
-@function pp-primary-palette($theme) {
-	@return pp-theme-var($theme, "primary");
-}
-
-// Returns the accent palette from the theme object
-@function pp-accent-palette($theme) {
-	@return pp-theme-var($theme, "accent");
-}
-
-// Returns the warn palette from the theme object
-@function pp-warn-palette($theme) {
-	@return pp-theme-var($theme, "warn");
-}
-
-// Returns the error palette from the theme object
-@function pp-error-palette($theme) {
-	@return pp-theme-var($theme, "error");
-}
-
-// Returns the success palette from the theme object
-@function pp-success-palette($theme) {
-	@return pp-theme-var($theme, "success");
-}
+//@mixin theme-vars($theme-map) {
+//	@each $key, $palette in $theme-map {
+//		@include palette-vars($key, $palette);
+//	}
+//}

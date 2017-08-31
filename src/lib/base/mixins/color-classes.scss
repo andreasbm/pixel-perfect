@@ -1,19 +1,16 @@
 @import "../functions";
 
-@mixin _color-class-variant($theme, $color-name, $variant-name) {
-  $color: map-get($theme, $color-name);
-  $color-variant: pp-color($color, $variant-name);
-
+@mixin _color-class-variant($color-name, $variant-name) {
   .#{$color-name}.#{$variant-name} {
-    color: $color-variant;
+    color: var(--#{$color-name}-#{$variant-name});
   }
 
   .#{$color-name}-bg.#{$variant-name}-bg {
-    background-color: $color-variant;
+    background-color: var(--#{$color-name}-#{$variant-name});
   }
 }
 
-@mixin _color-class($theme, $color-name) {
+@mixin _color-class($color-name) {
   $variants: (
     'lighter',
     'darker',
@@ -22,23 +19,21 @@
     'darker-contrast'
   );
 
-  $color: map-get($theme, $color-name);
-
   .#{$color-name} {
-    color: pp-color($color);
+    color: var(--#{$color-name}-default);
   }
 
   .#{$color-name}-bg {
-    background-color: pp-color($color);
+    background: var(--#{$color-name}-default);
   }
 
   @for $i from 0 to length($variants) {
     $variant-name: unquote(nth($variants, $i+1));
-    @include _color-class-variant($theme, $color-name, $variant-name);
+    @include _color-class-variant($color-name, $variant-name);
   }
 }
 
-@mixin pp-color-classes($theme) {
+@mixin pp-color-classes() {
   $colors: (
     'primary',
     'accent',
@@ -49,6 +44,6 @@
 
   @for $i from 0 to length($colors) {
     $color-name: unquote(nth($colors, $i+1));
-    @include _color-class($theme, $color-name);
+    @include _color-class($color-name);
   }
 }

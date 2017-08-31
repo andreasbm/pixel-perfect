@@ -1,10 +1,8 @@
 @import "../../../styles/base";
 
-@mixin demo-navbar-theme($theme) {
-	$navbar: pp-theme-var($theme, "navbar");
-
+@mixin demo-navbar-theme() {
 	nav {
-		color: map-get($navbar, "color");
-		background: map-get($navbar, "background");
+		color: var(--navbar-color);
+		background: var(--navbar-bg);
 	}
 }

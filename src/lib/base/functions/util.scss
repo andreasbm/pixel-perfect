@@ -1,8 +1,10 @@
 $px-to-rem-base-size: 17 !default;
 
-/// Remove the unit of a length
-/// @param {Number} $number - Number to remove unit from
-/// @return {Number} - Unitless number
+/**
+	Remove the unit of a length
+	@param {Number} $number - Number to remove unit from
+	@return {Number} - Unitless number
+ */
 @function pp-strip-unit($number) {
 	@if type-of($number) == 'number' and not unitless($number) {
 		@return $number / ($number * 0 + 1);
@@ -13,10 +15,10 @@ $px-to-rem-base-size: 17 !default;
 
 /**
 	Merges a set of maps.
-	@param {Map[]} $maps - The mats to merge
+	@param {Map[]} $maps - The maps to merge
 	@return {Map} - All the maps merged
  */
-@function map-collect($maps...) {
+@function pp-map-collect($maps...) {
 	$collection: ();
 
 	@each $map in $maps {
@@ -25,22 +27,49 @@ $px-to-rem-base-size: 17 !default;
 	@return $collection;
 }
 
-@function clamp($value, $min, $max) {
+/**
+	Clamps a value between min and max.
+	@param {Number} $value - The value to be clammed
+	@param {Number} $min - The minimum value
+	@param {Number} $max - The maximum value
+	@return {Number} - The clammed value
+ */
+@function pp-clamp($value, $min, $max) {
 	@return if($value > $max, $max, if($value < $min, $min, $value));
 }
 
+/**
+	Adds rem unit to a value.
+	@param {Number} $value - A unitless value
+	@return {Number} - The value with rem units
+ */
 @function rem($value) {
 	@return #{$value}rem;
 }
 
+/**
+	Adds px unit to a value.
+	@param {Number} $value - A unitless value
+	@return {Number} - The value with px units
+ */
 @function px($value) {
 	@return #{$value}px;
 }
 
+/**
+	Adds em unit to a value.
+	@param {Number} $value - A unitless value
+	@return {Number} - The value with em units
+ */
 @function em($value) {
 	@return #{$value}em;
 }
 
+/**
+	Converts a pixel value to rem value.
+	@param {Number} $value - A px value
+	@return {Number} - The corresponding rem value
+ */
 @function px-to-rem($size-px) {
 	@return rem(#{pp-strip-unit($size-px) / pp-strip-unit($px-to-rem-base-size)});
 }
@@ -79,7 +108,7 @@ $px-to-rem-base-size: 17 !default;
 	$value: map-get($map, $key);
 
 	@if $value == null {
-		@error "The #{$key} was not found in #{$map}."
+		@error "The key '#{$key}'' was not found in the map '#{$map}'."
 	}
 
 	@return $value;

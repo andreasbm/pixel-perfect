@@ -1,17 +1,26 @@
 // Overwrite vars
 $font-size-base-l-screen: 17px;
+$css-vars-use-native: true;
+$css-vars-debug-log: true;
 
 @import "styles/base";
 @import "styles/demo-theme";
 
-@include pp-layout();
-
 .theme-light {
-	@include pp-color-classes($theme-light);
-	@include demo-theme($theme-light);
+	@include light-theme();
 }
 
 .theme-dark {
-	@include pp-color-classes($theme-dark);
-	@include demo-theme($theme-dark);
+	@include dark-theme();
 }
+
+@include pp-layout();
+@include demo-theme();
+@include pp-color-classes();
+
+.test {
+	width: 200px;
+	height: 200px;
+	background: var(--primary-default);
+}
+

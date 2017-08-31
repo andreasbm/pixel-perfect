@@ -1,38 +1,29 @@
 @import "../../lib/pixel-perfect";
 
-$theme-light: pp-ensure-theme(
-	(
-		"primary": pp-palette($pp-blue),
-		"accent": pp-palette($pp-lime),
-		"warn": pp-palette($pp-orange),
-		"error": pp-palette($pp-red),
-		"success": pp-palette($pp-lime),
-		"navbar": (
-			"color": map-get($pp-grey, 300),
-			"background": map-get($pp-blue, 500)
-		),
-		"app": (
-			"text": black,
-			"background": white
-		)
-	)
-);
+@mixin light-theme() {
+	@include css-vars(palette("primary", $pp-blue));
+	@include css-vars(palette("accent", $pp-lime));
+	@include css-vars(palette("warn", $pp-orange));
+	@include css-vars(palette("error", $pp-red));
+	@include css-vars(palette("success", $pp-lime));
+	@include css-vars((
+		--navbar-color: map-get($pp-grey, 300),
+		--navbar-bg: map-get($pp-blue, 500),
+		--app-text: black,
+		--app-bg: white
+	));
+}
 
-$theme-dark: pp-ensure-theme(
-	(
-		"primary": pp-palette($pp-yellow),
-		"accent": pp-palette($pp-orange),
-		"warn": pp-palette($pp-red),
-		"error": pp-palette($pp-orange),
-		"success": pp-palette($pp-black-dirty),
-		"navbar": (
-			"color": black,
-			"background": map-get($pp-yellow, 500)
-		),
-		"app": (
-			"text": white,
-			"background": black
-		)
-	)
-);
-
+@mixin dark-theme() {
+	@include css-vars(palette("primary", $pp-yellow));
+	@include css-vars(palette("accent", $pp-orange));
+	@include css-vars(palette("warn", $pp-red));
+	@include css-vars(palette("error", $pp-orange));
+	@include css-vars(palette("success", $pp-black-dirty));
+	@include css-vars((
+		--navbar-color: black,
+		--navbar-bg: map-get($pp-yellow, 500),
+		--app-text: white,
+		--app-bg: black
+	));
+}
