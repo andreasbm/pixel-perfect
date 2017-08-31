@@ -55,5 +55,12 @@ $mat-elevation-property: box-shadow !default;
   }
 
   #{$mat-elevation-property}: #{map-get($_umbra-elevation-map, $zValue)}, #{map-get($_penumbra-elevation-map, $zValue)}, #{map-get($_ambient-elevation-map, $zValue)};
-  //#{$mat-elevation-property}: #{map-get($_penumbra-elevation-map, $zValue)};
+}
+
+@mixin pp-elevation-classes() {
+  @for $zValue from 0 through 10 {
+    .pp-elevation-z#{$zValue} {
+      @include pp-elevation($zValue);
+    }
+  }
 }

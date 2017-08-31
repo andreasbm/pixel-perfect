@@ -1,6 +1,6 @@
 @import "../base";
 
-@function get-stack-spacing($with-unit: false) {
+@function _get-stack-spacing($with-unit: false) {
 	@if $with-unit {
 		@return #{$stack-spacing}#{$stack-spacing-unit};
 	} @else {
@@ -8,7 +8,7 @@
 	}
 }
 
-@function get-stack-spacing-for-index($index, $max-cols, $with-unit: false) {
+@function _get-stack-spacing-for-index($index, $max-cols, $with-unit: false) {
 	@if $with-unit {
 		@return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
 	} @else {
@@ -21,8 +21,8 @@
 
 	/* Only add gap if the size of the column is not 100% */
 	@if $perc != 100% {
-		max-width: calc(#{$perc} - #{get-stack-spacing(true)} + #{get-stack-spacing-for-index($index, $max-cols, true)});
-		flex-basis: calc(#{$perc} - #{get-stack-spacing(true)} + #{get-stack-spacing-for-index($index, $max-cols, true)});
+		max-width: calc(#{$perc} - #{_get-stack-spacing(true)} + #{_get-stack-spacing-for-index($index, $max-cols, true)});
+		flex-basis: calc(#{$perc} - #{_get-stack-spacing(true)} + #{_get-stack-spacing-for-index($index, $max-cols, true)});
 
 	}
 }

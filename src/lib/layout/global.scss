@@ -2,51 +2,20 @@
 
 @mixin pp-global() {
 
-  html {
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-  }
+	html {
+		box-sizing: border-box;
+		overflow-wrap: break-word;
+	}
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
 
-  img, input, textarea {
-    max-width: 100%;
-  }
+	img, input, textarea {
+		max-width: 100%;
+	}
 
-  [hidden] {
-    visibility: hidden;
-  }
-
-  @include pp-breakpointify("hide") {
-    display: none;
-  }
-  @include pp-breakpointify("show") {
-    display: block;
-  }
-  @include pp-breakpointify("inline-block") {
-    display: inline-block;
-  }
-  @include pp-breakpointify("inline") {
-    display: inline;
-  }
-  @include pp-breakpointify("block") {
-    display: block;
-  }
-  @include pp-breakpointify("left-align") {
-    text-align: left;
-  }
-  @include pp-breakpointify("right-align") {
-    text-align: right;
-  }
-  @include pp-breakpointify("center-align") {
-    text-align: center;
-  }
-
-  @for $zValue from 0 through 10 {
-    .pp-elevation-z#{$zValue} {
-      @include pp-elevation($zValue);
-    }
-  }
+	[hidden] {
+		visibility: hidden;
+	}
 }

@@ -15,7 +15,7 @@
 	"scripts": {
 		"clean": "rimraf dist/*",
 		"build": "npm run clean; node build.js",
-		"start": "ng serve -o",
+		"start": "ng serve -o --port=1231",
 		"update": "ncu -ua; npm update",
 		"bump:patch": "cd src/lib && npm version patch && cd ../..;",
 		"bump:minor": "cd src/lib && npm version minor && cd ../..;",

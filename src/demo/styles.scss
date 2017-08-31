@@ -1,6 +1,6 @@
 // Overwrite vars
 $font-size-base-l-screen: 17px;
-$css-vars-use-native: true;
+$css-vars-use-native: false;
 $css-vars-debug-log: true;
 
 @import "styles/base";
@@ -21,6 +21,5 @@ $css-vars-debug-log: true;
 .test {
 	width: 200px;
 	height: 200px;
-	background: var(--primary-default);
 }
 
