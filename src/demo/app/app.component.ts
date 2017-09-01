@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 const template = `
 <pp-navbar></pp-navbar>
@@ -9,15 +9,13 @@ const template = `
 `;
 
 @Component({
-  selector: 'app',
-  template: template
+	selector: "app",
+	template: template
 })
 export class AppComponent {
 
-
-
-  constructor() {
-  }
+	constructor () {
+	}
 
 }
 

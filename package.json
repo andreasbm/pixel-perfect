@@ -14,15 +14,17 @@
 	"types": "index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist/*",
-		"build": "npm run clean; node build.js",
+		"b:lib": "npm run clean; node build.js",
+		"b:demo": "ng build --prod",
 		"start": "ng serve -o --port=1231",
 		"update": "ncu -ua; npm update",
 		"bump:patch": "cd src/lib && npm version patch && cd ../..;",
 		"bump:minor": "cd src/lib && npm version minor && cd ../..;",
 		"bump:major": "cd src/lib && npm version major && cd ../..;",
-		"publish:patch": "npm run bump:patch; npm run build; cd dist; npm publish && cd ..",
-		"publish:minor": "npm run bump:minor; npm run build; cd dist; npm publish && cd ..",
-		"publish:major": "npm run bump:major; npm run build; cd dist; npm publish && cd .."
+		"publish:patch": "npm run bump:patch; npm run b:lib; cd dist; npm publish && cd ..",
+		"publish:minor": "npm run bump:minor; npm run b:lib; cd dist; npm publish && cd ..",
+		"publish:major": "npm run bump:major; npm run b:lib; cd dist; npm publish && cd ..",
+		"deploy": "npm run b:demo; firebase deploy"
 	},
 	"repository": {
 		"type": "git",

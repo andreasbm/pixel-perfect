@@ -1,8 +1,9 @@
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "../app-routing.module";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ThemeService } from "./theme/theme.service";
 
 @NgModule({
 	imports: [
@@ -22,6 +23,12 @@ import { NavbarComponent } from "./navbar/navbar.component";
 	]
 })
 export class SharedModule {
+	static forRoot(): ModuleWithProviders {
+		return {
+			ngModule: SharedModule,
+			providers: [ThemeService]
+		}
+	}
 }
 
 

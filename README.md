@@ -1,6 +1,6 @@
 # Pixel Perfect
 
-A pixel perfect SCSS stylesheets to get you started.
+A pixel perfect SCSS stylesheet (demo: [https://pixel-perfect-39e99.firebaseapp.com/](https://pixel-perfect-39e99.firebaseapp.com/)). Spiced with themeable mixins, custom CSS variables and other cool stuff you can handpick from.
 
 Pixel perfect definition:
 
@@ -37,17 +37,17 @@ Or you can handpick the styles you want. Let's say you only want the grid and th
 
 Create a theme (or multiple themes) for your app.
 ```
-@mixin dark-theme() {
+@mixin light-theme() {
   @include css-vars(palette("primary", $pp-yellow));
   @include css-vars(palette("accent", $pp-orange));
   @include css-vars(palette("warn", $pp-red));
   @include css-vars(palette("error", $pp-orange));
   @include css-vars(palette("success", $pp-black-dirty));
   @include css-vars((
-    --navbar-color: black,
+    --navbar-color: white,
     --navbar-bg: map-get($pp-yellow, 500),
-    --app-text: white,
-    --app-bg: black
+    --app-text: black,
+    --app-bg: white
   ));
 }
 ```
@@ -101,9 +101,9 @@ $pp-blue: (
 
 ## Step 5: Decide whether you want custom CSS variables or SASS variables.
 
-The variables can be used in your stylesheets by using the `var(args...)` function. If you want the primary default color you could grab it by using `var(--primary-default)`. The theming in pixel-perfect uses custom CSS variables out of the box. Unfortunately, not all browsers support custom CSS variables yet ([See current state](http://caniuse.com/#feat=css-variables)). Therefore you can set the flag `$css-vars-use-native: false;` to tell pixel-perfect to use SASS variables instead. We recommend that you use custom CSS variables to get all the sweet benefits and serve at seperate stylesheet for browsers without custom CSS variables.
+The variables can be used in your stylesheets by using the `var(args...)` function. If you want the primary default color you could grab it by using `var(--primary-default)`. The theming in pixel-perfect uses custom CSS variables out of the box. Unfortunately, not all browsers support custom CSS variables yet ([See current state](http://caniuse.com/#feat=css-variables)). Therefore you can set the flag `$css-vars-use-native: false;` to tell pixel-perfect to use SASS variables instead. We recommend that you use custom CSS variables to get all the sweet benefits and either serve a seperate stylesheet for browsers without custom CSS variables or use polyfills.
 
-If you want to deactive (we DON'T recommend this!!) you can do the following by extracting all of your theme related sass into one mixin that you can reuse with different variables:
+If you want to deactivate (we don't recommend this) you can do the following by extracting all of your theme related sass into one mixin that you can reuse with different variables:
 
 ```
 // Deactive custom CSS variables :,(
@@ -122,7 +122,7 @@ $css-vars-use-native: true;
 
 ## Step 6: Customize the variables (optional)
 
-If you wish to customize the variables, import the variables overwriting the pixel-perfect variables before importing the layout.
+Its possible to customize most of the variables used in pixel-perfect.
 
 ```
 @import "~pixel-perfect/pixel-perfect.scss";

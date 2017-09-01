@@ -1,9 +1,32 @@
 <h1>Playground</h1>
 
-<span>Play!! :-)</span>
+<div class="stack-grid">
+	<div class="item s3">
+		<p>App Background</p>
+		<input type="color" name="appbg" (change)="updateTheme()" [(ngModel)]="appBg">
+	</div>
+	<div class="item s3">
+		<p>App Color</p>
+		<input type="color" name="app" (change)="updateTheme()" [(ngModel)]="appText">
+	</div>
+	<div class="item s3">
+		<p>Navbar Color</p>
+		<input type="color" name="nav" (change)="updateTheme()" [(ngModel)]="navbarColor">
+	</div>
+	<div class="item s3">
+		<p>Navbar Background</p>
+		<input type="color" name="navbg" (change)="updateTheme()" [(ngModel)]="navbarColorBg">
+	</div>
+</div>
 
 <h2>Elevation</h2>
 <div *ngFor="let z of zIndexes" [ngClass]="'pp-elevation-z' + z"></div>
 
-<h2>Custom CSS variables test</h2>
-<div class="test"></div>
+<h2>Change colors programatically</h2>
+
+
+
+
+
+
+

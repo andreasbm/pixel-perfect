@@ -13,9 +13,4 @@
 @include pp-layout();
 @include pp-color-classes();
 @include demo-theme();
-
-.test {
-	width: 200px;
-	height: 200px;
-}
-
+@include pp-elevation-classes();

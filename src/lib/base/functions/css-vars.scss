@@ -12,7 +12,7 @@ $_css-vars: ();
 $css-vars-use-native: false !default;
 
 /** Enables allowing non existing variables */
-$css-vars-allow-non-existing-vars: false !default;
+$css-vars-allow-non-existing-vars: true !default;
 
 /** enables the output of debug messages */
 $css-vars-debug-log: false !default;
@@ -79,8 +79,9 @@ $css-vars-backup: () !default;
 		} @else {
 			@if (not $css-vars-allow-non-existing-vars) {
 				@error "The variable '#{$varName}' is not assigned";
-			} @else {
-				@warn "The var() declaration for '#{$varName} used it will be skipped in the result CSS";
+
+			} @else if ($css-vars-debug-log) {
+				@warn "var(#{$varName}) was not found and will be skipped in the result CSS. Make sure you define the variables before using them.";
 			}
 		}
 	}

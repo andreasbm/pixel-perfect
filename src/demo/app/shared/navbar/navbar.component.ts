@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
 		"theming"
 	];
 
-	private currentTheme: string;
+	currentTheme: string;
 
   constructor() { }
 

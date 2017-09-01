@@ -18,7 +18,7 @@ import { ThemingComponent } from './theming/theming.component';
 		FormsModule,
 		HttpModule,
 		AppRoutingModule,
-		SharedModule
+		SharedModule.forRoot()
 	],
 	declarations: [AppComponent, PlaygroundComponent, TypographyComponent, StackComponent, StackGridComponent, ThemingComponent],
 	providers: [

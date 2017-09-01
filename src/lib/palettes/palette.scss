@@ -7,6 +7,9 @@ $white-12-opacity: rgba(white, 0.12);
 $black-6-opacity: rgba(black, 0.06);
 $white-6-opacity: rgba(white, 0.06);
 
+$black: #000000;
+$white: #ffffff;
+
 @function dark-color($color) {
   //@return adjust-color($color, $red: -10, $green: -19, $blue: -34);
   @return darken($color, 15%);

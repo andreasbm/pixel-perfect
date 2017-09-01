@@ -14,8 +14,8 @@ $light-theme: pp-map-collect(
 	(
 		--navbar-color: map-get($pp-grey, 300),
 		--navbar-bg: map-get($pp-blue, 500),
-		--app-text: black,
-		--app-bg: white
+		--app-text: $black,
+		--app-bg: $white
 	)
 );
 
@@ -33,9 +33,9 @@ $css-vars-backup: $light-theme;
 	@include css-vars(palette("error", $pp-orange));
 	@include css-vars(palette("success", $pp-black-dirty));
 	@include css-vars((
-		--navbar-color: black,
+		--navbar-color: $black,
 		--navbar-bg: map-get($pp-yellow, 500),
-		--app-text: white,
-		--app-bg: black
+		--app-text: $white,
+		--app-bg: $black
 	));
 }
