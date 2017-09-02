@@ -66,16 +66,16 @@
 	}
 
 	p {
-		@include _text-style($font-size-paragraph, $font-weight-paragraph, $line-height-paragraph);
+		@include _text-style(inherit, $font-weight-paragraph, inherit);
 		margin: $margin-paragraph;
 	}
 
 	span, a {
-		@include _text-style($font-size-span, $font-weight-span, $line-height-span);
+		@include _text-style(inherit, $font-weight-span, inherit);
 	}
 
 	label {
-		@include _text-style($font-size-label, $font-weight-label, $line-height-label);
+		@include _text-style($font-size-label, $font-weight-label, inherit);
 		display: block;
 	}
 

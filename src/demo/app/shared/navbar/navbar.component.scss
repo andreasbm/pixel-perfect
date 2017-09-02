@@ -3,8 +3,14 @@
 $navbar-height: px-to-rem(50);
 
 nav {
+	@include pp-layout();
+
 	color: var(--navbar-color);
 	background: var(--navbar-bg);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
 	position: fixed;
 	top: 0;

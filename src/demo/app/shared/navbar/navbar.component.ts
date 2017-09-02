@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 function themeClass (theme: string) {
 	return `theme-${theme}`;
@@ -7,7 +7,8 @@ function themeClass (theme: string) {
 @Component({
   selector: 'pp-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+	encapsulation: ViewEncapsulation.Native
 })
 export class NavbarComponent implements OnInit {
 

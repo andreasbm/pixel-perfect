@@ -19,8 +19,6 @@ $font-size-h5: px-to-rem(13) !default;
 $font-size-h6: px-to-rem(12) !default;
 
 $font-size-label: $font-size-m !default;
-$font-size-span: inherit !default;
-$font-size-paragraph: inherit !default;
 
 $font-weight-bolder: 600 !default;
 $font-weight-bold: 700 !default;
@@ -39,11 +37,7 @@ $font-weight-label: inherit !default;
 $font-weight-span: inherit !default;
 $font-weight-paragraph: inherit !default;
 
-$line-height-html: 1.5em !default;
-$line-height-label: 150% !default;
-$line-height-paragraph: 150% !default;
-$line-height-span: 150% !default;
-$line-height-base: 1.5 !default;
+$line-height-base: 120% !default;
 $line-height-header: 150% !default;
 
 $margin-paragraph: 0 0 px-to-rem(15) 0 !default;
