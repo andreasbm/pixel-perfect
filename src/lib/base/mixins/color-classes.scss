@@ -1,49 +1,36 @@
 @import "../functions";
 
 @mixin _color-class-variant($color-name, $variant-name) {
-  .#{$color-name}.#{$variant-name} {
-    color: var(--#{$color-name}-#{$variant-name});
-  }
+	.#{$color-name}.#{$variant-name} {
+		color: var(--#{$color-name}-#{$variant-name});
+	}
 
-  .#{$color-name}-bg.#{$variant-name}-bg {
-    background-color: var(--#{$color-name}-#{$variant-name});
-  }
+	.#{$color-name}-bg.#{$variant-name}-bg {
+		background-color: var(--#{$color-name}-#{$variant-name});
+	}
 }
 
-@mixin _color-class($color-name) {
-  $variants: (
-    'lighter',
-    'darker',
-    'default-contrast',
-    'lighter-contrast',
-    'darker-contrast'
-  );
+@mixin _color-class($color-name, $variants) {
+	.#{$color-name} {
+		color: var(--#{$color-name}-default);
+	}
 
-  .#{$color-name} {
-    color: var(--#{$color-name}-default);
-  }
+	.#{$color-name}-bg {
+		background: var(--#{$color-name}-default);
+	}
 
-  .#{$color-name}-bg {
-    background: var(--#{$color-name}-default);
-  }
-
-  @for $i from 0 to length($variants) {
-    $variant-name: unquote(nth($variants, $i+1));
-    @include _color-class-variant($color-name, $variant-name);
-  }
+	@for $i from 0 to length($variants) {
+		$variant-name: unquote(nth($variants, $i+1));
+		@include _color-class-variant($color-name, $variant-name);
+	}
 }
 
-@mixin pp-color-classes() {
-  $colors: (
-    'primary',
-    'accent',
-    'warn',
-    'error',
-    'success'
-  );
-
-  @for $i from 0 to length($colors) {
-    $color-name: unquote(nth($colors, $i+1));
-    @include _color-class($color-name);
-  }
+/**
+	Generates classes for the colors.
+ */
+@mixin pp-color-classes($colors: ('primary', 'accent', 'warn', 'error', 'success'), $variants: ('lighter', 'darker', 'default-contrast', 'lighter-contrast', 'darker-contrast')) {
+	@for $i from 0 to length($colors) {
+		$color-name: unquote(nth($colors, $i+1));
+		@include _color-class($color-name, $variants);
+	}
 }

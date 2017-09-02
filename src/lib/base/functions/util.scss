@@ -66,26 +66,48 @@ $px-to-rem-base-size: 17 !default;
 }
 
 /**
-	Converts a pixel value to rem value.
-	@param {Number} $value - A px value
-	@return {Number} - The corresponding rem value
+	Converts a pixel value to a rem value.
+	@param {Number} $size-px
+	@return {Number}
  */
 @function px-to-rem($size-px) {
 	@return rem(#{pp-strip-unit($size-px) / pp-strip-unit($px-to-rem-base-size)});
 }
 
+/**
+	Converts a rem value to a pixel value.
+	@param {Number} $size-rem
+	@return {Number}
+ */
 @function rem-to-px($size-rem) {
 	@return px(#{pp-strip-unit($size-rem) * pp-strip-unit($px-to-rem-base-size)});
 }
 
+/**
+	Converts a pixel value to an em value.
+	@param {Number} $base-size-px
+	@param {Number} $size-px
+	@return {Number}
+ */
 @function px-to-em($base-size-px, $size-px) {
 	@return em(#{pp-strip-unit($size-px) / pp-strip-unit($base-size-px)});
 }
 
+/**
+	Converts an em value to a pixel value.
+	@param {Number} $base-size-px 
+	@param {Number} $size-em
+	@return {Number}
+ */
 @function em-to-px($base-size-px, $size-em) {
 	@return px(#{pp-strip-unit($size-em) / pp-strip-unit($base-size-px)});
 }
 
+/**
+	Ensures that a map has a set of required keys. Throws an error if the map does not have the required keys.
+	@param {Map} $map
+	@param {Array} $required-keys
+ */
 @function pp-ensure-keys($map, $required-keys) {
 	@if type-of($map) != map {
 		@error "The input is not a valid map.";
@@ -100,15 +122,26 @@ $px-to-rem-base-size: 17 !default;
 	@return $map;
 }
 
-@function is-unitless($number) {
+/**
+	Decides whether a given value is a number and is unitless.
+	@param {Number} $number
+	@return {Boolean}
+ */
+@function pp-unitless($number) {
 	@return type-of($number) == number and unitless($number);
 }
 
+/**
+	Returns the value associated with a key from the map. Throws an error if the key is not found in the map.
+	@param {Map} $map
+	@param {String} $key
+	@return {Any}
+ */
 @function pp-map-get($map, $key) {
 	$value: map-get($map, $key);
 
 	@if $value == null {
-		@error "The key '#{$key}'' was not found in the map '#{$map}'."
+		@error "The key '#{$key}' was not found in the map '#{$map}'."
 	}
 
 	@return $value;

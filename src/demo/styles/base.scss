@@ -2,15 +2,15 @@
 
 $font-size-base-l-screen: 17px;
 $css-vars-use-native: true;
-$css-vars-debug-log: true;
-$css-vars-allow-non-existing-vars: false;
+$css-vars-debug-log: false;
+$css-vars-allow-non-existing-vars: true;
 
 $light-theme: pp-map-collect(
-	palette("primary", $pp-blue),
-	palette("accent", $pp-lime),
-	palette("warn", $pp-orange),
-	palette("error", $pp-red),
-	palette("success", $pp-lime),
+	pp-palette("primary", $pp-blue),
+	pp-palette("accent", $pp-lime),
+	pp-palette("warn", $pp-orange),
+	pp-palette("error", $pp-red),
+	pp-palette("success", $pp-lime),
 	(
 		--navbar-color: map-get($pp-grey, 300),
 		--navbar-bg: map-get($pp-blue, 500),
@@ -19,19 +19,16 @@ $light-theme: pp-map-collect(
 	)
 );
 
-// Nessesary to make the encapsulated angular components happy when NOT using native css variables.
-$css-vars-backup: $light-theme;
-
 @mixin light-theme() {
 	@include css-vars($light-theme);
 }
 
 @mixin dark-theme() {
-	@include css-vars(palette("primary", $pp-yellow));
-	@include css-vars(palette("accent", $pp-orange));
-	@include css-vars(palette("warn", $pp-red));
-	@include css-vars(palette("error", $pp-orange));
-	@include css-vars(palette("success", $pp-black-dirty));
+	@include css-vars(pp-palette("primary", $pp-yellow));
+	@include css-vars(pp-palette("accent", $pp-orange));
+	@include css-vars(pp-palette("warn", $pp-red));
+	@include css-vars(pp-palette("error", $pp-orange));
+	@include css-vars(pp-palette("success", $pp-black-dirty));
 	@include css-vars((
 		--navbar-color: $black,
 		--navbar-bg: map-get($pp-yellow, 500),

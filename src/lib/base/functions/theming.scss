@@ -1,30 +1,37 @@
 @import "util";
-@import "css-vars";
 
 /**
  For a given hue in a palette, return the contrast color from the map of contrast palettes.
  @param $color-map
  @param $hue
  */
-@function pp-contrast($palette, $hue) {
-	@return pp-map-get(pp-map-get($palette, "contrast"), $hue);
+@function _contrast($colors, $hue) {
+	@return pp-map-get(pp-map-get($colors, "contrast"), $hue);
 }
 
-@function palette($name, $palette, $default: 500, $lighter: 400, $darker: 600) {
+/**
+	Creates a palette based on a name, a colors map and a configuration.
+	@param $name
+	@param $colors
+	@param $default
+	@param $lighter
+	@param $darker
+ */
+@function pp-palette($name, $colors, $default: 500, $lighter: 400, $darker: 600) {
 	$vars: (
-		"--#{$name}-default": pp-map-get($palette, $default),
-		"--#{$name}-lighter": pp-map-get($palette, $lighter),
-		"--#{$name}-darker": pp-map-get($palette, $darker),
-		"--#{$name}-default-contrast": pp-contrast($palette, $default),
-		"--#{$name}-lighter-contrast": pp-contrast($palette, $lighter),
-		"--#{$name}-darker-contrast": pp-contrast($palette, $darker)
+		"--#{$name}-default": pp-map-get($colors, $default),
+		"--#{$name}-lighter": pp-map-get($colors, $lighter),
+		"--#{$name}-darker": pp-map-get($colors, $darker),
+		"--#{$name}-default-contrast": _contrast($colors, $default),
+		"--#{$name}-lighter-contrast": _contrast($colors, $lighter),
+		"--#{$name}-darker-contrast": _contrast($colors, $darker)
 	);
 
-	@each $hue, $color in $palette {
-		@if is-unitless($hue) {
+	@each $hue, $color in $colors {
+		@if pp-unitless($hue) {
 			$vars: pp-map-collect($vars, (
 				"--#{$name}-#{$hue}": $color,
-				"--#{$name}-#{$hue}-contrast": pp-contrast($palette, $hue)
+				"--#{$name}-#{$hue}-contrast": _contrast($colors, $hue)
 			));
 		}
 	}

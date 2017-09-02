@@ -1,7 +1,7 @@
 {
 	"name": "pixel-perfect-srcs",
 	"version": "1.0.0",
-	"description": "Pixel perfect SCSS stylesheets to get you going.",
+	"description": "A pixel perfect SCSS stylesheet. Spiced with themeable mixins, custom CSS variables and other cool stuff you can handpick from.",
 	"author": "Appnest",
 	"license": "MIT",
 	"bugs": {

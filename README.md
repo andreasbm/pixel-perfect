@@ -38,11 +38,11 @@ Or you can handpick the styles you want. Let's say you only want the grid and th
 Create a theme (or multiple themes) for your app.
 ```
 @mixin light-theme() {
-  @include css-vars(palette("primary", $pp-yellow));
-  @include css-vars(palette("accent", $pp-orange));
-  @include css-vars(palette("warn", $pp-red));
-  @include css-vars(palette("error", $pp-orange));
-  @include css-vars(palette("success", $pp-black-dirty));
+  @include css-vars(pp-palette("primary", $pp-yellow));
+  @include css-vars(pp-palette("accent", $pp-orange));
+  @include css-vars(pp-palette("warn", $pp-red));
+  @include css-vars(pp-palette("error", $pp-orange));
+  @include css-vars(pp-palette("success", $pp-black-dirty));
   @include css-vars((
     --navbar-color: white,
     --navbar-bg: map-get($pp-yellow, 500),
@@ -64,7 +64,7 @@ Include the mixins in your stylesheet. You could for example scope the themes in
 }
 ```
 
-You might be wondering what variables the `css-vars(palette(...))` spits out. The palette function spits out all the nessesary key-value pairs for the palette. Look below what variables we are talking about.
+You might be wondering what variables the `css-vars(pp-palette(...))` spits out. The palette function spits out all the nessesary key-value pairs for the palette. Look below what variables we are talking about.
 
 ```
 $pp-blue: (
@@ -78,24 +78,24 @@ $pp-blue: (
   )
 );
 
-@include css-vars(palette("primary", $pp-blue), $root: true);
+@include css-vars(pp-palette("primary", $pp-blue), $root: true);
 
 :root {
-  --primary-default: pp-map-get($palette, $default)
-  --primary-lighter: pp-map-get($palette, $lighter),
-  --primary-darker: pp-map-get($palette, $darker),
-  --primary-default-contrast: pp-contrast($palette, $default),
-  --primary-lighter-contrast: pp-contrast($palette, $lighter),
-  --primary-darker-contrast: pp-contrast($palette, $darker)
+  --primary-default: pp-map-get($colors, $default)
+  --primary-lighter: pp-map-get($colors, $lighter),
+  --primary-darker: pp-map-get($colors, $darker),
+  --primary-default-contrast: pp-contrast($colors, $default),
+  --primary-lighter-contrast: pp-contrast($colors, $lighter),
+  --primary-darker-contrast: pp-contrast($colors, $darker)
   
-  --primary-500: pp-map-get($palette, 500),
-  --primary-500-contrast: pp-contrast($palette, 500)
+  --primary-500: pp-map-get($colors, 500),
+  --primary-500-contrast: pp-contrast($colors, 500)
   
-  --primary-600: pp-map-get($palette, 600),
-  --primary-600-contrast: pp-contrast($palette, 600)
+  --primary-600: pp-map-get($colors, 600),
+  --primary-600-contrast: pp-contrast($colors, 600)
   
-  --primary-400: pp-map-get($palette, 400),
-  --primary-400-contrast: pp-contrast($palette, 400)
+  --primary-400: pp-map-get($colors, 400),
+  --primary-400-contrast: pp-contrast($colors, 400)
 }
 ```
 
@@ -103,7 +103,7 @@ $pp-blue: (
 
 The variables can be used in your stylesheets by using the `var(args...)` function. If you want the primary default color you could grab it by using `var(--primary-default)`. The theming in pixel-perfect uses custom CSS variables out of the box. Unfortunately, not all browsers support custom CSS variables yet ([See current state](http://caniuse.com/#feat=css-variables)). Therefore you can set the flag `$css-vars-use-native: false;` to tell pixel-perfect to use SASS variables instead. We recommend that you use custom CSS variables to get all the sweet benefits and either serve a seperate stylesheet for browsers without custom CSS variables or use polyfills.
 
-If you want to deactivate (we don't recommend this) you can do the following by extracting all of your theme related sass into one mixin that you can reuse with different variables:
+If you want to deactivate you can do the following by extracting all of your theme related sass into one mixin that you can reuse with different variables:
 
 ```
 // Deactive custom CSS variables :,(

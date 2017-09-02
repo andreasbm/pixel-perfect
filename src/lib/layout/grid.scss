@@ -1,19 +1,11 @@
 @import "../base";
 
-@function _get-stack-spacing($with-unit: false) {
-	@if $with-unit {
-		@return #{$stack-spacing}#{$stack-spacing-unit};
-	} @else {
-		@return #{$stack-spacing};
-	}
+@function _get-stack-spacing() {
+	@return #{$stack-spacing}#{$stack-spacing-unit};
 }
 
-@function _get-stack-spacing-for-index($index, $max-cols, $with-unit: false) {
-	@if $with-unit {
-		@return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
-	} @else {
-		@return #{$stack-spacing / ($max-cols/$index)};
-	}
+@function _get-stack-spacing-for-index($index, $max-cols) {
+	@return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
 }
 
 @mixin _grid-item-style($index, $max-cols) {
@@ -21,9 +13,8 @@
 
 	/* Only add gap if the size of the column is not 100% */
 	@if $perc != 100% {
-		max-width: calc(#{$perc} - #{_get-stack-spacing(true)} + #{_get-stack-spacing-for-index($index, $max-cols, true)});
-		flex-basis: calc(#{$perc} - #{_get-stack-spacing(true)} + #{_get-stack-spacing-for-index($index, $max-cols, true)});
-
+		max-width: calc(#{$perc} - #{_get-stack-spacing()} + #{_get-stack-spacing-for-index($index, $max-cols)});
+		flex-basis: calc(#{$perc} - #{_get-stack-spacing()} + #{_get-stack-spacing-for-index($index, $max-cols)});
 	}
 }
 
@@ -51,10 +42,6 @@
 		}
 	}
 
-	img {
-		vertical-align: middle;
-	}
-
 	section {
 		padding-top: $section-top-bottom-spacing-m;
 		padding-bottom: $section-top-bottom-spacing-m;
@@ -79,12 +66,10 @@
 	}
 
 	.stack-grid, .stack-grid-inline {
-
 		flex-wrap: wrap;
 		justify-content: space-between;
 
 		> .item {
-			/*flex: 0 0 auto;*/
 			flex: 0 0 auto;
 
 			width: 100%;
@@ -94,7 +79,6 @@
 			// Small and up
 			@while $i <= $stack-num-cols {
 				&.s#{$i} {
-
 					@include _grid-item-style($i, $stack-num-cols);
 				}
 				$i: $i + 1;
@@ -125,7 +109,6 @@
 		}
 	}
 
-	/* Horizontal grids */
 	.stack {
 		display: flex;
 	}

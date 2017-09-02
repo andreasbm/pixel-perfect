@@ -29,33 +29,18 @@
 		color: inherit;
 	}
 
-	// Weights
-	.bolder {
-		font-weight: $font-weight-bolder;
-	}
-	b, .bold {
+	b {
 		font-weight: $font-weight-bold;
 	}
-	strong, .strong {
+
+	strong {
 		font-weight: $font-weight-strong;
 	}
-	.thin {
-		font-weight: $font-weight-thin;
-	}
 
-	.small, small {
+	small {
 		font-size: $font-size-s;
 	}
-	.medium {
-		font-size: $font-size-m;
-	}
-	.large {
-		font-size: $font-size-l;
-	}
 
-	/** ==============================
-		 * Headers
-		 * ============================== */
 	h1, h2, h3, h4, h5, h6 {
 		line-height: $line-height-header;
 		margin: $margin-header;
@@ -80,27 +65,20 @@
 		@include _header-style($font-size-h6, $font-weight-h6);
 	}
 
-	/** ==============================
-		 * Text
-		 * ============================== */
-	// Paragraph
 	p {
 		@include _text-style($font-size-paragraph, $font-weight-paragraph, $line-height-paragraph);
 		margin: $margin-paragraph;
 	}
 
-	// Span
 	span, a {
 		@include _text-style($font-size-span, $font-weight-span, $line-height-span);
 	}
 
-	// Label
-	label, .label {
+	label {
 		@include _text-style($font-size-label, $font-weight-label, $line-height-label);
 		display: block;
 	}
 
-	// Anchor
 	a {
 		text-decoration: none;
 		cursor: pointer;

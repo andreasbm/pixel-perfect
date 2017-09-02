@@ -1,9 +1,5 @@
-/**
-	https://github.com/malyw/css-vars/blob/master/css-vars.scss
- */
-
 /** Global map to be filled via variables */
-$_css-vars: ();
+$css-vars: () !default;
 
 /**
  The variable may be set to "true" anywhere in the code,
@@ -17,13 +13,10 @@ $css-vars-allow-non-existing-vars: true !default;
 /** enables the output of debug messages */
 $css-vars-debug-log: false !default;
 
-/** "Polyfill" for older browsers */
-$css-vars-backup: () !default;
-
 /**
 	Assigns a variable to the global map
  */
-@function _cssVarAssign($name: null, $value: null) {
+@function _css-var-assign($name: null, $value: null) {
 	@if ($name==null) {
 		@error "Variable name is expected, instead got: null";
 	}
@@ -33,11 +26,11 @@ $css-vars-backup: () !default;
 	}
 
 	// Assign the value to the global map
-	@if ($css-vars-debug-log and map-get($_css-vars, $name)) {
+	@if ($css-vars-debug-log and map-get($css-vars, $name)) {
 		@warn "'#{$name}' variable is reassigned";
 	}
 
-	@return map-merge($_css-vars, ($name: $value));
+	@return map-merge($css-vars, ($name: $value));
 }
 
 /**
@@ -60,8 +53,7 @@ $css-vars-backup: () !default;
 	}
 
 	$varName: unquote(nth($args, 1));
-	$varValue: map-get($_css-vars, $varName);
-	$backupValue: map-get($css-vars-backup, $varName);
+	$varValue: map-get($css-vars, $varName);
 
 	// If the value is null, the variable doesn't exist.
 	@if ($varValue == null) {
@@ -73,9 +65,6 @@ $css-vars-backup: () !default;
 			}
 			$varValue: nth($args, 2);
 
-		} @else if ($backupValue != null) {
-			$varValue: $backupValue;
-
 		} @else {
 			@if (not $css-vars-allow-non-existing-vars) {
 				@error "The variable '#{$varName}' is not assigned";
@@ -85,7 +74,6 @@ $css-vars-backup: () !default;
 			}
 		}
 	}
-
 
 	@if ($css-vars-use-native) {
 		// Native CSS: don't process function in case of native
@@ -117,7 +105,7 @@ $css-vars-backup: () !default;
 
 	// Merge variables and values to the global map (provides no output)
 	@each $varName, $varValue in $varMap {
-		$css-vars: _cssVarAssign($varName, $varValue) !global; // store in global variable
+		$css-vars: _css-var-assign($varName, $varValue) !global; // store in global variable
 	}
 
 	// Native CSS: assign CSS custom properties to the global scope

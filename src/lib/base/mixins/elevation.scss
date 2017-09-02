@@ -3,64 +3,70 @@ $_penumbra-color: rgba(black, 0.14 / 2);
 $_ambient-color: rgba(black, 0.12 / 2);
 
 $_umbra-elevation-map: (
-  0: '0px 0px 0px 0px #{$_umbra-color}',
-  1: '0px 2px 1px -1px #{$_umbra-color}',
-  2: '0px 3px 1px -2px #{$_umbra-color}',
-  3: '0px 3px 3px -2px #{$_umbra-color}',
-  4: '0px 2px 4px -1px #{$_umbra-color}',
-  5: '0px 3px 5px -1px #{$_umbra-color}',
-  6: '0px 3px 5px -1px #{$_umbra-color}',
-  7: '0px 4px 5px -2px #{$_umbra-color}',
-  8: '0px 5px 5px -3px #{$_umbra-color}',
-  9: '0px 5px 6px -3px #{$_umbra-color}',
-  10: '0px 6px 6px -3px #{$_umbra-color}'
+	0: '0px 0px 0px 0px #{$_umbra-color}',
+	1: '0px 2px 1px -1px #{$_umbra-color}',
+	2: '0px 3px 1px -2px #{$_umbra-color}',
+	3: '0px 3px 3px -2px #{$_umbra-color}',
+	4: '0px 2px 4px -1px #{$_umbra-color}',
+	5: '0px 3px 5px -1px #{$_umbra-color}',
+	6: '0px 3px 5px -1px #{$_umbra-color}',
+	7: '0px 4px 5px -2px #{$_umbra-color}',
+	8: '0px 5px 5px -3px #{$_umbra-color}',
+	9: '0px 5px 6px -3px #{$_umbra-color}',
+	10: '0px 6px 6px -3px #{$_umbra-color}'
 );
 
 $_penumbra-elevation-map: (
-  0: '0px 0px 0px 0px #{$_penumbra-color}',
-  1: '0px 1px 1px 0px #{$_penumbra-color}',
-  2: '0px 2px 2px 0px #{$_penumbra-color}',
-  3: '0px 3px 4px 0px #{$_penumbra-color}',
-  4: '0px 4px 5px 0px #{$_penumbra-color}',
-  5: '0px 5px 8px 0px #{$_penumbra-color}',
-  6: '0px 6px 10px 0px #{$_penumbra-color}',
-  7: '0px 7px 10px 1px #{$_penumbra-color}',
-  8: '0px 8px 10px 1px #{$_penumbra-color}',
-  9: '0px 9px 12px 1px #{$_penumbra-color}',
-  10: '0px 10px 14px 1px #{$_penumbra-color}'
+	0: '0px 0px 0px 0px #{$_penumbra-color}',
+	1: '0px 1px 1px 0px #{$_penumbra-color}',
+	2: '0px 2px 2px 0px #{$_penumbra-color}',
+	3: '0px 3px 4px 0px #{$_penumbra-color}',
+	4: '0px 4px 5px 0px #{$_penumbra-color}',
+	5: '0px 5px 8px 0px #{$_penumbra-color}',
+	6: '0px 6px 10px 0px #{$_penumbra-color}',
+	7: '0px 7px 10px 1px #{$_penumbra-color}',
+	8: '0px 8px 10px 1px #{$_penumbra-color}',
+	9: '0px 9px 12px 1px #{$_penumbra-color}',
+	10: '0px 10px 14px 1px #{$_penumbra-color}'
 );
 
 $_ambient-elevation-map: (
-  0: '0px 0px 0px 0px #{$_ambient-color}',
-  1: '0px 1px 3px 0px #{$_ambient-color}',
-  2: '0px 1px 5px 0px #{$_ambient-color}',
-  3: '0px 1px 8px 0px #{$_ambient-color}',
-  4: '0px 1px 10px 0px #{$_ambient-color}',
-  5: '0px 1px 14px 0px #{$_ambient-color}',
-  6: '0px 1px 18px 0px #{$_ambient-color}',
-  7: '0px 2px 16px 1px #{$_ambient-color}',
-  8: '0px 3px 14px 2px #{$_ambient-color}',
-  9: '0px 3px 16px 2px #{$_ambient-color}',
-  10: '0px 4px 18px 3px #{$_ambient-color}'
+	0: '0px 0px 0px 0px #{$_ambient-color}',
+	1: '0px 1px 3px 0px #{$_ambient-color}',
+	2: '0px 1px 5px 0px #{$_ambient-color}',
+	3: '0px 1px 8px 0px #{$_ambient-color}',
+	4: '0px 1px 10px 0px #{$_ambient-color}',
+	5: '0px 1px 14px 0px #{$_ambient-color}',
+	6: '0px 1px 18px 0px #{$_ambient-color}',
+	7: '0px 2px 16px 1px #{$_ambient-color}',
+	8: '0px 3px 14px 2px #{$_ambient-color}',
+	9: '0px 3px 16px 2px #{$_ambient-color}',
+	10: '0px 4px 18px 3px #{$_ambient-color}'
 );
 
-$mat-elevation-property: box-shadow !default;
+$elevation-property: box-shadow !default;
 
+/**
+  Returns the elevation style for a given z-index between 0 and 10.
+ */
 @mixin pp-elevation($zValue) {
-  @if type-of($zValue) != number or not unitless($zValue) {
-    @error '$zValue must be a unitless number';
-  }
-  @if $zValue < 0 or $zValue > 10 {
-    @error '$zValue must be between 0 and 10';
-  }
+	@if type-of($zValue) != number or not unitless($zValue) {
+		@error '$zValue must be a unitless number';
+	}
+	@if $zValue < 0 or $zValue > (length($_ambient-elevation-map) - 1) {
+		@error '$zValue must be between 0 and 10';
+	}
 
-  #{$mat-elevation-property}: #{map-get($_umbra-elevation-map, $zValue)}, #{map-get($_penumbra-elevation-map, $zValue)}, #{map-get($_ambient-elevation-map, $zValue)};
+	#{$elevation-property}: #{map-get($_umbra-elevation-map, $zValue)}, #{map-get($_penumbra-elevation-map, $zValue)}, #{map-get($_ambient-elevation-map, $zValue)};
 }
 
+/**
+  Generates classes for the elevation styles.
+ */
 @mixin pp-elevation-classes() {
-  @for $zValue from 0 through 10 {
-    .pp-elevation-z#{$zValue} {
-      @include pp-elevation($zValue);
-    }
-  }
+	@for $zValue from 0 through (length($_ambient-elevation-map) - 1) {
+		.pp-elevation-z#{$zValue} {
+			@include pp-elevation($zValue);
+		}
+	}
 }

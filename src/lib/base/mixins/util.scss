@@ -13,75 +13,43 @@
 	right: 0;
 }
 
-@mixin pp-breakpointify($class-name, $is-inline: false) {
-	@if $is-inline == true {
-		&.#{$class-name} {
+@mixin pp-breakpointify($class-name, $inline: false) {
+	$prefix: "";
+	@if $inline {
+		$prefix: "&";
+	}
+
+	#{$prefix}.#{$class-name} {
+		@content;
+	}
+
+	#{$prefix}.s-only-#{$class-name} {
+		@media #{$screen-s-and-down} {
 			@content;
 		}
+	}
 
-		&.s-only-#{$class-name} {
-			@media #{$screen-s-and-down} {
-				@content;
-			}
-		}
-
-		&.m-down-#{$class-name} {
-			@media #{$screen-m-and-down} {
-				@content;
-			}
-		}
-
-		&.m-#{$class-name} {
-			@media #{$screen-m-and-up} {
-				@content;
-			}
-		}
-
-		&.m-only#{$class-name} {
-			@media #{$screen-m-only} {
-				@content;
-			}
-		}
-
-		&.l-#{$class-name} {
-			@media #{$screen-l-and-up} {
-				@content;
-			}
-		}
-
-	} @else {
-		.#{$class-name} {
+	#{$prefix}.m-down-#{$class-name} {
+		@media #{$screen-m-and-down} {
 			@content;
 		}
+	}
 
-		.s-only-#{$class-name} {
-			@media #{$screen-s-and-down} {
-				@content;
-			}
+	#{$prefix}.m-#{$class-name} {
+		@media #{$screen-m-and-up} {
+			@content;
 		}
+	}
 
-		.m-down-#{$class-name} {
-			@media #{$screen-m-and-down} {
-				@content;
-			}
+	#{$prefix}.m-only-#{$class-name} {
+		@media #{$screen-m-only} {
+			@content;
 		}
+	}
 
-		.m-#{$class-name} {
-			@media #{$screen-m-and-up} {
-				@content;
-			}
-		}
-
-		.m-only#{$class-name} {
-			@media #{$screen-m-only} {
-				@content;
-			}
-		}
-
-		.l-#{$class-name} {
-			@media #{$screen-l-and-up} {
-				@content;
-			}
+	#{$prefix}.l-#{$class-name} {
+		@media #{$screen-l-and-up} {
+			@content;
 		}
 	}
 }

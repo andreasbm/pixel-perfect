@@ -1,7 +1,6 @@
 @import "../base";
 
 @mixin pp-global() {
-
 	html {
 		box-sizing: border-box;
 		overflow-wrap: break-word;
@@ -17,5 +16,9 @@
 
 	[hidden] {
 		visibility: hidden;
+	}
+
+	img {
+		vertical-align: middle;
 	}
 }
