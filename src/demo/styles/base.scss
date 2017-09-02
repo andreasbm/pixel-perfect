@@ -5,21 +5,23 @@ $css-vars-use-native: true;
 $css-vars-debug-log: false;
 $css-vars-allow-non-existing-vars: true;
 
-$light-theme: pp-map-collect(
-	pp-palette("primary", $pp-blue),
-	pp-palette("accent", $pp-lime),
-	pp-palette("warn", $pp-orange),
-	pp-palette("error", $pp-red),
-	pp-palette("success", $pp-lime),
-	(
-		--navbar-color: map-get($pp-grey, 300),
-		--navbar-bg: map-get($pp-blue, 500),
-		--app-text: $black,
-		--app-bg: $white
-	)
-);
+
 
 @mixin light-theme() {
+	$light-theme: pp-map-collect(
+			pp-palette("primary", $pp-blue),
+			pp-palette("accent", $pp-lime),
+			pp-palette("warn", $pp-orange),
+			pp-palette("error", $pp-red),
+			pp-palette("success", $pp-lime),
+			(
+				--navbar-color: map-get($pp-grey, 300),
+				--navbar-bg: var(--primary-default),
+				--app-text: $black,
+				--app-bg: $white
+			)
+	);
+
 	@include css-vars($light-theme);
 }
 
@@ -29,10 +31,14 @@ $light-theme: pp-map-collect(
 	@include css-vars(pp-palette("warn", $pp-red));
 	@include css-vars(pp-palette("error", $pp-orange));
 	@include css-vars(pp-palette("success", $pp-black-dirty));
-	@include css-vars((
-		--navbar-color: $black,
-		--navbar-bg: map-get($pp-yellow, 500),
-		--app-text: $white,
-		--app-bg: $black
-	));
+	@include css-vars(pp-create-vars((
+		"navbar": (
+			"color": $black,
+			"bg": var(--primary-default)
+		),
+		"app": (
+			"text": $white,
+			"bg": $black
+		)
+	)));
 }
