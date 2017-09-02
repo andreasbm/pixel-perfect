@@ -5,8 +5,6 @@ $css-vars-use-native: true;
 $css-vars-debug-log: false;
 $css-vars-allow-non-existing-vars: true;
 
-
-
 @mixin light-theme() {
 	$light-theme: pp-map-collect(
 			pp-palette("primary", $pp-blue),

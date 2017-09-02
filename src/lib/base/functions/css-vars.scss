@@ -5,7 +5,7 @@ $css-vars: () !default;
  The variable may be set to "true" anywhere in the code,
  so native CSS custom properties will be used instead of the Sass global map
 */
-$css-vars-use-native: false !default;
+$css-vars-use-native: true !default;
 
 /** Enables allowing non existing variables */
 $css-vars-allow-non-existing-vars: true !default;
