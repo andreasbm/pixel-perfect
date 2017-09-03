@@ -1,7 +1,7 @@
 # Pixel Perfect
 [![Version](https://img.shields.io/npm/v/pixel-perfect.svg)](https://www.npmjs.com/package/pixel-perfect) [![Downloads](https://img.shields.io/npm/dt/pixel-perfect.svg)](https://www.npmjs.com/package/pixel-perfect)
 
-# ![pixel-perfect](/logo.svg)
+# ![pixel-perfect](https://github.com/andreasbm/pixel-perfect/raw/master/logo.svg?sanitize=true)
 
 A pixel perfect SCSS stylesheet (demo: [https://pixel-perfect-39e99.firebaseapp.com/](https://pixel-perfect-39e99.firebaseapp.com/)). Spiced with themeable mixins, custom CSS variables and other cool stuff you can handpick from.
 
