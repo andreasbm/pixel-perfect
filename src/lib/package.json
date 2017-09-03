@@ -1,6 +1,6 @@
 {
   "name": "pixel-perfect",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A pixel perfect SCSS stylesheet. Spiced with themeable mixins, custom CSS variables and other cool stuff you can handpick from.",
   "author": "Appnest",
   "license": "MIT",

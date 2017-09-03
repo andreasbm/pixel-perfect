@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="811px" height="209px" viewBox="0 0 811 209" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>pixel-perfect</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="611" height="24" rx="3"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pixel-perfect">
+            <g id="Group-6" transform="translate(144.000000, 48.000000)">
+                <text id="pixel-perfect" font-family="GothamBlack, Gotham Black" font-size="90" font-weight="700" fill="#000000">
+                    <tspan x="4.77" y="66">p</tspan>
+                    <tspan x="65.61" y="66" font-family="GothamMedium, Gotham Medium" font-weight="normal">ixel-</tspan>
+                    <tspan x="260.37" y="66">p</tspan>
+                    <tspan x="321.21" y="66" font-family="GothamMedium, Gotham Medium" font-weight="normal">erfect</tspan>
+                </text>
+                <g id="Rectangle" transform="translate(0.000000, 94.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFDAAA" xlink:href="#path-1"></use>
+                    <circle id="Oval" fill="#FFFFFF" mask="url(#mask-2)" cx="598" cy="12" r="4"></circle>
+                    <g id="Group-5" mask="url(#mask-2)">
+                        <g transform="translate(9.000000, 8.000000)">
+                            <rect id="Rectangle" fill="#FFC477" x="0" y="0" width="576" height="23" rx="3"></rect>
+                            <g id="Group-2" stroke-width="1" fill="none" transform="translate(5.000000, 6.000000)">
+                                <g id="Group-4" transform="translate(557.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(564.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(543.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(550.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(529.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(536.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(515.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(522.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(501.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(508.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(486.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(494.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(472.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(479.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(458.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(465.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(444.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(451.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(430.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(437.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(416.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(423.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(402.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(409.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(388.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(395.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(374.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(381.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(360.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(367.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(345.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(353.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(331.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(338.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(317.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(324.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(303.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(310.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(289.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(296.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(275.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(282.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(261.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(268.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(247.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(254.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(233.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(240.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(219.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(226.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(204.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(212.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(190.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(197.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(176.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(183.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(162.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(169.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(148.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(155.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(134.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(141.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(120.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(127.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(106.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(113.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(92.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(99.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(78.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(85.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(63.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(70.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(49.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(56.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(35.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(42.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-4" transform="translate(21.000000, 4.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                </g>
+                                <g id="Group-3" transform="translate(28.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="rule2" transform="translate(7.000000, 4.000000)">
+                                    <g id="Group-4">
+                                        <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="10" rx="1.5"></rect>
+                                        <rect id="Rectangle-4" fill="#00554B" x="0" y="4" width="3" height="5"></rect>
+                                    </g>
+                                </g>
+                                <g id="Group-3" transform="translate(14.000000, 0.000000)">
+                                    <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                    <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                </g>
+                                <g id="rule1">
+                                    <g id="Group-3">
+                                        <rect id="Rectangle-3" fill="#006D5D" x="0" y="0" width="3" height="14" rx="1.5"></rect>
+                                        <rect id="Rectangle-4" fill="#00554B" x="0" y="9" width="3" height="5"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <path d="M152,186 L152,29.5" id="Path-2" stroke="#F44336" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,9"></path>
+            <path d="M730.5,180 L730.5,35.4783753" id="Path-2" stroke="#F44336" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,9"></path>
+            <path d="M776.5,130 L121.494541,130" id="Path-2" stroke="#F44336" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,9"></path>
+            <path d="M776.5,48 L121.494541,48" id="Path-2" stroke="#F44336" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,9"></path>
+        </g>
+    </g>
+</svg>
