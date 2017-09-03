@@ -11,18 +11,18 @@ Pixel perfect definition:
 
 # How to use
 
-## Step 1: Install Pixel Perfect
+## 👍 Step 1: Install Pixel Perfect
 
 ```
 $ npm i pixel-perfect --save
 ```
 
-## Step 2: Import the library
+## 🙌 Step 2: Import the library
 ```
 @import "~pixel-perfect/pixel-perfect.scss";
 ```
 
-## Step 3: Include the layout
+## 👏 Step 3: Include the layout
 
 You can include everything from the layout.
 
@@ -36,7 +36,7 @@ Or you can handpick the styles you want. Let's say you only want the grid and th
 @include pp-typography();
 ```
 
-## Step 4: Create a theme for your app
+## 👌 Step 4: Create a theme for your app
 
 Create a theme (or multiple themes) for your app.
 ```
@@ -102,7 +102,7 @@ $pp-blue: (
 }
 ```
 
-## Step 5: Decide whether you want custom CSS variables or SASS variables.
+## 🤘 Step 5: Decide whether you want custom CSS variables or SASS variables.
 
 The variables can be used in your stylesheets by using the `var(args...)` function. If you want the primary default color you could grab it by using `var(--primary-default)`. The theming in pixel-perfect uses custom CSS variables out of the box. Unfortunately, not all browsers support custom CSS variables yet ([See current state](http://caniuse.com/#feat=css-variables)). Therefore you can set the flag `$css-vars-use-native: false;` to tell pixel-perfect to use SASS variables instead. We recommend that you use custom CSS variables to get all the sweet benefits and either serve a seperate stylesheet for browsers without custom CSS variables or use polyfills.
 
@@ -123,7 +123,7 @@ $css-vars-use-native: true;
 }
 ```
 
-## Step 6: Customize the variables (optional)
+## 💪 Step 6: Customize the variables (optional)
 
 Its possible to customize most of the variables used in pixel-perfect.
 
@@ -139,7 +139,7 @@ $space-l: 15rem;
 ...
 ```
 
-## Step 7: Create your app-theme
+## 👊 Step 7: Create your app-theme
 
 Here is an example of what your theme could look like.
 
@@ -152,7 +152,7 @@ Here is an example of what your theme could look like.
 }
 ```
 
-# SCSS naming
+# 🔥 SCSS naming
 
 Go from general to concrete in the naming. Examples could be "property-element" or "property-state".
 
@@ -182,7 +182,7 @@ $button-line-height: 100% !default;
 $button-transition: all 200ms ease !default;
 ```
 
-# Mixin overview
+# 🚀 Mixin overview
 
 Heres an overview of some of the sweet mixins that can generate classes for you.
 
@@ -206,6 +206,6 @@ Heres an overview of some of the sweet mixins that can generate classes for you.
 }
 ```
 
-# License
+# 🌈 License
 
 MIT
