@@ -53,3 +53,19 @@
 		}
 	}
 }
+
+@mixin pp-button-reset() {
+	cursor: pointer;
+	outline: none;
+	border: none;
+	appearance: none;
+	user-select: none;
+}
+
+@mixin pp-webkit-scrolling() {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translateZ(0px);
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-perspective: 1000;
+}

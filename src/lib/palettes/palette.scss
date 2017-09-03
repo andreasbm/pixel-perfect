@@ -162,13 +162,5 @@ $pp-grey: (
   400: #E2E2E2,
   300: #EDEDED,
   200: #EFF1F5,
-  contrast: (
-    800: $white-87-opacity,
-    700: $black-87-opacity,
-    600: $black-87-opacity,
-    500: $black-87-opacity,
-    400: $black-87-opacity,
-    300: $black-87-opacity,
-    200: $black-87-opacity
-  )
+  contrast: $white-87-opacity
 );

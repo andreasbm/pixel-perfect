@@ -6,7 +6,13 @@
  @param $hue
  */
 @function _contrast($colors, $hue) {
-	@return pp-map-get(pp-map-get($colors, "contrast"), $hue);
+	$contrast: pp-map-get($colors, "contrast");
+
+	@if (type-of($contrast) == map) {
+		@return pp-map-get($contrast, $hue);
+	} @else {
+		@return $contrast;
+	}
 }
 
 /**
