@@ -7,14 +7,17 @@ $css-vars: () !default;
 */
 $css-vars-use-native: true !default;
 
-/** Enables allowing non existing variables */
-$css-vars-allow-non-existing-vars: true !default;
+/** Enables allowing non assigned variables */
+$css-vars-allow-non-assigned-vars: true !default;
 
 /** enables the output of debug messages */
 $css-vars-debug-log: false !default;
 
 /**
 	Assigns a variable to the global map
+	@param {String} $name
+	@param {Any} $value
+	@return {Map} - Map containing all the assigned CSS variables.
  */
 @function _css-var-assign($name: null, $value: null) {
 	@if ($name==null) {
@@ -34,14 +37,26 @@ $css-vars-debug-log: false !default;
 }
 
 /**
- Emulates var() CSS native function behavior
+	Determines whether a variable is assigned.
 
- $args[0] {String} "--" + variable name
- [$args[1]] Optional default value if variable is not assigned yet
+	@param {String} $name - The name of the variable.
+	@return {Boolean - Whether or not the variable is assigned a value.
+ */
+@function is-css-var-assigned ($varName) {
+	$varValue: map-get($css-vars, $varName);
+	@return $varValue != null;
+}
+
+/**
+ Emulates var() CSS native function behavior.
 
  E.G.:
  color: var(--main-color);
  background: var(--main-bg, green);
+
+ @param {String} $args - "--" + variable name.
+ @param {String.. (optional)} - Optional default value if variable is not assigned yet.
+ @return {String} - Returns the native CSS variable or the value assigned.
 */
 @function var($args...) {
 	@if (length($args) == 0) {
@@ -66,7 +81,7 @@ $css-vars-debug-log: false !default;
 			$varValue: nth($args, 2);
 
 		} @else {
-			@if (not $css-vars-allow-non-existing-vars) {
+			@if (not $css-vars-allow-non-assigned-vars) {
 				@error "The variable '#{$varName}' is not assigned";
 
 			} @else if ($css-vars-debug-log) {
@@ -93,6 +108,9 @@ $css-vars-debug-log: false !default;
     --height: 68px,
     --margin-top: calc(2vh + 20px)
  ));
+
+ @param {Map} $varMap - A map containing the css variables.
+ @root {Boolean} $root - Whether the CSS variables should be added to the root or not.
 */
 @mixin css-vars($varMap: null, $root: false) {
 	@if ($varMap == null) {

@@ -110,7 +110,7 @@ If you want to deactivate you can do the following by extracting all of your the
 
 ```
 // Deactive custom CSS variables :,(
-$css-vars-use-native: true;
+$css-vars-use-native: false;
 
 .theme-light {
   @include light-theme();
