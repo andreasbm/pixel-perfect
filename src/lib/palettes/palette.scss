@@ -1,14 +1,16 @@
-$black-87-opacity: rgba(black, 0.87);
-$white-87-opacity: rgba(white, 0.87);
-$black-50-opacity: rgba(black, 0.50);
-$white-50-opacity: rgba(white, 0.50);
-$black-12-opacity: rgba(black, 0.12);
-$white-12-opacity: rgba(white, 0.12);
-$black-6-opacity: rgba(black, 0.06);
-$white-6-opacity: rgba(white, 0.06);
-
 $black: #000000;
 $white: #ffffff;
+
+$black-87-opacity: rgba($black, 0.87);
+$white-87-opacity: rgba($white, 0.87);
+$black-50-opacity: rgba($black, 0.50);
+$white-50-opacity: rgba($white, 0.50);
+$black-30-opacity: rgba($black, 0.30);
+$white-30-opacity: rgba($white, 0.30);
+$black-12-opacity: rgba($black, 0.12);
+$white-12-opacity: rgba($white, 0.12);
+$black-6-opacity: rgba($black, 0.06);
+$white-6-opacity: rgba($white, 0.06);
 
 @function dark-color($color) {
   //@return adjust-color($color, $red: -10, $green: -19, $blue: -34);
