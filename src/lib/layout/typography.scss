@@ -65,17 +65,16 @@
 		@include _header-style($font-size-h6, $font-weight-h6);
 	}
 
+	span, a, p {
+		@include _text-style(inherit, inherit, inherit);
+	}
+
 	p {
-		@include _text-style(inherit, $font-weight-paragraph, inherit);
 		margin: $margin-paragraph;
 	}
 
-	span, a {
-		@include _text-style(inherit, $font-weight-span, inherit);
-	}
-
 	label {
-		@include _text-style($font-size-label, $font-weight-label, inherit);
+		@include _text-style($font-size-label, inherit, inherit);
 		display: block;
 	}
 
