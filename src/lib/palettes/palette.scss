@@ -29,9 +29,9 @@ $pp-brown: (
   400: light-color(#E6AE8B),
   600: dark-color(#E6AE8B),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -40,9 +40,9 @@ $pp-turquoise: (
   400: light-color(#56DAAE),
   600: dark-color(#56DAAE),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -51,9 +51,9 @@ $pp-lime: (
   400: light-color(#BDDF72),
   600: dark-color(#BDDF72),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -62,9 +62,9 @@ $pp-pink: (
   400: #FF7676,
   600: #F54EA2,
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -73,9 +73,9 @@ $pp-yellow: (
   400: light-color(#FFD54C),
   600: dark-color(#FFD54C),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -84,9 +84,9 @@ $pp-orange: (
   400: light-color(#FF874E),
   600: dark-color(#FF874E),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -95,9 +95,9 @@ $pp-blue: (
   400: light-color(#4581F6),
   600: dark-color(#4581F6),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -106,9 +106,9 @@ $pp-blue-light: (
   400: light-color(#5BBAEB),
   600: dark-color(#5BBAEB),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -117,9 +117,9 @@ $pp-red: (
   400: light-color(#FF3655),
   600: dark-color(#FF3655),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -128,9 +128,9 @@ $pp-violet: (
   400: light-color(#7F1DEB),
   600: dark-color(#7F1DEB),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -150,9 +150,9 @@ $pp-black-dirty: (
   400: light-color(#171717),
   600: dark-color(#171717),
   contrast: (
-    500: $white-87-opacity,
-    400: $white-87-opacity,
-    600: $white-87-opacity
+    500: $white,
+    400: $white,
+    600: $white
   )
 );
 
@@ -164,5 +164,5 @@ $pp-grey: (
   400: #E2E2E2,
   300: #EDEDED,
   200: #EFF1F5,
-  contrast: $white-87-opacity
+  contrast: $white
 );
