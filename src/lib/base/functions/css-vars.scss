@@ -147,3 +147,39 @@ $css-vars-debug-log: false !default;
 		}
 	}
 }
+
+/**
+	Creates a flat map with variables.
+
+	@example
+	pp-create-vars((
+		"button": (
+			"foreground": white,
+			"background": black,
+			"variation": (
+				"primary": blue,
+				"accent": orange
+			)
+		)
+	));
+
+	Will result in:	("--button-foreground": white, "--button-background": black, "--button-variation-primary": blue, "--button-background": black)
+
+	@param {Map} $map
+	@param {String} $prefix
+
+	@return {Map}
+ */
+@function pp-create-vars($map, $prefix: "-") {
+	$vars: ();
+
+	@each $name, $value in $map {
+		@if (type-of($value) != map) {
+			$vars: map-merge($vars, ("#{$prefix}-#{$name}": $value));
+		} @else {
+			$vars: map-merge($vars, pp-create-vars($value, "#{$prefix}-#{$name}"));
+		}
+	}
+
+	@return $vars;
+}

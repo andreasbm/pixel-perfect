@@ -5,27 +5,50 @@
 	Strange things might happen when the item in a stack grid wants to be smaller than the padding.
  */
 
+$grid-vars: pp-create-vars((
+	"spacing": (
+		"s" px-to-rem(7.5),
+		"m" px-to-rem(15),
+		"l" px-to-rem(30)
+	),
+	"container": (
+		"width-thin": 70%,
+		"width": 80%,
+		"width-screen-m": 85%,
+		"width-screen-l": 70%,
+		"width-wide": 90%,
+		"max-width-thin": px-to-rem(700),
+		"max-width": px-to-rem(1280),
+		"max-width-wide": px-to-rem(1430)
+	),
+	"section": (
+		"top-bottom-spacing-s": var(--spacing-s),
+		"top-bottom-spacing-m": var(--spacing-m),
+		"top-bottom-spacing-l": var(--spacing-l)
+	)
+));
+
 /* Grid settings */
 $stack-num-cols: 12 !default;
 $stack-spacing: 15 !default;
 $stack-spacing-unit: 'px' !default;
 
-$spacing-s: px-to-rem(7.5) !default;
-$spacing-m: px-to-rem(15) !default;
-$spacing-l: px-to-rem(30) !default;
-
-/* Container */
-$container-width: 80% !default;
-$container-width-screen-m: 85% !default;
-$container-width-screen-l: 70% !default;
-$container-width-wide: 90% !default;
-$container-width-thin: 70% !default;
-
-$container-max-width-thin: px-to-rem(700) !default;
-$container-max-width: px-to-rem(1280) !default;
-$container-max-width-wide: px-to-rem(1430) !default;
-
-/* Section */
-$section-top-bottom-spacing-s: $spacing-s !default;
-$section-top-bottom-spacing-l: $spacing-l !default;
-$section-top-bottom-spacing-m: $spacing-m !default;
+//$spacing-s: px-to-rem(7.5) !default;
+//$spacing-m: px-to-rem(15) !default;
+//$spacing-l: px-to-rem(30) !default;
+//
+///* Container */
+//$container-width: 80% !default;
+//$container-width-screen-m: 85% !default;
+//$container-width-screen-l: 70% !default;
+//$container-width-wide: 90% !default;
+//$container-width-thin: 70% !default;
+//
+//$container-max-width-thin: px-to-rem(700) !default;
+//$container-max-width: px-to-rem(1280) !default;
+//$container-max-width-wide: px-to-rem(1430) !default;
+//
+///* Section */
+//$section-top-bottom-spacing-s: $spacing-s !default;
+//$section-top-bottom-spacing-l: $spacing-l !default;
+//$section-top-bottom-spacing-m: $spacing-m !default;

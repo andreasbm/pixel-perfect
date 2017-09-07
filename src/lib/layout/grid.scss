@@ -20,40 +20,40 @@
 
 @mixin pp-grid() {
 	.container {
-		width: $container-width;
-		max-width: $container-max-width;
+		width: var(--container-width);
+		max-width: var(--container-max-width);
 		margin: 0 auto;
 
 		@media #{$screen-m-and-up} {
-			width: $container-width-screen-m;
+			width: var(--container-width-screen-m);
 		}
 		@media #{$screen-l-and-up} {
-			width: $container-width-screen-l;
+			width: var(--container-width-screen-l);
 		}
 
 		&.container-thin {
-			max-width: $container-max-width-thin;
-			width: $container-width-thin;
+			max-width: var(--container-max-width-thin);
+			width: var(--container-width-thin);
 		}
 
 		&.container-wide {
-			max-width: $container-max-width-wide;
-			width: $container-width-wide;
+			max-width: var(--container-max-width-wide);
+			width: var(--container-width-wide);
 		}
 	}
 
 	section {
-		padding-top: $section-top-bottom-spacing-m;
-		padding-bottom: $section-top-bottom-spacing-m;
+		padding-top: var(--section-top-bottom-spacing-m);
+		padding-bottom: var(--section-top-bottom-spacing-m);
 
 		&.section-s {
-			padding-top: $section-top-bottom-spacing-s;
-			padding-bottom: $section-top-bottom-spacing-s;
+			padding-top: var(--section-top-bottom-spacing-s);
+			padding-bottom: var(--section-top-bottom-spacing-s);
 		}
 
 		&.section-l {
-			padding-top: $section-top-bottom-spacing-l;
-			padding-bottom: $section-top-bottom-spacing-l;
+			padding-top: var(--section-top-bottom-spacing-l);
+			padding-bottom: var(--section-top-bottom-spacing-l);
 		}
 	}
 
@@ -213,21 +213,21 @@
 	}
 
 	@include pp-breakpointify("space-horizontal-s") {
-		width: $spacing-s;
+		width: var(--spacing-s);
 	}
 	@include pp-breakpointify("space-horizontal-m") {
-		width: $spacing-m;
+		width: var(--spacing-m);
 	}
 	@include pp-breakpointify("space-horizontal-l") {
-		width: $spacing-l;
+		width: var(--spacing-l);
 	}
 	@include pp-breakpointify("space-vertical-s") {
-		height: $spacing-s;
+		height: var(--spacing-s);
 	}
 	@include pp-breakpointify("space-vertical-m") {
-		height: $spacing-m;
+		height: var(--spacing-m);
 	}
 	@include pp-breakpointify("space-vertical-l") {
-		height: $spacing-l;
+		height: var(--spacing-l);
 	}
 }
