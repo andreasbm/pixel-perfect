@@ -1,5 +1,6 @@
 /* ==========================================================================
    Normalize.css v3.0.2 | MIT License | git.io/normalize | https://necolas.github.io/normalize.css/
+   !! The parts that has been modified are tagged with "MODIFIED" !!
    ========================================================================== */
 
 @mixin pp-normalize() {
@@ -253,6 +254,7 @@
 		font-size: 100%; /* 1 */
 		line-height: 1.15; /* 1 */
 		margin: 0; /* 2 */
+		font-family: inherit;
 	}
 
 
