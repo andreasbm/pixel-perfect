@@ -21,11 +21,11 @@ $css-vars-debug-log: false !default;
  */
 @function _css-var-assign($name: null, $value: null) {
 	@if ($name==null) {
-		@error "Variable name is expected, instead got: null";
+		@error "Variable name is expected for '#{$name}', instead got: null";
 	}
 
 	@if ($value==null) {
-		@error "Variable value is expected, instead got: null";
+		@error "Variable value is expected for '#{$name}', instead got: null";
 	}
 
 	// Assign the value to the global map

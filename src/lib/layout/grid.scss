@@ -180,6 +180,7 @@
 		@include pp-breakpointify("stack-items-align-end", true) {
 			align-items: flex-end;
 		}
+
 		@include pp-breakpointify("stack-items-align-baseline", true) {
 			align-items: baseline;
 		}
