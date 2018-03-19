@@ -101,6 +101,19 @@ $css-vars-debug-log: false !default;
 }
 
 /**
+	Generates the CSS vars based on a map.
+ */
+@mixin _generate-vars($varMap) {
+	@each $varName, $varValue in $varMap {
+		@if (type_of($varValue)==string) {
+			#{$varName}: $varValue // Prevent quotes interpolation
+		} @else {
+			#{$varName}: #{$varValue}
+		}
+	}
+}
+
+/**
  CSS mixin to provide variables
  E.G.:
  @include css-vars((
@@ -128,22 +141,13 @@ $css-vars-debug-log: false !default;
 
 	// Native CSS: assign CSS custom properties to the global scope
 	@if ($css-vars-use-native) {
-		@mixin generate-vars() {
-			@each $varName, $varValue in $varMap {
-				@if (type_of($varValue)==string) {
-					#{$varName}: $varValue // Prevent quotes interpolation
-				} @else {
-					#{$varName}: #{$varValue}
-				}
-			}
-		}
 
 		@if ($root) {
 			@at-root :root {
-				@include generate-vars();
+				@include _generate-vars($varMap);
 			}
 		} @else {
-			@include generate-vars();
+			@include _generate-vars($varMap);
 		}
 	}
 }
