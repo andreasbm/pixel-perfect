@@ -6,6 +6,7 @@ $breakpoint-xl: 1700px !default;
 $screen-m-and-up: "only screen and (min-width : #{$breakpoint-s + 1})" !default;
 $screen-l-and-up: "only screen and (min-width : #{$breakpoint-m + 1})" !default;
 $screen-xl-and-up: "only screen and (min-width : #{$breakpoint-l + 1})" !default;
+$screen-xxl-and-up: "only screen and (min-width : #{$breakpoint-xl + 1})" !default;
 $screen-l-and-down: "only screen and (max-width : #{$breakpoint-m})" !default;
 $screen-s-and-down: "only screen and (max-width : #{$breakpoint-s})" !default;
 $screen-m-and-down: "only screen and (max-width : #{$breakpoint-m})" !default;
