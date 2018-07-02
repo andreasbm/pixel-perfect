@@ -23,6 +23,10 @@
 		@media #{$screen-l-and-up} {
 			font-size: $font-size-base-screen-l;
 		}
+
+		@media #{$screen-xl-and-up} {
+			font-size: $font-size-base-screen-xl;
+		}
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, span, label, a {
