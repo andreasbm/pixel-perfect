@@ -1,98 +1,98 @@
 @import "../base";
 
 @mixin _text-style($size, $weight, $line-height) {
-	font-size: $size;
-	font-weight: $weight;
-	line-height: $line-height;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
 }
 
 @mixin _header-style($font-size, $font-weight) {
-	font-size: $font-size;
-	font-weight: $font-weight;
+  font-size: $font-size;
+  font-weight: $font-weight;
 }
 
 @mixin pp-typography() {
-	html {
-		font-family: $font-family-base;
-		@include _text-style($font-size-base-screen-s, $font-weight-base, $line-height-base);
+  html {
+    font-family: $font-family-base;
+    @include _text-style($font-size-base-screen-s, $font-weight-base, $line-height-base);
 
-		@media #{$screen-m-only} {
-			font-size: $font-size-base-screen-m;
-		}
+    @media #{$screen-m-only} {
+      font-size: $font-size-base-screen-m;
+    }
 
-		@media #{$screen-l-and-up} {
-			font-size: $font-size-base-screen-l;
-		}
+    @media #{$screen-l-and-up} {
+      font-size: $font-size-base-screen-l;
+    }
 
-		@media #{$screen-xl-and-up} {
-			font-size: $font-size-base-screen-xl;
-		}
+    @media #{$screen-xl-and-up} {
+      font-size: $font-size-base-screen-xl;
+    }
 
-		@media #{$screen-xxl-and-up} {
-			font-size: $font-size-base-screen-xxl;
-		}
-	}
+    @media #{$screen-xxl-and-up} {
+      font-size: $font-size-base-screen-xxl;
+    }
+  }
 
-	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, span, label, a {
-		color: inherit;
-	}
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, span, label, a {
+    color: inherit;
+  }
 
-	b {
-		font-weight: $font-weight-bold;
-	}
+  b {
+    font-weight: $font-weight-bold;
+  }
 
-	strong {
-		font-weight: $font-weight-strong;
-	}
+  strong {
+    font-weight: $font-weight-strong;
+  }
 
-	small {
-		font-size: $font-size-s;
-	}
+  small {
+    font-size: $font-size-s;
+  }
 
-	h1, h2, h3, h4, h5, h6 {
-		line-height: $line-height-header;
-		margin: $margin-header;
-	}
+  h1, h2, h3, h4, h5, h6 {
+    line-height: $line-height-header;
+    margin: $margin-header;
+  }
 
-	h1 {
-		@include _header-style($font-size-h1, $font-weight-h1);
-	}
-	h2 {
-		@include _header-style($font-size-h2, $font-weight-h2);
-	}
-	h3 {
-		@include _header-style($font-size-h3, $font-weight-h3);
-	}
-	h4 {
-		@include _header-style($font-size-h4, $font-weight-h4);
-	}
-	h5 {
-		@include _header-style($font-size-h5, $font-weight-h5);
-	}
-	h6 {
-		@include _header-style($font-size-h6, $font-weight-h6);
-	}
+  h1 {
+    @include _header-style($font-size-h1, $font-weight-h1);
+  }
+  h2 {
+    @include _header-style($font-size-h2, $font-weight-h2);
+  }
+  h3 {
+    @include _header-style($font-size-h3, $font-weight-h3);
+  }
+  h4 {
+    @include _header-style($font-size-h4, $font-weight-h4);
+  }
+  h5 {
+    @include _header-style($font-size-h5, $font-weight-h5);
+  }
+  h6 {
+    @include _header-style($font-size-h6, $font-weight-h6);
+  }
 
-	span, a, p {
-		@include _text-style(inherit, inherit, inherit);
-	}
+  span, a, p {
+    @include _text-style(inherit, inherit, inherit);
+  }
 
-	p {
-		margin: $margin-paragraph;
-	}
+  p {
+    margin: $margin-paragraph;
+  }
 
-	label {
-		@include _text-style($font-size-label, inherit, inherit);
-		display: block;
-	}
+  label {
+    @include _text-style($font-size-label, inherit, inherit);
+    display: block;
+  }
 
-	a {
-		text-decoration: none;
-		cursor: pointer;
-		user-select: none;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
 
-		&.link:hover {
-			text-decoration: underline;
-		}
-	}
+    &.link:hover {
+      text-decoration: underline;
+    }
+  }
 }

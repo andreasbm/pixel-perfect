@@ -1,0 +1,18 @@
+@import "../base";
+
+@mixin pp-section() {
+  section {
+    padding-top: $section-top-bottom-spacing-m;
+    padding-bottom: $section-top-bottom-spacing-m;
+
+    &.section-s {
+      padding-top: $section-top-bottom-spacing-s;
+      padding-bottom: $section-top-bottom-spacing-s;
+    }
+
+    &.section-l {
+      padding-top: $section-top-bottom-spacing-l;
+      padding-bottom: $section-top-bottom-spacing-l;
+    }
+  }
+}

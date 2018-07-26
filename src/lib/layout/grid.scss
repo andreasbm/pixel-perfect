@@ -1,234 +1,196 @@
 @import "../base";
 
 @function _get-stack-spacing() {
-	@return #{$stack-spacing}#{$stack-spacing-unit};
+  @return #{$stack-spacing}#{$stack-spacing-unit};
 }
 
 @function _get-stack-spacing-for-index($index, $max-cols) {
-	@return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
+  @return #{$stack-spacing / ($max-cols/$index)}#{$stack-spacing-unit};
 }
 
 @mixin _grid-item-style($index, $max-cols) {
-	$perc: ($index / $max-cols) * 100%;
+  $perc: ($index / $max-cols) * 100%;
 
-	/* Only add gap if the size of the column is not 100% */
-	@if $perc != 100% {
-		max-width: calc(#{$perc} - #{_get-stack-spacing()} + #{_get-stack-spacing-for-index($index, $max-cols)});
-		flex-basis: calc(#{$perc} - #{_get-stack-spacing()} + #{_get-stack-spacing-for-index($index, $max-cols)});
-	}
+  /* Only add gap if the size of the column is not 100% */
+  @if $perc != 100% {
+    max-width: calc(#{$perc} - #{_get-stack-spacing()} + #{_get-stack-spacing-for-index($index, $max-cols)});
+    flex-basis: calc(#{$perc} - #{_get-stack-spacing()} + #{_get-stack-spacing-for-index($index, $max-cols)});
+  }
 }
 
 @mixin pp-grid() {
-	.container {
-		width: $container-width;
-		max-width: $container-max-width;
-		margin: 0 auto;
+  .stack-grid {
+    display: flex;
+  }
 
-		@media #{$screen-m-and-up} {
-			width: $container-width-screen-m;
-		}
-		@media #{$screen-l-and-up} {
-			width: $container-width-screen-l;
-		}
+  .stack-grid-inline {
+    display: inline-flex;
+  }
 
-		&.container-thin {
-			max-width: $container-max-width-thin;
-			width: $container-width-thin;
-		}
+  .stack-grid, .stack-grid-inline {
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-		&.container-wide {
-			max-width: $container-max-width-wide;
-			width: $container-width-wide;
-		}
-	}
+    > .item {
+      flex: 0 0 auto;
 
-	section {
-		padding-top: $section-top-bottom-spacing-m;
-		padding-bottom: $section-top-bottom-spacing-m;
+      width: 100%;
 
-		&.section-s {
-			padding-top: $section-top-bottom-spacing-s;
-			padding-bottom: $section-top-bottom-spacing-s;
-		}
+      $i: 1;
 
-		&.section-l {
-			padding-top: $section-top-bottom-spacing-l;
-			padding-bottom: $section-top-bottom-spacing-l;
-		}
-	}
+      // Small and up
+      @while $i <= $stack-num-cols {
+        &.s#{$i} {
+          @include _grid-item-style($i, $stack-num-cols);
+        }
+        $i: $i + 1;
+      }
 
-	.stack-grid {
-		display: flex;
-	}
+      $i: 1;
 
-	.stack-grid-inline {
-		display: inline-flex;
-	}
+      // Medium and up
+      @while $i <= $stack-num-cols {
+        @media #{$screen-m-and-up} {
+          &.m#{$i} {
+            @include _grid-item-style($i, $stack-num-cols);
+          }
+        }
+        $i: $i + 1;
+      }
 
-	.stack-grid, .stack-grid-inline {
-		flex-wrap: wrap;
-		justify-content: space-between;
+      $i: 1;
+      // Large and up
+      @while $i <= $stack-num-cols {
+        @media #{$screen-l-and-up} {
+          &.l#{$i} {
+            @include _grid-item-style($i, $stack-num-cols);
+          }
+        }
+        $i: $i + 1;
+      }
+    }
+  }
 
-		> .item {
-			flex: 0 0 auto;
+  .stack {
+    display: flex;
+  }
 
-			width: 100%;
+  .stack-inline {
+    display: inline-flex;
+  }
 
-			$i: 1;
+  .stack, .stack-inline {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
 
-			// Small and up
-			@while $i <= $stack-num-cols {
-				&.s#{$i} {
-					@include _grid-item-style($i, $stack-num-cols);
-				}
-				$i: $i + 1;
-			}
+  .stack, .stack-inline, .stack-grid, .stack-grid-inline {
 
-			$i: 1;
+    /* Wrap */
+    @include pp-breakpointify("stack-wrap", true) {
+      flex-wrap: wrap;
+    }
+    @include pp-breakpointify("stack-nowrap", true) {
+      flex-wrap: nowrap;
+    }
 
-			// Medium and up
-			@while $i <= $stack-num-cols {
-				@media #{$screen-m-and-up} {
-					&.m#{$i} {
-						@include _grid-item-style($i, $stack-num-cols);
-					}
-				}
-				$i: $i + 1;
-			}
+    /* Alignment - Determines the layout of the arranged views perpendicular to the stack’s axis. */
+    @include pp-breakpointify("stack-align-start", true) {
+      justify-content: flex-start;
+    }
+    @include pp-breakpointify("stack-align-end", true) {
+      justify-content: flex-end;
+    }
+    @include pp-breakpointify("stack-align-center", true) {
+      justify-content: center;
+    }
 
-			$i: 1;
-			// Large and up
-			@while $i <= $stack-num-cols {
-				@media #{$screen-l-and-up} {
-					&.l#{$i} {
-						@include _grid-item-style($i, $stack-num-cols);
-					}
-				}
-				$i: $i + 1;
-			}
-		}
-	}
+    /* Direction - Determines the stack’s orientation */
+    @include pp-breakpointify("stack-direction-horizontal", true) {
+      flex-direction: row;
+    }
+    @include pp-breakpointify("stack-direction-vertical", true) {
+      flex-direction: column;
+    }
+    @include pp-breakpointify("stack-direction-horizontal-reverse", true) {
+      flex-direction: row-reverse;
+    }
+    @include pp-breakpointify("stack-direction-vertical-reverse", true) {
+      flex-direction: column-reverse;
+    }
 
-	.stack {
-		display: flex;
-	}
+    /* Distribution */
+    @include pp-breakpointify("stack-distribution-fill", true) {
+      > .item {
+        flex-grow: 1
+      }
+    }
+    @include pp-breakpointify("stack-distribution-center", true) {
+      justify-content: space-around;
+    }
+    @include pp-breakpointify("stack-distribution-space", true) {
+      justify-content: space-between;
+    }
 
-	.stack-inline {
-		display: inline-flex;
-	}
+    /* Items */
+    @include pp-breakpointify("stack-items-align-center", true) {
+      align-items: center;
+    }
+    @include pp-breakpointify("stack-items-align-start", true) {
+      align-items: flex-start;
+    }
+    @include pp-breakpointify("stack-items-align-end", true) {
+      align-items: flex-end;
+    }
 
-	.stack, .stack-inline {
-		flex-flow: row nowrap;
-		align-items: center;
-	}
+    @include pp-breakpointify("stack-items-align-baseline", true) {
+      align-items: baseline;
+    }
+    @include pp-breakpointify("stack-items-align-fill", true) {
+      align-items: stretch;
+    }
 
-	.stack, .stack-inline, .stack-grid, .stack-grid-inline {
+    /* Item */
+    > .item {
+      @include pp-breakpointify("item-align-center", true) {
+        align-self: center
+      }
+      @include pp-breakpointify("item-align-start", true) {
+        align-self: flex-start;
+      }
+      @include pp-breakpointify("item-align-end", true) {
+        align-self: flex-end;
+      }
+      @include pp-breakpointify("item-align-baseline", true) {
+        align-self: baseline;
+      }
+      @include pp-breakpointify("item-align-fill", true) {
+        align-self: stretch;
+      }
+    }
+  }
 
-		/* Wrap */
-		@include pp-breakpointify("stack-wrap", true) {
-			flex-wrap: wrap;
-		}
-		@include pp-breakpointify("stack-nowrap", true) {
-			flex-wrap: nowrap;
-		}
+  /* Space */
+  [class*="space-horizontal-"], [class*="space-vertical-"] {
+    flex: 0 0 auto;
+  }
 
-		/* Alignment - Determines the layout of the arranged views perpendicular to the stack’s axis. */
-		@include pp-breakpointify("stack-align-start", true) {
-			justify-content: flex-start;
-		}
-		@include pp-breakpointify("stack-align-end", true) {
-			justify-content: flex-end;
-		}
-		@include pp-breakpointify("stack-align-center", true) {
-			justify-content: center;
-		}
-
-		/* Direction - Determines the stack’s orientation */
-		@include pp-breakpointify("stack-direction-horizontal", true) {
-			flex-direction: row;
-		}
-		@include pp-breakpointify("stack-direction-vertical", true) {
-			flex-direction: column;
-		}
-		@include pp-breakpointify("stack-direction-horizontal-reverse", true) {
-			flex-direction: row-reverse;
-		}
-		@include pp-breakpointify("stack-direction-vertical-reverse", true) {
-			flex-direction: column-reverse;
-		}
-
-		/* Distribution */
-		@include pp-breakpointify("stack-distribution-fill", true) {
-			> .item {
-				flex-grow: 1
-			}
-		}
-		@include pp-breakpointify("stack-distribution-center", true) {
-			justify-content: space-around;
-		}
-		@include pp-breakpointify("stack-distribution-space", true) {
-			justify-content: space-between;
-		}
-
-		/* Items */
-		@include pp-breakpointify("stack-items-align-center", true) {
-			align-items: center;
-		}
-		@include pp-breakpointify("stack-items-align-start", true) {
-			align-items: flex-start;
-		}
-		@include pp-breakpointify("stack-items-align-end", true) {
-			align-items: flex-end;
-		}
-
-		@include pp-breakpointify("stack-items-align-baseline", true) {
-			align-items: baseline;
-		}
-		@include pp-breakpointify("stack-items-align-fill", true) {
-			align-items: stretch;
-		}
-
-		/* Item */
-		> .item {
-			@include pp-breakpointify("item-align-center", true) {
-				align-self: center
-			}
-			@include pp-breakpointify("item-align-start", true) {
-				align-self: flex-start;
-			}
-			@include pp-breakpointify("item-align-end", true) {
-				align-self: flex-end;
-			}
-			@include pp-breakpointify("item-align-baseline", true) {
-				align-self: baseline;
-			}
-			@include pp-breakpointify("item-align-fill", true) {
-				align-self: stretch;
-			}
-		}
-	}
-
-	/* Space */
-	[class*="space-horizontal-"], [class*="space-vertical-"] {
-		flex: 0 0 auto;
-	}
-
-	@include pp-breakpointify("space-horizontal-s") {
-		width: $spacing-s;
-	}
-	@include pp-breakpointify("space-horizontal-m") {
-		width: $spacing-m;
-	}
-	@include pp-breakpointify("space-horizontal-l") {
-		width: $spacing-l;
-	}
-	@include pp-breakpointify("space-vertical-s") {
-		height: $spacing-s;
-	}
-	@include pp-breakpointify("space-vertical-m") {
-		height: $spacing-m;
-	}
-	@include pp-breakpointify("space-vertical-l") {
-		height: $spacing-l;
-	}
+  @include pp-breakpointify("space-horizontal-s") {
+    width: $spacing-s;
+  }
+  @include pp-breakpointify("space-horizontal-m") {
+    width: $spacing-m;
+  }
+  @include pp-breakpointify("space-horizontal-l") {
+    width: $spacing-l;
+  }
+  @include pp-breakpointify("space-vertical-s") {
+    height: $spacing-s;
+  }
+  @include pp-breakpointify("space-vertical-m") {
+    height: $spacing-m;
+  }
+  @include pp-breakpointify("space-vertical-l") {
+    height: $spacing-l;
+  }
 }

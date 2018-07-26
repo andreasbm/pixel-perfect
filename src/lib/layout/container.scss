@@ -1,0 +1,26 @@
+@import "../base";
+
+@mixin pp-container() {
+  .container {
+    width: $container-width;
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    @media #{$screen-m-and-up} {
+      width: $container-width-screen-m;
+    }
+    @media #{$screen-l-and-up} {
+      width: $container-width-screen-l;
+    }
+
+    &.container-thin {
+      max-width: $container-max-width-thin;
+      width: $container-width-thin;
+    }
+
+    &.container-wide {
+      max-width: $container-max-width-wide;
+      width: $container-width-wide;
+    }
+  }
+}

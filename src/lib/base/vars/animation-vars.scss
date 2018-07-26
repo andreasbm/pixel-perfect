@@ -4,15 +4,15 @@ $fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
 
 $ease-in-out-curve-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
 
-$ease-out-duration: 150ms !default;
+$ease-out-duration: 100ms !default;
 $ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
 $ease-out: all $ease-out-duration $ease-out-timing-function !default;
 
-$ease-in-duration: 150ms !default;
+$ease-in-duration: 100ms !default;
 $ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2) !default;
 $ease-in: all $ease-in-duration $ease-in-timing-function !default;
 
-$ease-in-out-duration: 200ms !default;
+$ease-in-out-duration: 100ms !default;
 $ease-in-out-timing-function: $ease-in-out-curve-function !default;
 $ease-in-out: all $ease-in-out-duration $ease-in-out-timing-function !default;
 
