@@ -34,7 +34,7 @@
 	);
 
 	@each $hue, $color in $colors {
-		@if pp-unitless($hue) {
+		@if ($hue != "contrast") {
 			$vars: pp-map-collect($vars, (
 				"--#{$name}-#{$hue}": $color,
 				"--#{$name}-#{$hue}-contrast": _contrast($colors, $hue)
